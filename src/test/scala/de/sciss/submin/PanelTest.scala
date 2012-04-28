@@ -18,7 +18,11 @@ object PanelTest extends Runnable {
       submin.putClientProperty( "submin", true )
       submin.setUI( new PanelUI )
       addWidgets( nimbus )
+      nimbus.add( new JButton( "Button" ))
       addWidgets( submin )
+      val subminBut = new JButton( "Button" )
+      subminBut.setUI( new ButtonUI )
+      submin.add( subminBut )
       split.setLeftComponent( nimbus )
       split.setRightComponent( submin )
       split.setResizeWeight( 0.5 )
@@ -32,7 +36,6 @@ object PanelTest extends Runnable {
 
    private def addWidgets( p: JPanel ) {
       p.setLayout( new FlowLayout() )
-      p.add( new JButton( "Button" ))
       p.add( new JLabel( "Label" ))
       p.add( new JSlider() )
       p.add( new JCheckBox( "Check Box" ))
