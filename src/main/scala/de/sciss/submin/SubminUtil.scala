@@ -71,6 +71,8 @@ object SubminUtil {
    def getDefaultFont( c: JComponent, defaultFontName: String ) : Font = {
       val f = UIManager.getFont( defaultFontName ) // "defaultFont"
 
+//      if( f == null ) println( "No font for " + defaultFontName )
+
       c.getClientProperty( "JComponent.sizeVariant" ) match {
          case "large" => f.deriveFont( math.round( f.getSize2D * LARGE_SCALE ))
          case "small" => f.deriveFont( math.round( f.getSize2D * SMALL_SCALE ))

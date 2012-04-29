@@ -77,6 +77,9 @@ object NimbusDefaults {
       m.put( "Panel.contentMargins",      zeroInsets )
       m.put( "Panel.font",                fntSans12 )
       m.put( "Panel.opaque",              true )
+
+      m.put( "Label.contentMargins",      zeroInsets )
+      m.put( "Label.font",                fntSans12 )
       m
    }
 

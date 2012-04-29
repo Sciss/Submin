@@ -93,6 +93,9 @@ object PanelTest extends Runnable {
    private def addWidgets( p: JPanel ) {
       p.setLayout( new FlowLayout() )
       p.add( new JLabel( "Label" ))
+      val lbSmall = new JLabel( "Small" )
+      lbSmall.putClientProperty( "JComponent.sizeVariant", "small" )
+      p.add( lbSmall )
       p.add( new JSlider() )
       p.add( new JCheckBox( "Check Box" ))
       p.add( new JTextField( "Text Field" ))
