@@ -29,10 +29,15 @@ import javax.swing.text.View
 import javax.swing.plaf.basic.{BasicHTML, BasicButtonUI}
 import sun.swing.SwingUtilities2
 import java.awt.{RenderingHints, Dimension, Graphics2D, FontMetrics, Rectangle, Graphics}
-import javax.swing.{JButton, SwingUtilities, JComponent, AbstractButton}
+import javax.swing.{LookAndFeel, UIManager, JButton, SwingUtilities, JComponent, AbstractButton}
+import javax.swing.plaf.UIResource
 
 /**
- * todo: doesn't paint default dialog button distinguished
+ * todo:
+ *  - doesn't check the `DEFAULT` state flag
+ *  - doesn't recognise `sizeVariant` client property
+ *  - haven't checked proper icon painting
+ *  - should recognise custom button color (currently `null` is passed into `NimbusButtonPainter`)
  */
 object ButtonUI {
    private val viewRect = new Rectangle()
@@ -42,10 +47,38 @@ object ButtonUI {
 class ButtonUI extends BasicButtonUI {
    import ButtonUI._
 
-//   override def update( g: Graphics, c: JComponent ) {
-////       paintBackground( g, c.asInstanceOf[ AbstractButton ])
-//       paint( g, c )
-//   }
+   override protected def installDefaults( b: AbstractButton ) {
+      val pp = getPropertyPrefix
+
+      defaultTextShiftOffset = UIManager.getInt( pp + "textShiftOffset" )
+
+//      LookAndFeel.installProperty( b, "opaque", b.isContentAreaFilled )
+
+      val m = b.getMargin
+      if( m == null || m.isInstanceOf[ UIResource ]) {
+//         val m2 = UIManager.getInsets( pp + "margin" )
+         val m3 = UIManager.getInsets( pp + "contentMargins" )
+//println( pp + "contentMargin -> " + m3 )
+         b.setMargin( m3 )
+      }
+
+      val submin  = SubminHelper.getBoolean( b, "submin" )
+//println( "submin = " + submin + "; parent = " + b.getParent )
+      val pps     = if( submin ) pp.substring( 0, pp.length - 1 ) + "[submin]." else pp
+
+//if( submin ) println( pps + "background" )
+
+      LookAndFeel.installColorsAndFont( b, pps + "background", pps + "foreground", pp + "font" )
+      LookAndFeel.installBorder( b, pp + "border" )
+
+      val rollover = UIManager.get( pp + "rollover" )
+      if( rollover != null ) {
+         LookAndFeel.installProperty( b, "rolloverEnabled", if( rollover != null ) rollover else true )
+      }
+
+      val gap = UIManager.get( pp + "iconTextGap" )
+      if( gap != null ) LookAndFeel.installProperty( b, "iconTextGap", gap )
+   }
 
    private def getComponentState( b: AbstractButton ) : State = {
       if( !b.isEnabled ) return State.disabled
@@ -107,9 +140,10 @@ class ButtonUI extends BasicButtonUI {
 
    override def getPreferredSize( c: JComponent ) : Dimension = {
       val res = super.getPreferredSize( c )
-      // XXX
-      res.width  += 28
-      res.height += 12
+      val b = c.asInstanceOf[ AbstractButton ]
+      val in = b.getMargin
+      res.width  += in.left + in.right // 28
+      res.height += in.top + in.bottom // 12
       res
    }
 

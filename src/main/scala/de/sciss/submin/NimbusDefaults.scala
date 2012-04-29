@@ -39,6 +39,11 @@ object NimbusDefaults {
    private val defaultSelectionBackgroundColor  = new Color(  57, 105, 138, 255 )
 
    private val defaultBackgroundColor           = defaultControlColor
+   private val defaultButtonForegroundColor     = defaultTextColor
+   private val defaultPanelForegroundColor      = defaultTextColor
+
+   private val defaultButtonBackgroundColor     = defaultBackgroundColor
+   private val defaultPanelBackgroundColor      = defaultBackgroundColor
 
    private val nimbusDefaults : UIDefaults = {
       val current = UIManager.getLookAndFeel
@@ -88,6 +93,26 @@ object NimbusDefaults {
    def disabledTextColor : Color = {
       val c = if( nimbusDefaults == null ) null else nimbusDefaults.getColor( "nimbusDisabledText" )
       if( c == null ) defaultDisabledTextColor else c
+   }
+
+   def buttonBackgroundColor : Color = {
+      val c = if( nimbusDefaults == null ) null else nimbusDefaults.getColor( "Button.background" )
+      if( c == null ) defaultButtonBackgroundColor else c
+   }
+
+   def buttonForegroundColor : Color = {
+      val c = if( nimbusDefaults == null ) null else nimbusDefaults.getColor( "Button.foreground" )
+      if( c == null ) defaultButtonForegroundColor else c
+   }
+
+   def panelBackgroundColor : Color = {
+      val c = if( nimbusDefaults == null ) null else nimbusDefaults.getColor( "Panel.background" )
+      if( c == null ) defaultPanelBackgroundColor else c
+   }
+
+   def panelForegroundColor : Color = {
+      val c = if( nimbusDefaults == null ) null else nimbusDefaults.getColor( "Panel.foreground" )
+      if( c == null ) defaultPanelForegroundColor else c
    }
 
    def getBlueGreyColor( base: Color ) : Color = {

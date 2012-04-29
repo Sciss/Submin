@@ -45,6 +45,7 @@ object PanelTest extends Runnable {
 //      nimbus.add( defaultSubmin )
       addWidgets( submin )
       val subminBut = new JButton( "Button" )
+      subminBut.putClientProperty( "submin", true )
       subminBut.setUI( new ButtonUI )
       submin.add( subminBut )
       split.setLeftComponent( nimbus )

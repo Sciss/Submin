@@ -35,6 +35,26 @@ object SubminDefaults {
       subminify( nimbus )
    }
 
+   def buttonBackgroundColor : Color = {
+      val nimbus = NimbusDefaults.buttonBackgroundColor
+      subminify( nimbus )
+   }
+
+   def buttonForegroundColor : Color = {
+      val nimbus = NimbusDefaults.buttonForegroundColor
+      subminify( nimbus )
+   }
+
+   def panelBackgroundColor : Color = {
+      val nimbus = NimbusDefaults.panelBackgroundColor
+      subminify( nimbus )
+   }
+
+   def panelForegroundColor : Color = {
+      val nimbus = NimbusDefaults.panelForegroundColor
+      subminify( nimbus )
+   }
+
    private def subminify( c: Color ) : Color = {
       val r    = 0xFF - c.getRed
       val g    = 0xFF - c.getGreen

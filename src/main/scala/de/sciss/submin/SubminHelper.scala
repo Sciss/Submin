@@ -25,9 +25,10 @@
 
 package de.sciss.submin
 
-import javax.swing.{UnsupportedLookAndFeelException, UIManager, JComponent}
 import javax.swing.plaf.ColorUIResource
-import java.awt.Color
+import javax.swing.{UnsupportedLookAndFeelException, UIManager, JComponent}
+import annotation.tailrec
+import java.awt.{Container, Color}
 
 object SubminHelper {
    def getBoolean( c: JComponent, property: String, default: Boolean = false ) : Boolean =
@@ -35,6 +36,23 @@ object SubminHelper {
          case java.lang.Boolean.TRUE   => true
          case java.lang.Boolean.FALSE  => false
          case _                        => default
+      }
+
+   @tailrec private def findJComponentAncestor( child: Container ) : JComponent = {
+      if( child == null ) return null
+      child.getParent match {
+         case jp: JComponent => jp
+         case p => findJComponentAncestor( p )
+      }
+   }
+
+   @tailrec def getClosestBoolean( c: JComponent, property: String, default: Boolean = false ) : Boolean =
+      c.getClientProperty( property ) match {
+         case java.lang.Boolean.TRUE   => true
+         case java.lang.Boolean.FALSE  => false
+         case _ =>
+            val p = findJComponentAncestor( c )
+            if( p == null ) default else getClosestBoolean( p, property, default )
       }
 
    def setLookAndFeel() {
@@ -56,7 +74,9 @@ object SubminHelper {
       }
 
       val defaults = UIManager.getDefaults
-      defaults.put( "Panel[submin].background", new ColorUIResource( SubminDefaults.backgroundColor ))
-      defaults.put( "Panel[submin].foreground", new ColorUIResource( Color.yellow ))
+      defaults.put( "Panel[submin].background",  new ColorUIResource( SubminDefaults.panelBackgroundColor ))
+      defaults.put( "Panel[submin].foreground",  new ColorUIResource( SubminDefaults.panelForegroundColor ))
+      defaults.put( "Button[submin].background", new ColorUIResource( SubminDefaults.buttonBackgroundColor ))
+      defaults.put( "Button[submin].foreground", new ColorUIResource( SubminDefaults.buttonForegroundColor ))
    }
 }
