@@ -25,12 +25,16 @@
 
 package de.sciss.submin
 
-import javax.swing.plaf.ColorUIResource
 import javax.swing.{UnsupportedLookAndFeelException, UIManager, JComponent}
 import annotation.tailrec
-import java.awt.{Container, Color}
+import java.awt.{Insets, Font, Container}
+import javax.swing.plaf.ColorUIResource
 
-object SubminHelper {
+object SubminUtil {
+   private val LARGE_SCALE = 1.15
+   private val SMALL_SCALE = 0.857
+   private val MINI_SCALE  = 0.714
+
    def getBoolean( c: JComponent, property: String, default: Boolean = false ) : Boolean =
       c.getClientProperty( property ) match {
          case java.lang.Boolean.TRUE   => true
@@ -54,6 +58,53 @@ object SubminHelper {
             val p = findJComponentAncestor( c )
             if( p == null ) default else getClosestBoolean( p, property, default )
       }
+
+   def getDefaultFont( c: JComponent, defaultFontName: String ) : Font = {
+      val f = UIManager.getFont( defaultFontName ) // "defaultFont"
+
+      c.getClientProperty( "JComponent.sizeVariant" ) match {
+         case "large" => f.deriveFont( math.round( f.getSize2D * LARGE_SCALE ))
+         case "small" => f.deriveFont( math.round( f.getSize2D * SMALL_SCALE ))
+         case "mini"  => f.deriveFont( math.round( f.getSize2D * MINI_SCALE  ))
+         case _       => f
+      }
+   }
+
+   def getInsets( c: JComponent, in: Insets, defaultMarginsName: String ) : Insets = {
+      val in1 = if( in != null ) in else new Insets( 0, 0, 0, 0 )
+
+      val m = UIManager.getInsets( defaultMarginsName ) // pp + "contentMargins"
+      if( m == null ) {
+         in1.top     = 0
+         in1.left    = 0
+         in1.bottom  = 0
+         in1.right   = 0
+      } else {
+         c.getClientProperty( "JComponent.sizeVariant" ) match {
+            case "large" =>
+               in1.top     = (m.top    * LARGE_SCALE).toInt
+               in1.left    = (m.left   * LARGE_SCALE).toInt
+               in1.bottom  = (m.bottom * LARGE_SCALE).toInt
+               in1.right   = (m.right  * LARGE_SCALE).toInt
+            case "small" =>
+               in1.top     = (m.top    * SMALL_SCALE).toInt
+               in1.left    = (m.left   * SMALL_SCALE).toInt
+               in1.bottom  = (m.bottom * SMALL_SCALE).toInt
+               in1.right   = (m.right  * SMALL_SCALE).toInt
+            case "mini"  =>
+               in1.top     = (m.top    * MINI_SCALE).toInt
+               in1.left    = (m.left   * MINI_SCALE).toInt
+               in1.bottom  = (m.bottom * MINI_SCALE).toInt
+               in1.right   = (m.right  * MINI_SCALE).toInt
+            case _ =>
+               in1.top     = m.top
+               in1.left    = m.left
+               in1.bottom  = m.bottom
+               in1.right   = m.right
+         }
+      }
+      in1
+   }
 
    def setLookAndFeel() {
       try {

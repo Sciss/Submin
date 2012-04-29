@@ -9,7 +9,7 @@ object PanelTest extends Runnable {
    }
 
    def run() {
-      SubminHelper.setLookAndFeel()
+      SubminUtil.setLookAndFeel()
       val f       = new JFrame( "Submin" )
       val cp      = f.getContentPane
       val split   = new JSplitPane()
@@ -43,6 +43,13 @@ object PanelTest extends Runnable {
 //      defaultSubmin.setUI( new ButtonUI )
 //      defaultSubmin.setDefaultCapable( true )
 //      nimbus.add( defaultSubmin )
+      val smallNimbus = new JButton( "Small" )
+      smallNimbus.putClientProperty( "JComponent.sizeVariant", "small" )
+      nimbus.add( smallNimbus )
+      val smallSubmin = new JButton( "Small" )
+      smallSubmin.putClientProperty( "JComponent.sizeVariant", "small" )
+      smallSubmin.setUI( new ButtonUI )
+      nimbus.add( smallSubmin )
       addWidgets( submin )
       val subminBut = new JButton( "Button" )
       subminBut.putClientProperty( "submin", true )
@@ -58,6 +65,11 @@ object PanelTest extends Runnable {
       focusSubmin2.setUI( new ButtonUI )
       focusSubmin2.setFocusable( false )
       submin.add( focusSubmin2 )
+      val smallSubmin2 = new JButton( "Boot" )
+      smallSubmin2.putClientProperty( "JComponent.sizeVariant", "small" )
+      smallSubmin2.putClientProperty( "submin", true )
+      smallSubmin2.setUI( new ButtonUI )
+      submin.add( smallSubmin2 )
 
       split.setLeftComponent( nimbus )
       split.setRightComponent( submin )

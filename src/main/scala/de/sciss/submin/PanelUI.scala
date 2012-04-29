@@ -30,7 +30,7 @@ import javax.swing.plaf.basic.BasicPanelUI
 
 class PanelUI extends BasicPanelUI {
    override protected def installDefaults( p: JPanel ) {
-      val submin = SubminHelper.getBoolean( p, "submin" )
+      val submin = SubminUtil.getBoolean( p, "submin" )
       val propBg = if( submin ) "Panel[submin].background" else "Panel.background"
       val propFg = if( submin ) "Panel[submin].foreground" else "Panel.foreground"
       LookAndFeel.installColorsAndFont( p, propBg, propFg, "Panel.font" )

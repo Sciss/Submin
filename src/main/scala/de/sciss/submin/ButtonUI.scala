@@ -57,18 +57,25 @@ class ButtonUI extends BasicButtonUI {
       val m = b.getMargin
       if( m == null || m.isInstanceOf[ UIResource ]) {
 //         val m2 = UIManager.getInsets( pp + "margin" )
-         val m3 = UIManager.getInsets( pp + "contentMargins" )
+//         val m3 = UIManager.getInsets( pp + "contentMargins" )
 //println( pp + "contentMargin -> " + m3 )
+         val m3 = SubminUtil.getInsets( b, null, pp + "contentMargins" )
          b.setMargin( m3 )
       }
 
-      val submin  = SubminHelper.getBoolean( b, "submin" )
+      val submin  = SubminUtil.getBoolean( b, "submin" )
 //println( "submin = " + submin + "; parent = " + b.getParent )
       val pps     = if( submin ) pp.substring( 0, pp.length - 1 ) + "[submin]." else pp
 
 //if( submin ) println( pps + "background" )
 
-      LookAndFeel.installColorsAndFont( b, pps + "background", pps + "foreground", pp + "font" )
+      val f = b.getFont
+      if( f == null || f.isInstanceOf[ UIResource ]) {
+         b.setFont( SubminUtil.getDefaultFont( b, pp + "font" ))
+      }
+
+//      LookAndFeel.installColorsAndFont( b, pps + "background", pps + "foreground", pp + "font" )
+      LookAndFeel.installColors( b, pps + "background", pps + "foreground" )
       LookAndFeel.installBorder( b, pp + "border" )
 
       val rollover = UIManager.get( pp + "rollover" )
@@ -114,7 +121,7 @@ class ButtonUI extends BasicButtonUI {
       val state   = getComponentState( b )
       val g2      = g.asInstanceOf[ Graphics2D ]
       g2.setRenderingHint( RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON )
-      val butPtr  = if( SubminHelper.getBoolean( c, "submin" )) SubminButtonPainter else NimbusButtonPainter
+      val butPtr  = if( SubminUtil.getBoolean( c, "submin" )) SubminButtonPainter else NimbusButtonPainter
       butPtr.paint( state, null, g2, viewRect.x, viewRect.y, viewRect.width, viewRect.height )
 
       if( b.getIcon != null ) paintIcon( g, c, iconRect )
