@@ -1,5 +1,5 @@
 /*
- *  ButtonUI.scala
+ *  SubminButtonUI.scala
  *  (Submin)
  *
  *  Copyright (c) 2012 Hanns Holger Rutz. All rights reserved.
@@ -30,12 +30,11 @@ import javax.swing.plaf.basic.{BasicHTML, BasicButtonUI}
 import sun.swing.SwingUtilities2
 import java.awt.{RenderingHints, Dimension, Graphics2D, FontMetrics, Rectangle, Graphics}
 import javax.swing.{LookAndFeel, UIManager, JButton, SwingUtilities, JComponent, AbstractButton}
-import javax.swing.plaf.UIResource
+import javax.swing.plaf.{ComponentUI, UIResource}
 
 /**
  * todo:
  *  - doesn't check the `DEFAULT` state flag
- *  - doesn't recognise `sizeVariant` client property
  *  - haven't checked proper icon painting
  *  - should recognise custom button color (currently `null` is passed into `NimbusButtonPainter`)
  */
@@ -43,6 +42,9 @@ object SubminButtonUI {
    private val viewRect = new Rectangle()
    private val textRect = new Rectangle()
    private val iconRect = new Rectangle()
+
+   private val instance = new SubminButtonUI
+   def createUI( c: JComponent ) : ComponentUI = instance
 }
 class SubminButtonUI extends BasicButtonUI {
    import SubminButtonUI._

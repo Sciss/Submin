@@ -8,67 +8,82 @@ object PanelTest extends Runnable {
       EventQueue.invokeLater( this )
    }
 
+   val setUI = false
+
    def run() {
-      SubminUtil.init()
+//      SubminUtil.init()
+      Submin.init()
       val f       = new JFrame( "Submin" )
       val cp      = f.getContentPane
       val split   = new JSplitPane()
       val nimbus  = new JPanel()
-      val submin  = new JPanel()
-      submin.putClientProperty( "submin", true )
-      submin.setUI( new SubminPanelUI )
+      val submin  = new JPanel() {
+         putClientProperty( "submin", true )
+//         override def getClientProperty( key: Any ) : Any = key match {
+//            case "submin"  => true
+//            case _ => super.getClientProperty( key )
+//         }
+//println( "AAAA" )
+      }
+      if( setUI ) submin.setUI( new SubminPanelUI )
       addWidgets( nimbus )
       nimbus.add( new JButton( "Button" ))
       val testBut = new JButton( "Button" )
-      testBut.setUI( new SubminButtonUI )
+      if( setUI ) testBut.setUI( new SubminButtonUI )
       nimbus.add( testBut )
       val disabledNimbus = new JButton( "Disabled" )
       disabledNimbus.setEnabled( false )
       nimbus.add( disabledNimbus )
       val disabledSubmin = new JButton( "Disabled" )
-      disabledSubmin.setUI( new SubminButtonUI )
+      if( setUI ) disabledSubmin.setUI( new SubminButtonUI )
       disabledSubmin.setEnabled( false )
       nimbus.add( disabledSubmin )
       val focusNimbus = new JButton( "No Focus" )
       focusNimbus.setFocusable( false )
       nimbus.add( focusNimbus )
       val focusSubmin = new JButton( "No Focus" )
-      focusSubmin.setUI( new SubminButtonUI )
+      if( setUI ) focusSubmin.setUI( new SubminButtonUI )
       focusSubmin.setFocusable( false )
       nimbus.add( focusSubmin )
 //      val defaultNimbus = new JButton( "Default" )
 //      defaultNimbus.setDefaultCapable( true )
 //      nimbus.add( defaultNimbus )
 //      val defaultSubmin = new JButton( "Default" )
-//      defaultSubmin.setUI( new SubminSubminButtonUI )
+//      if( setUI ) defaultSubmin.setUI( new SubminSubminButtonUI )
 //      defaultSubmin.setDefaultCapable( true )
 //      nimbus.add( defaultSubmin )
-      val smallNimbus = new JButton( "Small" )
-      smallNimbus.putClientProperty( "JComponent.sizeVariant", "small" )
+      val smallNimbus = new JButton( "Small" ) {
+         putClientProperty( "JComponent.sizeVariant", "small" )
+      }
       nimbus.add( smallNimbus )
-      val smallSubmin = new JButton( "Small" )
-      smallSubmin.putClientProperty( "JComponent.sizeVariant", "small" )
-      smallSubmin.setUI( new SubminButtonUI )
+      val smallSubmin = new JButton( "Small" ) {
+         putClientProperty( "JComponent.sizeVariant", "small" )
+      }
+      if( setUI ) smallSubmin.setUI( new SubminButtonUI )
       nimbus.add( smallSubmin )
       addWidgets( submin )
-      val subminBut = new JButton( "Button" )
-      subminBut.putClientProperty( "submin", true )
-      subminBut.setUI( new SubminButtonUI )
+      val subminBut = new JButton( "Button" ) {
+         putClientProperty( "submin", true )
+      }
+      if( setUI ) subminBut.setUI( new SubminButtonUI )
       submin.add( subminBut )
-      val disabledSubmin2 = new JButton( "Disabled" )
-      disabledSubmin2.putClientProperty( "submin", true )
-      disabledSubmin2.setUI( new SubminButtonUI )
+      val disabledSubmin2 = new JButton( "Disabled" ) {
+         putClientProperty( "submin", true )
+      }
+      if( setUI ) disabledSubmin2.setUI( new SubminButtonUI )
       disabledSubmin2.setEnabled( false )
       submin.add( disabledSubmin2 )
-      val focusSubmin2 = new JButton( "No Focus" )
-      focusSubmin2.putClientProperty( "submin", true )
-      focusSubmin2.setUI( new SubminButtonUI )
+      val focusSubmin2 = new JButton( "No Focus" ) {
+         putClientProperty( "submin", true )
+      }
+      if( setUI ) focusSubmin2.setUI( new SubminButtonUI )
       focusSubmin2.setFocusable( false )
       submin.add( focusSubmin2 )
-      val smallSubmin2 = new JButton( "Boot" )
-      smallSubmin2.putClientProperty( "JComponent.sizeVariant", "small" )
-      smallSubmin2.putClientProperty( "submin", true )
-      smallSubmin2.setUI( new SubminButtonUI )
+      val smallSubmin2 = new JButton( "Boot" ) {
+         putClientProperty( "JComponent.sizeVariant", "small" )
+         putClientProperty( "submin", true )
+      }
+      if( setUI ) smallSubmin2.setUI( new SubminButtonUI )
       submin.add( smallSubmin2 )
 
       split.setLeftComponent( nimbus )

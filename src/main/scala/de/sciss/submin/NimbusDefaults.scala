@@ -26,7 +26,8 @@
 package de.sciss.submin
 
 import javax.swing.{UIDefaults, UIManager}
-import java.awt.Color
+import javax.swing.plaf.{FontUIResource, InsetsUIResource, ColorUIResource}
+import java.awt.{Font, Color}
 
 object NimbusDefaults {
    private val defaultControlColor              = new Color( 214, 217, 223, 255 )
@@ -48,6 +49,35 @@ object NimbusDefaults {
    private val nimbusDefaults : UIDefaults = {
       val current = UIManager.getLookAndFeel
       if( current.getName.toLowerCase == "nimbus" ) current.getDefaults else null
+   }
+
+   private[submin] def map : UIDefaults = {
+      val m = new UIDefaults()
+
+      val zeroInsets = new InsetsUIResource( 0, 0, 0, 0 )
+      val fntSans12  = new FontUIResource( "SansSerif", Font.PLAIN, 12 )
+
+      m.put( "control",                   new ColorUIResource( controlColor ))
+      m.put( "nimbusBase",                new ColorUIResource( baseColor ))
+      m.put( "nimbusDisabledText",        new ColorUIResource( disabledTextColor ))
+      m.put( "nimbusFocus",               new ColorUIResource( focusColor ))
+      m.put( "nimbusSelectedText",        new ColorUIResource( selectedTextColor ))
+      m.put( "nimbusSelectionBackground", new ColorUIResource( selectionBackgroundColor ))
+      m.put( "text",                      new ColorUIResource( textColor ))
+
+      m.put( "background",                new ColorUIResource( backgroundColor ))
+      m.put( "controlHighlight",          new ColorUIResource( controlHighlightColor ))
+
+      m.put( "Button.background",         new ColorUIResource( buttonBackgroundColor ))
+      m.put( "Button.contentMargins",     new InsetsUIResource( 6, 14, 6, 14 ))
+      m.put( "Button.font",               fntSans12 )
+      m.put( "Button.foreground",         new ColorUIResource( buttonForegroundColor ))
+
+      m.put( "Panel.background",          new ColorUIResource( panelBackgroundColor ))
+      m.put( "Panel.contentMargins",      zeroInsets )
+      m.put( "Panel.font",                fntSans12 )
+      m.put( "Panel.opaque",              true )
+      m
    }
 
    def controlColor : Color = {

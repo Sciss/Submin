@@ -1,5 +1,5 @@
 /*
- *  PaneUI.scala
+ *  SubminPaneUI.scala
  *  (Submin)
  *
  *  Copyright (c) 2012 Hanns Holger Rutz. All rights reserved.
@@ -25,11 +25,17 @@
 
 package de.sciss.submin
 
-import javax.swing.{JPanel, LookAndFeel}
 import javax.swing.plaf.basic.BasicPanelUI
+import javax.swing.{JComponent, JPanel, LookAndFeel}
+import javax.swing.plaf.ComponentUI
 
+object SubminPanelUI {
+   private val instance = new SubminPanelUI
+   def createUI( c: JComponent ) : ComponentUI = instance // new SubminPanelUI
+}
 class SubminPanelUI extends BasicPanelUI {
    override protected def installDefaults( p: JPanel ) {
+//println( "BBBB" )
       val submin = SubminUtil.getBoolean( p, "submin" )
       val propBg = if( submin ) "Panel[submin].background" else "Panel.background"
       val propFg = if( submin ) "Panel[submin].foreground" else "Panel.foreground"

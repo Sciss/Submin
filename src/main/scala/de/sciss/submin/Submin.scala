@@ -25,6 +25,8 @@
 
 package de.sciss.submin
 
+import javax.swing.UIManager
+
 object Submin {
    val name          = "Submin"
    val version       = 0.10
@@ -37,7 +39,9 @@ object Submin {
    }
 
    private lazy val initialized: Unit = {
-      SubminUtil.init( false )
+//      SubminUtil.init( false )
+      UIManager.installLookAndFeel( SubminLookAndFeel.name, SubminLookAndFeel.className )
+      UIManager.setLookAndFeel( SubminLookAndFeel.className )
    }
 
    def init() { initialized }

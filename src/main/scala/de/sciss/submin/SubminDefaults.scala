@@ -26,9 +26,20 @@
 package de.sciss.submin
 
 import java.awt.Color
+import javax.swing.plaf.ColorUIResource
+import javax.swing.UIDefaults
 
 object SubminDefaults {
 //   private val hsbArr   = new Array[ Float ]( 3 )
+
+   private[submin] def map : UIDefaults = {
+      val m = new UIDefaults()
+      m.put( "Panel[submin].background",  new ColorUIResource( panelBackgroundColor ))
+      m.put( "Panel[submin].foreground",  new ColorUIResource( panelForegroundColor ))
+      m.put( "Button[submin].background", new ColorUIResource( buttonBackgroundColor ))
+      m.put( "Button[submin].foreground", new ColorUIResource( buttonForegroundColor ))
+      m
+   }
 
    def backgroundColor : Color = {
       val nimbus = NimbusDefaults.backgroundColor

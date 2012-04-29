@@ -28,7 +28,6 @@ package de.sciss.submin
 import javax.swing.{UnsupportedLookAndFeelException, UIManager, JComponent}
 import annotation.tailrec
 import java.awt.{Insets, Font, Container}
-import javax.swing.plaf.ColorUIResource
 
 object SubminUtil {
    private val LARGE_SCALE = 1.15
@@ -106,8 +105,9 @@ object SubminUtil {
       in1
    }
 
-   def init( force: Boolean = false ) {
+   def initx( force: Boolean = false ) {
       if( force ) try {
+println( "AQUI" )
          val current = UIManager.getLookAndFeel
          if( current.getName.toLowerCase != "nimbus" ) {
             val infos = UIManager.getInstalledLookAndFeels
@@ -125,9 +125,6 @@ object SubminUtil {
       }
 
       val defaults = UIManager.getDefaults
-      defaults.put( "Panel[submin].background",  new ColorUIResource( SubminDefaults.panelBackgroundColor ))
-      defaults.put( "Panel[submin].foreground",  new ColorUIResource( SubminDefaults.panelForegroundColor ))
-      defaults.put( "Button[submin].background", new ColorUIResource( SubminDefaults.buttonBackgroundColor ))
-      defaults.put( "Button[submin].foreground", new ColorUIResource( SubminDefaults.buttonForegroundColor ))
+      defaults.putAll( SubminDefaults.map )
    }
 }
