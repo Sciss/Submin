@@ -39,13 +39,13 @@ import javax.swing.plaf.UIResource
  *  - haven't checked proper icon painting
  *  - should recognise custom button color (currently `null` is passed into `NimbusButtonPainter`)
  */
-object ButtonUI {
+object SubminButtonUI {
    private val viewRect = new Rectangle()
    private val textRect = new Rectangle()
    private val iconRect = new Rectangle()
 }
-class ButtonUI extends BasicButtonUI {
-   import ButtonUI._
+class SubminButtonUI extends BasicButtonUI {
+   import SubminButtonUI._
 
    override protected def installDefaults( b: AbstractButton ) {
       val pp = getPropertyPrefix

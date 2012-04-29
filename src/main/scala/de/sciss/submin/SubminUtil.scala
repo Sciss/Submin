@@ -106,8 +106,8 @@ object SubminUtil {
       in1
    }
 
-   def setLookAndFeel() {
-      try {
+   def init( force: Boolean = false ) {
+      if( force ) try {
          val current = UIManager.getLookAndFeel
          if( current.getName.toLowerCase != "nimbus" ) {
             val infos = UIManager.getInstalledLookAndFeels
