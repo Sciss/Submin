@@ -63,5 +63,6 @@ class SubminLookAndFeel extends BasicLookAndFeel {
       super.initComponentDefaults( table )
       table.remove( "Button.border" )
       table.putAll( NimbusDefaults.map )
+      table.putAll( SubminDefaults.map )
    }
 }

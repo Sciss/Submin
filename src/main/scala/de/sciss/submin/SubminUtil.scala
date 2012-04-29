@@ -28,6 +28,7 @@ package de.sciss.submin
 import javax.swing.{UnsupportedLookAndFeelException, UIManager, JComponent}
 import annotation.tailrec
 import java.awt.{Insets, Font, Container}
+import javax.swing.plaf.InsetsUIResource
 
 object SubminUtil {
    private val LARGE_SCALE = 1.15
@@ -70,7 +71,7 @@ object SubminUtil {
    }
 
    def getInsets( c: JComponent, in: Insets, defaultMarginsName: String ) : Insets = {
-      val in1 = if( in != null ) in else new Insets( 0, 0, 0, 0 )
+      val in1 = if( in != null && in.isInstanceOf[ InsetsUIResource ]) in else new InsetsUIResource( 0, 0, 0, 0 )
 
       val m = UIManager.getInsets( defaultMarginsName ) // pp + "contentMargins"
       if( m == null ) {

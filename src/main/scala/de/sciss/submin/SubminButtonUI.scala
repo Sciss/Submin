@@ -31,6 +31,7 @@ import sun.swing.SwingUtilities2
 import java.awt.{RenderingHints, Dimension, Graphics2D, FontMetrics, Rectangle, Graphics}
 import javax.swing.{LookAndFeel, UIManager, JButton, SwingUtilities, JComponent, AbstractButton}
 import javax.swing.plaf.{ComponentUI, UIResource}
+import java.beans.{PropertyChangeEvent, PropertyChangeListener}
 
 /**
  * todo:
@@ -47,7 +48,16 @@ object SubminButtonUI {
    def createUI( c: JComponent ) : ComponentUI = instance
 }
 class SubminButtonUI extends BasicButtonUI {
+   ui =>
+
    import SubminButtonUI._
+
+   private def getSubmin( c: JComponent ) : Boolean = SubminUtil.getClosestBoolean( c, "submin" )
+
+   private def getSubminPropertyPrefix( c: JComponent ) : String = {
+      val pp = getPropertyPrefix
+      if( getSubmin( c )) pp.substring( 0, pp.length - 1 ) + "[submin]." else pp
+   }
 
    override protected def installDefaults( b: AbstractButton ) {
       val pp = getPropertyPrefix
@@ -56,28 +66,9 @@ class SubminButtonUI extends BasicButtonUI {
 
 //      LookAndFeel.installProperty( b, "opaque", b.isContentAreaFilled )
 
-      val m = b.getMargin
-      if( m == null || m.isInstanceOf[ UIResource ]) {
-//         val m2 = UIManager.getInsets( pp + "margin" )
-//         val m3 = UIManager.getInsets( pp + "contentMargins" )
-//println( pp + "contentMargin -> " + m3 )
-         val m3 = SubminUtil.getInsets( b, null, pp + "contentMargins" )
-         b.setMargin( m3 )
-      }
+      updateSizeVariant( b )
+      updateColors( b )
 
-      val submin  = SubminUtil.getBoolean( b, "submin" )
-//println( "submin = " + submin + "; parent = " + b.getParent )
-      val pps     = if( submin ) pp.substring( 0, pp.length - 1 ) + "[submin]." else pp
-
-//if( submin ) println( pps + "background" )
-
-      val f = b.getFont
-      if( f == null || f.isInstanceOf[ UIResource ]) {
-         b.setFont( SubminUtil.getDefaultFont( b, pp + "font" ))
-      }
-
-//      LookAndFeel.installColorsAndFont( b, pps + "background", pps + "foreground", pp + "font" )
-      LookAndFeel.installColors( b, pps + "background", pps + "foreground" )
       LookAndFeel.installBorder( b, pp + "border" )
 
       val rollover = UIManager.get( pp + "rollover" )
@@ -87,6 +78,59 @@ class SubminButtonUI extends BasicButtonUI {
 
       val gap = UIManager.get( pp + "iconTextGap" )
       if( gap != null ) LookAndFeel.installProperty( b, "iconTextGap", gap )
+   }
+
+   private def updateSizeVariant( b: AbstractButton ) {
+      val pp = getPropertyPrefix
+
+      val m = b.getMargin
+      if( m == null || m.isInstanceOf[ UIResource ]) {
+         b.setMargin( SubminUtil.getInsets( b, null, pp + "contentMargins" ))
+      }
+
+      val f = b.getFont
+      if( f == null || f.isInstanceOf[ UIResource ]) {
+         b.setFont( SubminUtil.getDefaultFont( b, pp + "font" ))
+      }
+   }
+
+   private def updateColors( b: AbstractButton ) {
+      val pps = getSubminPropertyPrefix( b )
+      LookAndFeel.installColors( b, pps + "background", pps + "foreground" )
+//      if( pps.contains( "submin" )) {
+//         println( "foreground (" + pps + ") now " + b.getForeground )
+//      }
+   }
+
+   private val prop = new PropertyChangeListener {
+      def propertyChange( e: PropertyChangeEvent ) {
+//         println( "PCE " + e.getPropertyName + " : " + e.getOldValue + " -> " + e.getNewValue )
+         e.getPropertyName match {
+            case "JComponent.sizeVariant" =>
+               val b = e.getSource.asInstanceOf[ AbstractButton ]
+//               val oldSz = b.getPreferredSize
+//               println( "BEFORE " + oldSz )
+               updateSizeVariant( b )
+//               val newSz = b.getPreferredSize
+//               println( "NOW " + newSz )
+//               b.invalidate()
+//               b.setPreferredSize( getPreferredSize( b ))
+//               b.validate()
+            case "submin" =>
+               updateColors( e.getSource.asInstanceOf[ AbstractButton ])
+            case _ =>
+         }
+      }
+   }
+
+   override protected def installListeners( b: AbstractButton ) {
+      super.installListeners( b )
+      b.addPropertyChangeListener( prop )
+   }
+
+   override protected def uninstallListeners( b: AbstractButton ) {
+      super.uninstallListeners( b )
+      b.removePropertyChangeListener( prop )
    }
 
    private def getComponentState( b: AbstractButton ) : State = {
@@ -152,6 +196,7 @@ class SubminButtonUI extends BasicButtonUI {
       val res = super.getPreferredSize( c )
       val b = c.asInstanceOf[ AbstractButton ]
       val in = b.getMargin
+//      println( "GETPREF " + in )
       res.width  += in.left + in.right // 28
       res.height += in.top + in.bottom // 12
       res
