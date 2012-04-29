@@ -1,3 +1,28 @@
+/*
+ *  ColorUtil.scala
+ *  (Submin)
+ *
+ *  Copyright (c) 2012 Hanns Holger Rutz. All rights reserved.
+ *
+ *  This software is free software; you can redistribute it and/or
+ *  modify it under the terms of the GNU General Public License
+ *  as published by the Free Software Foundation; either
+ *  version 2, june 1991 of the License, or (at your option) any later version.
+ *
+ *  This software is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ *  General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public
+ *  License (gpl.txt) along with this software; if not, write to the Free Software
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ *
+ *  For further information, please contact Hanns Holger Rutz at
+ *  contact@sciss.de
+ */
+
 package de.sciss.submin
 
 import java.awt.Color
@@ -6,7 +31,8 @@ object ColorUtil {
    private val hsbArr = new Array[ Float ]( 3 )
 
    def adjustColor( c: Color, hueOffset: Float, satOffset: Float, briOffset: Float, alphaOffset: Int ) : Color = {
-      val sameColor = hueOffset == 0f && satOffset == 0f && briOffset == 0f
+      // statistically, brightness offset is varied more often than hue offset
+      val sameColor = briOffset == 0f && satOffset == 0f && hueOffset == 0f
       val sameAlpha = alphaOffset == 0
       if( sameColor ) {
          if( sameAlpha ) return c
