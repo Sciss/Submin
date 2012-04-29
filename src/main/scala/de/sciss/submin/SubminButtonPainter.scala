@@ -32,14 +32,15 @@ import scala.Int
 object SubminButtonPainter extends ButtonPainter {
    private val rrect    = new RoundRectangle2D.Float()
 
-   private val grad1frac = Array[ Float ]( 0.09f, 0.95f )
+//   private val grad1frac = Array[ Float ]( 0.09f, 0.95f )
+   private val grad1frac = Array[ Float ]( 0.05f, 0.91f )
 
    private val pressedGrad1frac = Array[ Float ]( 0.05f, 0.95f )
 
    private def enabledGrad1colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, -0.055555522f, -0.05356429f, -0.12549019f, 0 )
-      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.0147816315f, -0.3764706f, 0 )
+      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, -0.055555522f, -0.05356429f, -0.12549019f, 0 )
+      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.0147816315f, -0.3764706f, 0 )
       res
    }
 
@@ -363,7 +364,8 @@ object SubminButtonPainter extends ButtonPainter {
 
    private def paintEnabledBack( g: Graphics2D, blueGrey: Color, x: Int, y: Int, width: Int, height: Int ) {
       val e1x = x + 2f
-      val e1y = y + 3f
+//      val e1y = y + 3f
+      val e1y = y + 1f
       val e1w = width - 4f
       val e1h = height - 4f
       rrect.setRoundRect( e1x, e1y, e1w, e1h, 12f, 12f )
