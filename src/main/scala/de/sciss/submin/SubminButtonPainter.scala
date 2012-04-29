@@ -66,14 +66,26 @@ object SubminButtonPainter extends ButtonPainter {
 
    private val grad2frac = Array[ Float ]( 0.0f, 0.06f, 0.6f, 0.7f, 0.95f, 1.0f )
 
+//   private def enabledGrad2colr( blueGrey: Color ) : Array[ Color ] = {
+//      val res = new Array[ Color ]( 6 )
+//      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.055555582f, -0.10655806f, 0.24313724f, 0 )
+//      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.09823123f,  0.2117647f,  0 )
+//      res( 2 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07016757f,  0.12941176f, 0 )
+//      res( 3 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07016757f,  0.12941176f, 0 )
+//      res( 4 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.0749532f,   0.24705881f, 0 )
+//      res( 5 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
+//      res
+//   }
+
    private def enabledGrad2colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 6 )
-      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.055555582f, -0.10655806f, 0.24313724f, 0 )
-      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.09823123f,  0.2117647f,  0 )
-      res( 2 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07016757f,  0.12941176f, 0 )
-      res( 3 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07016757f,  0.12941176f, 0 )
-      res( 4 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.0749532f,   0.24705881f, 0 )
-      res( 5 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
+      // brightness = nimbusBrightness.linlin(0.12941176f,0.25490195f,-0.25490195f,-0.12941176f)
+      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, -0.10655806f, -0.14117646f, 0 )
+      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.09823123f,  -0.17254901f, 0 )
+      res( 2 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07016757f,  -0.25490195f, 0 )
+      res( 3 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07016757f,  -0.25490195f, 0 )
+      res( 4 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.0749532f,   -0.1372549f,  0 )
+      res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, -0.12941176f, 0 )
       res
    }
 
@@ -99,14 +111,60 @@ object SubminButtonPainter extends ButtonPainter {
 //      res
 //   }
 
+//   private def overGrad2colr( blueGrey: Color ) : Array[ Color ] = {
+//      val res = new Array[ Color ]( 6 )
+//      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, -0.10658931f, -0.24313724f + 0.25098038f, 0 )
+//      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.098526314f, -0.2117647f * 2 + 0.2352941f, 0 )
+//      res( 2 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, -0.12941176f * 2 + 0.20392156f, 0 )
+//      res( 3 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, -0.12941176f * 2 + 0.20392156f, 0 )
+//      res( 4 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, -0.24705881f * 2 + 0.25490195f, 0 )
+//      res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, -0.25490195f * 2 + 0.25490195f, 0 )
+//      res
+//   }
+
+   // submin enabled
+//   res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, -0.10655806f, -0.14117646f, 0 )
+//   res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.09823123f,  -0.17254901f, 0 )
+//   res( 2 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07016757f,  -0.25490195f, 0 )
+//   res( 3 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07016757f,  -0.25490195f, 0 )
+//   res( 4 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.0749532f,   -0.1372549f,  0 )
+//   res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, -0.12941176f, 0 )
+
+   // nimbus over
+//   res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, -0.10658931f, 0.25098038f, 0 )
+//   res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.098526314f, 0.2352941f, 0 )
+//   res( 2 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, 0.20392156f, 0 )
+//   res( 3 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, 0.20392156f, 0 )
+//   res( 4 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
+//   res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
+
+   // nimbus enabled
+//   res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, -0.10655806f, 0.24313724f, 0 )
+//   res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.09823123f,  0.2117647f,  0 )
+//   res( 2 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07016757f,  0.12941176f, 0 )
+//   res( 3 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07016757f,  0.12941176f, 0 )
+//   res( 4 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.0749532f,   0.24705881f, 0 )
+//   res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
+
    private def overGrad2colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 6 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, -0.10658931f, -0.24313724f + 0.25098038f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.098526314f, -0.2117647f * 2 + 0.2352941f, 0 )
-      res( 2 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, -0.12941176f * 2 + 0.20392156f, 0 )
-      res( 3 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, -0.12941176f * 2 + 0.20392156f, 0 )
-      res( 4 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, -0.24705881f * 2 + 0.25490195f, 0 )
-      res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, -0.25490195f * 2 + 0.25490195f, 0 )
+      // brightness = same offset from enabled brightness as in nimbus equivalent
+      // e.g. nimbus enabled 0.24313724f / over 0.25098038f = offset 0.007843137f
+      // with submin enabled = -0.14117646f thus yields submin over -0.13333333f
+
+      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, -0.10658931f, -0.13333333f, 0 )
+      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.098526314f, -0.1490196f, 0 )
+      res( 2 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, -0.18039215f, 0 )
+      res( 3 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, -0.18039215f, 0 )
+      res( 4 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, -0.12941176f, 0 )
+      res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, -0.12941176f, 0 )
+
+//      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, -0.10658931f, -0.031372547f, 0 )
+//      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.098526314f, -0.109803915f, 0 )
+//      res( 2 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, -0.30588233f, 0 )
+//      res( 3 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, -0.30588233f, 0 )
+//      res( 4 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, -0.019607842f, 0 )
+//      res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, -0.0039215684f, 0 )
       res
    }
 
