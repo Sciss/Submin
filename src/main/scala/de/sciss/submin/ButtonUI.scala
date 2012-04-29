@@ -114,7 +114,8 @@ class ButtonUI extends BasicButtonUI {
       val state   = getComponentState( b )
       val g2      = g.asInstanceOf[ Graphics2D ]
       g2.setRenderingHint( RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON )
-      NimbusButtonPainter.paint( state, null, g2, viewRect.x, viewRect.y, viewRect.width, viewRect.height )
+      val butPtr  = if( SubminHelper.getBoolean( c, "submin" )) SubminButtonPainter else NimbusButtonPainter
+      butPtr.paint( state, null, g2, viewRect.x, viewRect.y, viewRect.width, viewRect.height )
 
       if( b.getIcon != null ) paintIcon( g, c, iconRect )
 

@@ -35,7 +35,12 @@ object SubminDefaults {
       ColorUtil.subminify( nimbus )
    }
 
-   def focusColor : Color = NimbusDefaults.focusColor
+//   def focusColor : Color = NimbusDefaults.focusColor
+
+   def focusColor : Color = {
+      val nimbus = NimbusDefaults.focusColor
+      ColorUtil.subminify( nimbus )
+   }
 
    def buttonBackgroundColor : Color = {
       val nimbus = NimbusDefaults.buttonBackgroundColor

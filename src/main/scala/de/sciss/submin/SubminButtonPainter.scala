@@ -25,8 +25,9 @@
 
 package de.sciss.submin
 
-import java.awt.{Graphics2D, MultipleGradientPaint, LinearGradientPaint, Paint, Color}
 import java.awt.geom.RoundRectangle2D
+import java.awt.{Color, Graphics2D, MultipleGradientPaint, LinearGradientPaint, Paint}
+import scala.Int
 
 object SubminButtonPainter extends ButtonPainter {
    private val rrect    = new RoundRectangle2D.Float()
@@ -87,14 +88,25 @@ object SubminButtonPainter extends ButtonPainter {
       res
    }
 
+//   private def overGrad2colr( blueGrey: Color ) : Array[ Color ] = {
+//      val res = new Array[ Color ]( 6 )
+//      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.055555582f, -0.10658931f, 0.25098038f, 0 )
+//      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.098526314f, 0.2352941f, 0 )
+//      res( 2 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07333623f, 0.20392156f, 0 )
+//      res( 3 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07333623f, 0.20392156f, 0 )
+//      res( 4 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
+//      res( 5 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
+//      res
+//   }
+
    private def overGrad2colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 6 )
-      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.055555582f, -0.10658931f, 0.25098038f, 0 )
-      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.098526314f, 0.2352941f, 0 )
-      res( 2 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07333623f, 0.20392156f, 0 )
-      res( 3 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07333623f, 0.20392156f, 0 )
-      res( 4 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
-      res( 5 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
+      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, -0.10658931f, -0.24313724f + 0.25098038f, 0 )
+      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.098526314f, -0.2117647f * 2 + 0.2352941f, 0 )
+      res( 2 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, -0.12941176f * 2 + 0.20392156f, 0 )
+      res( 3 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, -0.12941176f * 2 + 0.20392156f, 0 )
+      res( 4 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, -0.24705881f * 2 + 0.25490195f, 0 )
+      res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, -0.25490195f * 2 + 0.25490195f, 0 )
       res
    }
 
