@@ -31,7 +31,6 @@ import sun.swing.SwingUtilities2
 import java.awt.{RenderingHints, Dimension, Graphics2D, FontMetrics, Rectangle, Graphics}
 import javax.swing.{LookAndFeel, UIManager, JButton, SwingUtilities, JComponent, AbstractButton}
 import javax.swing.plaf.{ComponentUI, UIResource}
-import java.beans.{PropertyChangeEvent, PropertyChangeListener}
 
 /**
  * todo:
@@ -47,20 +46,15 @@ object SubminButtonUI {
    private val instance = new SubminButtonUI
    def createUI( c: JComponent ) : ComponentUI = instance
 }
-class SubminButtonUI extends BasicButtonUI {
+final class SubminButtonUI extends BasicButtonUI with SubminUI[ AbstractButton ] {
    ui =>
 
    import SubminButtonUI._
 
-   private def getSubmin( c: JComponent ) : Boolean = SubminUtil.getClosestBoolean( c, "submin" )
-
-   private def getSubminPropertyPrefix( c: JComponent ) : String = {
-      val pp = getPropertyPrefix
-      if( getSubmin( c )) pp.substring( 0, pp.length - 1 ) + "[submin]." else pp
-   }
+   protected def propertyPrefix = getPropertyPrefix
 
    override protected def installDefaults( b: AbstractButton ) {
-      val pp = getPropertyPrefix
+      val pp = propertyPrefix
 
       defaultTextShiftOffset = UIManager.getInt( pp + "textShiftOffset" )
 
@@ -80,57 +74,23 @@ class SubminButtonUI extends BasicButtonUI {
       if( gap != null ) LookAndFeel.installProperty( b, "iconTextGap", gap )
    }
 
-   private def updateSizeVariant( b: AbstractButton ) {
-      val pp = getPropertyPrefix
+   override protected def updateSizeVariant( c: AbstractButton ) {
+      super.updateSizeVariant( c )
 
-      val m = b.getMargin
+      val m = c.getMargin
       if( m == null || m.isInstanceOf[ UIResource ]) {
-         b.setMargin( SubminUtil.getInsets( b, null, pp + "contentMargins" ))
-      }
-
-      val f = b.getFont
-      if( f == null || f.isInstanceOf[ UIResource ]) {
-         b.setFont( SubminUtil.getDefaultFont( b, pp + "font" ))
-      }
-   }
-
-   private def updateColors( b: AbstractButton ) {
-      val pps = getSubminPropertyPrefix( b )
-      LookAndFeel.installColors( b, pps + "background", pps + "foreground" )
-//      if( pps.contains( "submin" )) {
-//         println( "foreground (" + pps + ") now " + b.getForeground )
-//      }
-   }
-
-   private val prop = new PropertyChangeListener {
-      def propertyChange( e: PropertyChangeEvent ) {
-//         println( "PCE " + e.getPropertyName + " : " + e.getOldValue + " -> " + e.getNewValue )
-         e.getPropertyName match {
-            case "JComponent.sizeVariant" =>
-               val b = e.getSource.asInstanceOf[ AbstractButton ]
-//               val oldSz = b.getPreferredSize
-//               println( "BEFORE " + oldSz )
-               updateSizeVariant( b )
-//               val newSz = b.getPreferredSize
-//               println( "NOW " + newSz )
-//               b.invalidate()
-//               b.setPreferredSize( getPreferredSize( b ))
-//               b.validate()
-            case "submin" =>
-               updateColors( e.getSource.asInstanceOf[ AbstractButton ])
-            case _ =>
-         }
+         c.setMargin( SubminUtil.getInsets( c, null, propertyPrefix + "contentMargins" ))
       }
    }
 
    override protected def installListeners( b: AbstractButton ) {
       super.installListeners( b )
-      b.addPropertyChangeListener( prop )
+      installPropertyListener( b )
    }
 
    override protected def uninstallListeners( b: AbstractButton ) {
       super.uninstallListeners( b )
-      b.removePropertyChangeListener( prop )
+      uninstallPropertyListener( b )
    }
 
    private def getComponentState( b: AbstractButton ) : State = {
@@ -167,7 +127,7 @@ class SubminButtonUI extends BasicButtonUI {
       val state   = getComponentState( b )
       val g2      = g.asInstanceOf[ Graphics2D ]
       g2.setRenderingHint( RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON )
-      val butPtr  = if( SubminUtil.getBoolean( c, "submin" )) SubminButtonPainter else NimbusButtonPainter
+      val butPtr  = if( SubminUtil.getClosestBoolean( c, "submin" )) SubminButtonPainter else NimbusButtonPainter
       butPtr.paint( state, null, g2, viewRect.x, viewRect.y, viewRect.width, viewRect.height )
 
       if( b.getIcon != null ) paintIcon( g, c, iconRect )

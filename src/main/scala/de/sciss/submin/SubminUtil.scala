@@ -59,6 +59,15 @@ object SubminUtil {
             if( p == null ) default else getClosestBoolean( p, property, default )
       }
 
+   @tailrec def getClosestBooleanSource( c: JComponent, property: String ) : Option[ (JComponent, Boolean) ] =
+      c.getClientProperty( property ) match {
+         case java.lang.Boolean.TRUE   => Some( c, true )
+         case java.lang.Boolean.FALSE  => Some( c, false )
+         case _ =>
+            val p = findJComponentAncestor( c )
+            if( p == null ) None else getClosestBooleanSource( p, property )
+      }
+
    def getDefaultFont( c: JComponent, defaultFontName: String ) : Font = {
       val f = UIManager.getFont( defaultFontName ) // "defaultFont"
 
