@@ -115,9 +115,16 @@ object NimbusDefaults {
       if( c == null ) defaultPanelForegroundColor else c
    }
 
-   def getBlueGreyColor( base: Color ) : Color = {
-       val c = if( nimbusDefaults == null ) null else nimbusDefaults.getColor( "nimbusBlueGrey" )
-       if( c == null ) getDefaultBlueGreyColor( base ) else c
+//   def blueGreyColor : Color = getBlueGreyColor( baseColor )
+//
+//   def getBlueGreyColor( base: Color ) : Color = {
+//       val c = if( nimbusDefaults == null ) null else nimbusDefaults.getColor( "nimbusBlueGrey" )
+//       if( c == null ) getDefaultBlueGreyColor( base ) else c
+//   }
+
+   def blueGreyColor : Color = {
+      val c = if( nimbusDefaults == null ) null else nimbusDefaults.getColor( "nimbusBlueGrey" )
+      if( c == null ) getDefaultBlueGreyColor( baseColor ) else c
    }
 
    private def getDefaultBlueGreyColor( base: Color ) : Color =

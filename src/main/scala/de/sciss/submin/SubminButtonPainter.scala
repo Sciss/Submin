@@ -1,5 +1,5 @@
 /*
- *  NimbusButtonPainter.scala
+ *  SubminButtonPainter.scala
  *  (Submin)
  *
  *  Copyright (c) 2012 Hanns Holger Rutz. All rights reserved.
@@ -28,7 +28,7 @@ package de.sciss.submin
 import java.awt.{Graphics2D, MultipleGradientPaint, LinearGradientPaint, Paint, Color}
 import java.awt.geom.RoundRectangle2D
 
-object NimbusButtonPainter extends ButtonPainter {
+object SubminButtonPainter extends ButtonPainter {
    private val rrect    = new RoundRectangle2D.Float()
 
    private val grad1frac = Array[ Float ]( 0.09f, 0.95f )
@@ -37,29 +37,29 @@ object NimbusButtonPainter extends ButtonPainter {
 
    private def enabledGrad1colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, -0.055555522f, -0.05356429f, -0.12549019f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.0147816315f, -0.3764706f, 0 )
+      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, -0.055555522f, -0.05356429f, -0.12549019f, 0 )
+      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.0147816315f, -0.3764706f, 0 )
       res
    }
 
    private def disabledGrad1colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.06766917f, 0.07843137f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.06484103f, 0.027450979f, 0 )
+      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.06766917f, 0.07843137f, 0 )
+      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.06484103f, 0.027450979f, 0 )
       res
    }
 
    private def overGrad1colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.020974077f, -0.21960783f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, 0.11169591f, -0.53333336f, 0 )
+      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.020974077f, -0.21960783f, 0 )
+      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, 0.11169591f, -0.53333336f, 0 )
       res
    }
 
    private def pressedGrad1colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, 0.8894737f, -0.7176471f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, 5.847961e-4f, -0.32156864f, 0 )
+      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.055555582f, 0.8894737f, -0.7176471f, 0 )
+      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, 5.847961e-4f, -0.32156864f, 0 )
       res
    }
 
@@ -67,54 +67,54 @@ object NimbusButtonPainter extends ButtonPainter {
 
    private def enabledGrad2colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 6 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, -0.10655806f, 0.24313724f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.09823123f,  0.2117647f,  0 )
-      res( 2 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07016757f,  0.12941176f, 0 )
-      res( 3 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07016757f,  0.12941176f, 0 )
-      res( 4 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.0749532f,   0.24705881f, 0 )
-      res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
+      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.055555582f, -0.10655806f, 0.24313724f, 0 )
+      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.09823123f,  0.2117647f,  0 )
+      res( 2 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07016757f,  0.12941176f, 0 )
+      res( 3 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07016757f,  0.12941176f, 0 )
+      res( 4 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.0749532f,   0.24705881f, 0 )
+      res( 5 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
       res
    }
 
    private def disabledGrad2colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 6 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.08477524f, 0.16862744f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, -0.015872955f, -0.080091536f, 0.15686274f, 0 )
-      res( 2 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07016757f, 0.12941176f, 0 )
-      res( 3 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07016757f, 0.12941176f, 0 )
-      res( 4 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07052632f, 0.1372549f, 0 )
-      res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.070878744f, 0.14509803f, 0 )
+      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.08477524f, 0.16862744f, 0 )
+      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, -0.015872955f, -0.080091536f, 0.15686274f, 0 )
+      res( 2 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07016757f, 0.12941176f, 0 )
+      res( 3 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07016757f, 0.12941176f, 0 )
+      res( 4 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07052632f, 0.1372549f, 0 )
+      res( 5 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.070878744f, 0.14509803f, 0 )
       res
    }
 
    private def overGrad2colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 6 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, -0.10658931f, 0.25098038f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.098526314f, 0.2352941f, 0 )
-      res( 2 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, 0.20392156f, 0 )
-      res( 3 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07333623f, 0.20392156f, 0 )
-      res( 4 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
-      res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
+      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.055555582f, -0.10658931f, 0.25098038f, 0 )
+      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.098526314f, 0.2352941f, 0 )
+      res( 2 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07333623f, 0.20392156f, 0 )
+      res( 3 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07333623f, 0.20392156f, 0 )
+      res( 4 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
+      res( 5 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, 0 )
       res
    }
 
    private def pressedGrad2colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 6 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, -0.00505054f, -0.05960039f, 0.10196078f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, -0.008547008f, -0.04772438f, 0.06666666f, 0 )
-      res( 2 ) = ColorUtil.adjustColor( blueGrey, -0.0027777553f, -0.0018306673f, -0.02352941f, 0 )
-      res( 3 ) = ColorUtil.adjustColor( blueGrey, -0.0027777553f, -0.0018306673f, -0.02352941f, 0 )
-      res( 4 ) = ColorUtil.adjustColor( blueGrey, -0.0027777553f, -0.0212406f, 0.13333333f, 0 )
-      res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0055555105f, -0.030845039f, 0.23921567f, 0 )
+      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, -0.00505054f, -0.05960039f, 0.10196078f, 0 )
+      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, -0.008547008f, -0.04772438f, 0.06666666f, 0 )
+      res( 2 ) = ColorUtil.subAdjustColor( blueGrey, -0.0027777553f, -0.0018306673f, -0.02352941f, 0 )
+      res( 3 ) = ColorUtil.subAdjustColor( blueGrey, -0.0027777553f, -0.0018306673f, -0.02352941f, 0 )
+      res( 4 ) = ColorUtil.subAdjustColor( blueGrey, -0.0027777553f, -0.0212406f, 0.13333333f, 0 )
+      res( 5 ) = ColorUtil.subAdjustColor( blueGrey, 0.0055555105f, -0.030845039f, 0.23921567f, 0 )
       res
    }
 
-   private val pressedBackColr = new Color( 245, 250, 255, 160 )
+   private val pressedBackColr = ColorUtil.subminify( new Color( 245, 250, 255, 160 ))
 
    def paint( state: State, c: Color, g: Graphics2D, x: Int, y: Int, width: Int, height: Int ) {
-//      val nimBase = NimbusDefaults.baseColor
+//      val nimBase = SubminDefaults.baseColor
       if( state.isEnabled ) {
-         val blueGrey = ColorUtil.mixColorWithAlpha( NimbusDefaults.blueGreyColor, c )
+         val blueGrey = ColorUtil.mixColorWithAlpha( SubminDefaults.blueGreyColor, c )
          if( state.isPressed ) {
             if( state.isFocused ) {
                paintFocusedPressed( g, blueGrey, x, y, width, height )
@@ -135,8 +135,8 @@ object NimbusButtonPainter extends ButtonPainter {
             }
          }
        } else {
-          val c2          = if( c == null ) c else ColorUtil.adjustColor( c, 0f, 0f, 0f, -112 )
-          val blueGrey    = ColorUtil.mixColorWithAlpha( NimbusDefaults.blueGreyColor, c2 )
+          val c2          = if( c == null ) c else ColorUtil.subAdjustColor( c, 0f, 0f, 0f, -112 )
+          val blueGrey    = ColorUtil.mixColorWithAlpha( SubminDefaults.blueGreyColor, c2 )
           paintDisabled( g, blueGrey, x, y, width, height )
        }
    }
@@ -272,7 +272,7 @@ object NimbusButtonPainter extends ButtonPainter {
       val e1w = width - 1.2f
       val e1h = height - 1.2f
       rrect.setRoundRect( e1x, e1y, e1w, e1h, 11f, 11f )
-      g.setColor( NimbusDefaults.focusColor )
+      g.setColor( SubminDefaults.focusColor )
       g.fill( rrect )
    }
 
@@ -288,7 +288,7 @@ object NimbusButtonPainter extends ButtonPainter {
       val e1w = width - 4f
       val e1h = height - 4f
       rrect.setRoundRect( e1x, e1y, e1w, e1h, 12f, 12f )
-      g.setColor( ColorUtil.adjustColor( blueGrey, -0.027777791f, -0.06885965f, -0.36862746f, -190 ))
+      g.setColor( ColorUtil.subAdjustColor( blueGrey, -0.027777791f, -0.06885965f, -0.36862746f, -190 ))
       g.fill( rrect )
    }
 
@@ -316,7 +316,7 @@ object NimbusButtonPainter extends ButtonPainter {
       val e1w = width - 4f
       val e1h = height - 4f
       rrect.setRoundRect( e1x, e1y, e1w, e1h, 12f, 12f )
-      g.setColor( ColorUtil.adjustColor( blueGrey, -0.027777791f, -0.06885965f, -0.36862746f, -232 ))
+      g.setColor( ColorUtil.subAdjustColor( blueGrey, -0.027777791f, -0.06885965f, -0.36862746f, -232 ))
       g.fill( rrect )
 
       val e2x = x + 2f

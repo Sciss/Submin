@@ -30,6 +30,23 @@ import java.awt.Color
 object ColorUtil {
    private val hsbArr = new Array[ Float ]( 3 )
 
+   def subminify( c: Color ) : Color = {
+      val r    = 0xFF - c.getRed
+      val g    = 0xFF - c.getGreen
+      val b    = 0xFF - c.getBlue
+      val a    = c.getAlpha
+      Color.RGBtoHSB( r, g, b, hsbArr )
+      val hue  = hsbArr( 0 ) + 0.5f
+      val sat  = hsbArr( 1 )
+      val bri  = hsbArr( 2 )
+      val rgb  = Color.HSBtoRGB( hue, sat, bri )
+      val rgba = (rgb & 0xFFFFFF) | (a << 24)
+      new Color( rgba, true )
+   }
+
+   def subAdjustColor( c: Color, hueOffset: Float, satOffset: Float, briOffset: Float, alphaOffset: Int ) : Color =
+      adjustColor( c, hueOffset, satOffset, -briOffset, alphaOffset )
+
    def adjustColor( c: Color, hueOffset: Float, satOffset: Float, briOffset: Float, alphaOffset: Int ) : Color = {
       // statistically, brightness offset is varied more often than hue offset
       val sameColor = briOffset == 0f && satOffset == 0f && hueOffset == 0f
