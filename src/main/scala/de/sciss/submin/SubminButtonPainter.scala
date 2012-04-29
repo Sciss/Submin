@@ -59,8 +59,18 @@ object SubminButtonPainter extends ButtonPainter {
 
    private def pressedGrad1colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.055555582f, 0.8894737f, -0.7176471f, 0 )
-      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, 5.847961e-4f, -0.32156864f, 0 )
+      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, -0.8894737f * 0.5f, 0.7176471f * 0.5f, 0 )
+      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -5.847961e-4f, 0.32156864f, 0 )
+      res
+   }
+
+//   private val pressedBackColr = ColorUtil.subminify( new Color( 245, 250, 255, 160 ))
+   private val pressedBackColr = new Color( 245, 250, 255, 160 )
+
+   private def focusedPressedGrad1colr( blueGrey: Color ) : Array[ Color ] = {
+      val res = new Array[ Color ]( 2 )
+      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, 0.8894737f, -0.7176471f, 0 )
+      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, 5.847961e-4f, -0.32156864f, 0 )
       res
    }
 
@@ -170,16 +180,14 @@ object SubminButtonPainter extends ButtonPainter {
 
    private def pressedGrad2colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 6 )
-      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, -0.00505054f, -0.05960039f, 0.10196078f, 0 )
-      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, -0.008547008f, -0.04772438f, 0.06666666f, 0 )
-      res( 2 ) = ColorUtil.subAdjustColor( blueGrey, -0.0027777553f, -0.0018306673f, -0.02352941f, 0 )
-      res( 3 ) = ColorUtil.subAdjustColor( blueGrey, -0.0027777553f, -0.0018306673f, -0.02352941f, 0 )
-      res( 4 ) = ColorUtil.subAdjustColor( blueGrey, -0.0027777553f, -0.0212406f, 0.13333333f, 0 )
-      res( 5 ) = ColorUtil.subAdjustColor( blueGrey, 0.0055555105f, -0.030845039f, 0.23921567f, 0 )
+      res( 0 ) = ColorUtil.adjustColor( blueGrey, -0.00505054f, -0.05960039f, 0.10196078f, 0 )
+      res( 1 ) = ColorUtil.adjustColor( blueGrey, -0.008547008f, -0.04772438f, 0.06666666f, 0 )
+      res( 2 ) = ColorUtil.adjustColor( blueGrey, -0.0027777553f, -0.0018306673f, -0.02352941f, 0 )
+      res( 3 ) = ColorUtil.adjustColor( blueGrey, -0.0027777553f, -0.0018306673f, -0.02352941f, 0 )
+      res( 4 ) = ColorUtil.adjustColor( blueGrey, -0.0027777553f, -0.0212406f, 0.13333333f, 0 )
+      res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0055555105f, -0.030845039f, 0.23921567f, 0 )
       res
    }
-
-   private val pressedBackColr = ColorUtil.subminify( new Color( 245, 250, 255, 160 ))
 
    def paint( state: State, c: Color, g: Graphics2D, x: Int, y: Int, width: Int, height: Int ) {
 //      val nimBase = SubminDefaults.baseColor
@@ -238,12 +246,12 @@ object SubminButtonPainter extends ButtonPainter {
                                 MultipleGradientPaint.CycleMethod.NO_CYCLE )
    }
 
-   private def createPressedGradient1( blueGrey: Color, shpX1: Float, shpY1: Float, shpW: Float, shpH: Float ) : Paint = {
+   private def createPressedGradient1( colors: Array[ Color ], shpX1: Float, shpY1: Float, shpW: Float, shpH: Float ) : Paint = {
        val startX = shpX1 + 0.5f * shpW
        val startY = shpY1
        val endX   = shpX1 + 0.5f * shpW
        val endY   = shpY1 + shpH
-       new LinearGradientPaint( startX, startY, endX, endY, pressedGrad1frac, pressedGrad1colr( blueGrey ),
+       new LinearGradientPaint( startX, startY, endX, endY, pressedGrad1frac, colors,
                                 MultipleGradientPaint.CycleMethod.NO_CYCLE )
    }
 
@@ -284,13 +292,13 @@ object SubminButtonPainter extends ButtonPainter {
    }
 
    private def paintFocusedPressed( g: Graphics2D, blueGrey: Color, x: Int, y: Int, width: Int, height: Int ) {
-      paintFocusedBack( g,           x, y, width, height )
-      paintPressedTop(  g, blueGrey, x, y, width, height )
+      paintFocusedBack( g, x, y, width, height )
+      paintPressedTop(  g, blueGrey, focusedPressedGrad1colr( blueGrey ), x, y, width, height )
    }
 
    private def paintPressed( g: Graphics2D, blueGrey: Color, x: Int, y: Int, width: Int, height: Int ) {
       paintPressedBack( g, /* blueGrey, */ x, y, width, height )
-      paintPressedTop(  g, blueGrey, x, y, width, height )
+      paintPressedTop(  g, blueGrey, pressedGrad1colr( blueGrey ), x, y, width, height )
    }
 
    private def paintPressedBack( g: Graphics2D, /* blueGrey: Color, */ x: Int, y: Int, width: Int, height: Int ) {
@@ -303,13 +311,14 @@ object SubminButtonPainter extends ButtonPainter {
       g.fill( rrect )
    }
 
-   private def paintPressedTop( g: Graphics2D, blueGrey: Color, x: Int, y: Int, width: Int, height: Int ) {
+   private def paintPressedTop( g: Graphics2D, blueGrey: Color, grad1Colors: Array[ Color ],
+                                x: Int, y: Int, width: Int, height: Int ) {
       val e2x = x + 2f
       val e2y = y + 2f
       val e2w = width - 4f
       val e2h = height - 4f
       rrect.setRoundRect( e2x, e2y, e2w, e2h, 9f, 9f )
-      g.setPaint( createPressedGradient1( blueGrey, e2x, e2y, e2w, e2h ))
+      g.setPaint( createPressedGradient1( grad1Colors, e2x, e2y, e2w, e2h ))
       g.fill( rrect )
 
       val e3x = x + 3f
