@@ -53,8 +53,8 @@ object SubminButtonPainter extends ButtonPainter {
 
    private def overGrad1colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.020974077f, -0.21960783f, 0 )
-      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, 0.11169591f, -0.53333336f, 0 )
+      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.020974077f, -0.21960783f, 0 )
+      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, 0.11169591f, -0.53333336f, 0 )
       res
    }
 
@@ -65,8 +65,8 @@ object SubminButtonPainter extends ButtonPainter {
       res
    }
 
-//   private val pressedBackColr = ColorUtil.subminify( new Color( 245, 250, 255, 160 ))
-   private val pressedBackColr = new Color( 245, 250, 255, 160 )
+   private val pressedBackColr = ColorUtil.subminify( new Color( 245, 250, 255, 160 ))
+//   private val pressedBackColr = new Color( 245, 250, 255, 160 )
 
    private def focusedPressedGrad1colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 2 )
@@ -304,7 +304,8 @@ object SubminButtonPainter extends ButtonPainter {
 
    private def paintPressedBack( g: Graphics2D, /* blueGrey: Color, */ x: Int, y: Int, width: Int, height: Int ) {
       val e1x = x + 2f
-      val e1y = y + 3f
+//      val e1y = y + 3f
+      val e1y = y + 1f
       val e1w = width - 4f
       val e1h = height - 4f
       rrect.setRoundRect( e1x, e1y, e1w, e1h, 12f, 12f )
