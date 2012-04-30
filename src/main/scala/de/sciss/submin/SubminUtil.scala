@@ -25,10 +25,10 @@
 
 package de.sciss.submin
 
-import javax.swing.{UnsupportedLookAndFeelException, UIManager, JComponent}
 import annotation.tailrec
 import java.awt.{Insets, Font, Container}
 import javax.swing.plaf.InsetsUIResource
+import javax.swing.{JFrame, UnsupportedLookAndFeelException, UIManager, JComponent}
 
 object SubminUtil {
    private val LARGE_SCALE = 1.15
@@ -48,6 +48,19 @@ object SubminUtil {
          case jp: JComponent => jp
          case p => findJComponentAncestor( p )
       }
+   }
+
+   @tailrec def getSubmin( c: JComponent ) : Boolean = c.getClientProperty( "submin" ) match {
+      case java.lang.Boolean.TRUE   => true
+      case java.lang.Boolean.FALSE  => false
+      case _ =>
+         val p = findJComponentAncestor( c )
+         if( p == null ) {
+            c match {
+               case f: JFrame => f.getRootPane.getUI.isInstanceOf[ SubminDarkRootPaneUI ]
+               case _ => false
+            }
+         } else getSubmin( p )
    }
 
    @tailrec def getClosestBoolean( c: JComponent, property: String, default: Boolean = false ) : Boolean =

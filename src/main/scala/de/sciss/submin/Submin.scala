@@ -38,11 +38,21 @@ object Submin {
       if( isSnapshot ) s + "-SNAPSHOT" else s
    }
 
-   private lazy val initialized: Unit = {
-//      SubminUtil.init( false )
-      UIManager.installLookAndFeel( SubminLookAndFeel.name, SubminLookAndFeel.className )
-      UIManager.setLookAndFeel( SubminLookAndFeel.className )
-   }
+   private val sync = new AnyRef
+   private var initialized = false
 
-   def init() { initialized }
+   def init( dark: Boolean = false ) {
+      sync.synchronized {
+         if( !initialized ) {
+            val (name, className) = if( dark ) {
+               SubminDarkLookAndFeel.name -> SubminDarkLookAndFeel.className
+            } else {
+               SubminLookAndFeel.name -> SubminLookAndFeel.className
+            }
+            UIManager.installLookAndFeel( name, className )
+            UIManager.setLookAndFeel( className )
+            initialized = true
+         }
+      }
+   }
 }

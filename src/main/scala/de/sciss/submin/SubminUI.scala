@@ -91,13 +91,13 @@ trait SubminUI[ C <: JComponent ] {
 //      i += 1 }
 //   }
 
-   final protected def getSubmin( c: JComponent ) : Boolean = SubminUtil.getClosestBoolean( c, "submin" )
+//   final protected def getSubmin( c: JComponent ) : Boolean = SubminUtil.getClosestBoolean( c, "submin" )
 
    protected def propertyPrefix : String
 
    final protected def getSubminPropertyPrefix( c: JComponent ) : String = {
       val pp = propertyPrefix
-      if( getSubmin( c )) pp.substring( 0, pp.length - 1 ) + "[submin]." else pp
+      if( SubminUtil.getSubmin( c )) pp.substring( 0, pp.length - 1 ) + "[submin]." else pp
    }
 
    final protected def updateColors( c: JComponent ) {

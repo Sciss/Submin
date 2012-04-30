@@ -2,6 +2,7 @@ package de.sciss.submin
 
 import org.jdesktop.laffy.Laffy
 import java.awt.EventQueue
+import javax.swing.UIManager
 
 object LaffyDemo extends Runnable {
    def main( args: Array[ String ]) {
@@ -10,10 +11,9 @@ object LaffyDemo extends Runnable {
 
    def run() {
       Submin.init()
-//      UIManager.installLookAndFeel( "Dorian", "de.sciss.dorianlaf.DorianLookAndFeel" )
-//      Laffy.getInstance().load( Array.empty[ AnyRef ])
+      UIManager.installLookAndFeel( SubminDarkLookAndFeel.name, SubminDarkLookAndFeel.className )
 
-      // "invokeAndWait cannot be called from event thread"... sucky bastards
+      // "invokeAndWait cannot be called from event thread"...
       new Thread( new Runnable { def run() { Laffy.main( Array.empty[ String ])}}).start()
    }
 }

@@ -40,8 +40,8 @@ object SubminButtonPainter extends ButtonPainter {
 
    protected def disabledGrad1colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.06766917f, 0.07843137f, 0 )
-      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.06484103f, 0.027450979f, 0 )
+      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.06766917f, 0.07843137f, 0 )
+      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.06484103f, 0.027450979f, 0 )
       res
    }
 
@@ -73,12 +73,13 @@ object SubminButtonPainter extends ButtonPainter {
 
    protected def disabledGrad2colr( blueGrey: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 6 )
-      res( 0 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.08477524f, 0.16862744f, 0 )
-      res( 1 ) = ColorUtil.subAdjustColor( blueGrey, -0.015872955f, -0.080091536f, 0.15686274f, 0 )
-      res( 2 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07016757f, 0.12941176f, 0 )
-      res( 3 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07016757f, 0.12941176f, 0 )
-      res( 4 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.07052632f, 0.1372549f, 0 )
-      res( 5 ) = ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.070878744f, 0.14509803f, 0 )
+      // .linlin( 0.12941176f, 0.16862744f, -0.16862744f, -0.12941176f )
+      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.08477524f, -0.12941176f, 0 )
+      res( 1 ) = ColorUtil.adjustColor( blueGrey, -0.015872955f, -0.080091536f, -0.14117646f, 0 )
+      res( 2 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07016757f, -0.16862744f, 0 )
+      res( 3 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07016757f, -0.16862744f, 0 )
+      res( 4 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.07052632f, -0.1607843f, 0 )
+      res( 5 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.070878744f, -0.15294117f, 0 )
       res
    }
 

@@ -42,6 +42,8 @@ class SubminLookAndFeel extends BasicLookAndFeel {
    def isNativeLookAndFeel    = false
    def isSupportedLookAndFeel = true
 
+   protected def rootPaneUI : String   = "SubminRootPaneUI"
+
    override protected def initClassDefaults( table: UIDefaults ) {
       super.initClassDefaults( table )
 
@@ -51,7 +53,8 @@ class SubminLookAndFeel extends BasicLookAndFeel {
          "FileChooserUI",  packageName + "SubminFileChooserUI",    // laffy needs it...
          "LabelUI",        packageName + "SubminLabelUI",
          "PanelUI",        packageName + "SubminPanelUI",
-         "TextAreaUI",     packageName + "SubminTextAreaUI"
+         "TextAreaUI",     packageName + "SubminTextAreaUI",
+         "RootPaneUI",     packageName + rootPaneUI
 //         "ToggleButtonUI", packageName + "ButtonUI",
 //         "SliderUI",       packageName + "SliderUI",
 //         "ListUI",         packageName + "ListUI",
