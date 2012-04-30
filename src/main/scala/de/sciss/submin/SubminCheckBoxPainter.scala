@@ -1,5 +1,5 @@
 /*
- *  Defaults.scala
+ *  SubminCheckBoxPainter.scala
  *  (Submin)
  *
  *  Copyright (c) 2012 Hanns Holger Rutz. All rights reserved.
@@ -25,10 +25,6 @@
 
 package de.sciss.submin
 
-import java.awt.Color
-
-trait Defaults {
-   def blueGreyColor : Color
-   def focusColor : Color
-   def baseColor : Color
+object SubminCheckBoxPainter extends CheckBoxPainter {
+   protected def defaults : Defaults = SubminDefaults
 }

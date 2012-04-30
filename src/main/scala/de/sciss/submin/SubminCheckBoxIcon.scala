@@ -11,7 +11,7 @@ object SubminCheckBoxIcon extends Icon {
       val b       = c.asInstanceOf[ AbstractButton ]
       val state   = SubminButtonUILike.getComponentState( b )
       // XXX TODO
-      val butPtr  = if( SubminUtil.getClosestBoolean( b, "submin" )) NimbusCheckBoxPainter else NimbusCheckBoxPainter
+      val butPtr  = if( SubminUtil.getClosestBoolean( b, "submin" )) SubminCheckBoxPainter else NimbusCheckBoxPainter
       val g2      = g.asInstanceOf[ Graphics2D ]
       butPtr.paint( state, null, g2, x, y, getIconWidth, getIconHeight )
    }

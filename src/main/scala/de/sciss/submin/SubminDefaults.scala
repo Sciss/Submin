@@ -48,6 +48,11 @@ object SubminDefaults extends Defaults {
 
 //   def focusColor : Color = NimbusDefaults.focusColor
 
+   def baseColor : Color = {
+      val nimbus = NimbusDefaults.baseColor
+      ColorUtil.subminify( nimbus )
+   }
+
    def focusColor : Color = {
       val nimbus = NimbusDefaults.focusColor
       ColorUtil.subminify( nimbus )
