@@ -1,7 +1,7 @@
 package de.sciss.submin
 
 import java.awt.{FlowLayout, BorderLayout, EventQueue}
-import javax.swing.{JTextArea, JTextField, JCheckBox, JSlider, JButton, JLabel, JPanel, WindowConstants, JSplitPane, JFrame}
+import javax.swing.{JTextArea, JCheckBox, JButton, JLabel, JPanel, WindowConstants, JSplitPane, JFrame}
 
 object PanelTest extends Runnable {
    def main( args: Array[ String ]) {
@@ -12,6 +12,7 @@ object PanelTest extends Runnable {
 
    def run() {
 //      SubminUtil.init()
+//UIManager.setLookAndFeel( new NimbusLookAndFeel )
       Submin.init()
       val f       = new JFrame( "Submin" )
       val cp      = f.getContentPane

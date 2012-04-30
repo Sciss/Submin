@@ -76,9 +76,9 @@ final class SubminButtonUI extends BasicButtonUI with SubminButtonUILike {
       LookAndFeel.installBorder( b, pp + "border" )
 
       val rollover = UIManager.get( pp + "rollover" )
-      if( rollover != null ) {
+//      if( rollover != null ) {
          LookAndFeel.installProperty( b, "rolloverEnabled", if( rollover != null ) rollover else true )
-      }
+//      }
 
       val gap = UIManager.get( pp + "iconTextGap" )
       if( gap != null ) LookAndFeel.installProperty( b, "iconTextGap", gap )
