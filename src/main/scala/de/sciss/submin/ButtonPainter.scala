@@ -75,67 +75,12 @@ trait ButtonPainter extends ButtonPainterLike {
        }
    }
 
-   private def createEnabledGradient1( blueGrey: Color, shpX1: Float, shpY1: Float, shpW: Float, shpH: Float ) : Paint = {
-       val startX = shpX1 + 0.5f * shpW
-       val startY = shpY1
-       val endX   = shpX1 + 0.5f * shpW
-       val endY   = shpY1 + shpH
-       new LinearGradientPaint( startX, startY, endX, endY, grad1frac, enabledGrad1colr( blueGrey ),
-                                MultipleGradientPaint.CycleMethod.NO_CYCLE )
-   }
-
-   private def createDisabledGradient1( blueGrey: Color, shpX1: Float, shpY1: Float, shpW: Float, shpH: Float ) : Paint = {
-       val startX = shpX1 + 0.5f * shpW
-       val startY = shpY1
-       val endX   = shpX1 + 0.5f * shpW
-       val endY   = shpY1 + shpH
-       new LinearGradientPaint( startX, startY, endX, endY, grad1frac, disabledGrad1colr( blueGrey ),
-                                MultipleGradientPaint.CycleMethod.NO_CYCLE )
-   }
-
-   private def createOverGradient1( blueGrey: Color, shpX1: Float, shpY1: Float, shpW: Float, shpH: Float ) : Paint = {
-       val startX = shpX1 + 0.5f * shpW
-       val startY = shpY1
-       val endX   = shpX1 + 0.5f * shpW
-       val endY   = shpY1 + shpH
-       new LinearGradientPaint( startX, startY, endX, endY, grad1frac, overGrad1colr( blueGrey ),
-                                MultipleGradientPaint.CycleMethod.NO_CYCLE )
-   }
-
-   private def createPressedGradient1( colors: Array[ Color ], shpX1: Float, shpY1: Float, shpW: Float, shpH: Float ) : Paint = {
-       val startX = shpX1 + 0.5f * shpW
-       val startY = shpY1
-       val endX   = shpX1 + 0.5f * shpW
-       val endY   = shpY1 + shpH
-       new LinearGradientPaint( startX, startY, endX, endY, pressedGrad1frac, colors,
-                                MultipleGradientPaint.CycleMethod.NO_CYCLE )
-   }
-
-   private def createPressedGradient2( blueGrey: Color, shpX1: Float, shpY1: Float, shpW: Float, shpH: Float ) : Paint = {
-       val startX = shpX1 + 0.5f * shpW
-       val startY = shpY1
-       val endX   = shpX1 + 0.5f * shpW
-       val endY   = shpY1 + shpH
-       new LinearGradientPaint( startX, startY, endX, endY, grad2frac, pressedGrad2colr( blueGrey ),
-                                MultipleGradientPaint.CycleMethod.NO_CYCLE )
-   }
-
-   private def createEnabledGradient2( blueGrey: Color, shpX1: Float, shpY1: Float, shpW: Float, shpH: Float ) : Paint = {
-       val startX = shpX1 + 0.5f * shpW
-       val startY = shpY1
-       val endX   = shpX1 + 0.5f * shpW
-       val endY   = shpY1 + shpH
-       new LinearGradientPaint( startX, startY, endX, endY, grad2frac, enabledGrad2colr( blueGrey ),
-                                MultipleGradientPaint.CycleMethod.NO_CYCLE )
-   }
-
-   private def createDisabledGradient2( blueGrey: Color, shpX1: Float, shpY1: Float, shpW: Float, shpH: Float ) : Paint = {
-       val startX = shpX1 + 0.5f * shpW
-       val startY = shpY1
-       val endX   = shpX1 + 0.5f * shpW
-       val endY   = shpY1 + shpH
-       new LinearGradientPaint( startX, startY, endX, endY, grad2frac, disabledGrad2colr( blueGrey ),
-                                MultipleGradientPaint.CycleMethod.NO_CYCLE )
+   private def createGradient1( colors: Array[ Color ], frac: Array[ Float ], shpX1: Float, shpY1: Float, shpW: Float, shpH: Float ) : Paint = {
+      val startX = shpX1 + 0.5f * shpW
+      val startY = shpY1
+      val endX   = shpX1 + 0.5f * shpW
+      val endY   = shpY1 + shpH
+      new LinearGradientPaint( startX, startY, endX, endY, frac, colors, MultipleGradientPaint.CycleMethod.NO_CYCLE )
    }
 
    private def createOverGradient2( blueGrey: Color, shpX1: Float, shpY1: Float, shpW: Float, shpH: Float ) : Paint = {
@@ -168,7 +113,7 @@ trait ButtonPainter extends ButtonPainterLike {
       val e2w = width - 4f
       val e2h = height - 4f
       rrect.setRoundRect( e2x, e2y, e2w, e2h, 9f, 9f )
-      g.setPaint( createEnabledGradient1( blueGrey, e2x, e2y, e2w, e2h ))
+      g.setPaint( createGradient1( enabledGrad1colr( blueGrey ), grad1frac, e2x, e2y, e2w, e2h ))
       g.fill( rrect )
 
       val e3x = x + 3f
@@ -176,7 +121,7 @@ trait ButtonPainter extends ButtonPainterLike {
       val e3w = width - 6f
       val e3h = height - 6f
       rrect.setRoundRect( e3x, e3y, e3w, e3h, 7f, 7f )
-      g.setPaint( createEnabledGradient2( blueGrey, e3x, e3y, e3w, e3h ))
+      g.setPaint( createGradient1( enabledGrad2colr( blueGrey ), grad2frac, e3x, e3y, e3w, e3h ))
       g.fill( rrect )
    }
 
@@ -206,7 +151,7 @@ trait ButtonPainter extends ButtonPainterLike {
       val e2w = width - 4f
       val e2h = height - 4f
       rrect.setRoundRect( e2x, e2y, e2w, e2h, 9f, 9f )
-      g.setPaint( createOverGradient1( blueGrey, e2x, e2y, e2w, e2h ))
+      g.setPaint( createGradient1( overGrad1colr( blueGrey ), grad1frac, e2x, e2y, e2w, e2h ))
       g.fill( rrect )
 
       val e3x = x + 3f
@@ -245,7 +190,7 @@ trait ButtonPainter extends ButtonPainterLike {
       val e2w = width - 4f
       val e2h = height - 4f
       rrect.setRoundRect( e2x, e2y, e2w, e2h, 9f, 9f )
-      g.setPaint( createPressedGradient1( grad1Colors, e2x, e2y, e2w, e2h ))
+      g.setPaint( createGradient1( grad1Colors, pressedGrad1frac, e2x, e2y, e2w, e2h ))
       g.fill( rrect )
 
       val e3x = x + 3f
@@ -253,7 +198,7 @@ trait ButtonPainter extends ButtonPainterLike {
       val e3w = width - 6f
       val e3h = height - 6f
       rrect.setRoundRect( e3x, e3y, e3w, e3h, 7f, 7f )
-      g.setPaint( createPressedGradient2( blueGrey, e3x, e3y, e3w, e3h ))
+      g.setPaint( createGradient1( pressedGrad2colr( blueGrey ), grad2frac, e3x, e3y, e3w, e3h ))
       g.fill( rrect )
    }
 
@@ -276,7 +221,7 @@ trait ButtonPainter extends ButtonPainterLike {
       val e2w = width - 4f
       val e2h = height - 4f
       rrect.setRoundRect( e2x, e2y, e2w, e2h, 9f, 9f )
-      g.setPaint( createDisabledGradient1( blueGrey, e2x, e2y, e2w, e2h ))
+      g.setPaint( createGradient1( disabledGrad1colr( blueGrey ), grad1frac, e2x, e2y, e2w, e2h ))
       g.fill( rrect )
 
       val e3x = x + 3f
@@ -284,7 +229,7 @@ trait ButtonPainter extends ButtonPainterLike {
       val e3w = width - 6f
       val e3h = height - 6f
       rrect.setRoundRect( e3x, e3y, e3w, e3h, 7f, 7f )
-      g.setPaint( createDisabledGradient2( blueGrey, e3x, e3y, e3w, e3h ))
+      g.setPaint( createGradient1( disabledGrad2colr( blueGrey ), grad2frac, e3x, e3y, e3w, e3h ))
       g.fill( rrect )
    }
 }
