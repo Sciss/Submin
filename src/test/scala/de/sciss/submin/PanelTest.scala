@@ -100,6 +100,12 @@ object PanelTest extends Runnable {
       p.add( lbSmall )
       p.add( new JSlider() )
       p.add( new JCheckBox( "Check Box" ))
+      val cbNoFocus = new JCheckBox( "No Focus" )
+      cbNoFocus.setFocusable( false )
+      p.add( cbNoFocus )
+      val cbDisabled = new JCheckBox( "Disabled" )
+      cbDisabled.setEnabled( false )
+      p.add( cbDisabled )
       p.add( new JTextField( "Text Field" ))
    }
 }

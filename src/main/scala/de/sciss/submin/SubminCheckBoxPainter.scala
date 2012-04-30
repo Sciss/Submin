@@ -116,18 +116,24 @@ object SubminCheckBoxPainter extends CheckBoxPainter {
 
    protected def pressedGrad2colr( base: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 3 )
-      res( 0 ) = ColorUtil.subAdjustColor( base, 0.027408898f, -0.5847884f,  0.2980392f,  0 )
-      res( 1 ) = ColorUtil.subAdjustColor( base, 0.029681683f, -0.52701867f, 0.17254901f, 0 )
-      res( 2 ) = ColorUtil.subAdjustColor( base, 0.029681683f, -0.5376751f,  0.25098038f, 0 )
+      // .linlin( 0.02352941f, 0.2980392f, -0.2980392f, -0.02352941f )
+      res( 0 ) = ColorUtil.adjustColor( base, 0.027408898f, -0.5847884f,  -0.02352941f * 2f, 0 )
+      res( 1 ) = ColorUtil.adjustColor( base, 0.029681683f, -0.52701867f, -0.14901958f * 2f, 0 )
+      res( 2 ) = ColorUtil.adjustColor( base, 0.029681683f, -0.5376751f,  -0.07058823f * 2f, 0 )
       res
    }
 
    protected def pressedSelectedGrad2colr( base: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 4 )
-      res( 0 ) = ColorUtil.subAdjustColor( base, -4.2033195e-4f, -0.38050595f,   0.20392156f, 0 )
-      res( 1 ) = ColorUtil.subAdjustColor( base, -0.0021489263f, -0.2891234f,    0.14117646f, 0 )
-      res( 2 ) = ColorUtil.subAdjustColor( base, -0.006362498f,  -0.016311288f, -0.02352941f, 0 )
-      res( 3 ) = ColorUtil.subAdjustColor( base,  0.0f,          -0.17930403f,   0.21568626f, 0 )
+//      res( 0 ) = ColorUtil.adjustColor( base, -4.2033195e-4f, -0.38050595f,   0.20392156f, 0 )
+//      res( 1 ) = ColorUtil.adjustColor( base, -0.0021489263f, -0.2891234f,    0.14117646f, 0 )
+//      res( 2 ) = ColorUtil.adjustColor( base, -0.006362498f,  -0.016311288f, -0.02352941f, 0 )
+//      res( 3 ) = ColorUtil.adjustColor( base,  0.0f,          -0.17930403f,   0.21568626f, 0 )
+      //.linlin( -0.02352941f, 0.21568626f, -0.21568626f, 0.02352941f )
+      res( 0 ) = ColorUtil.adjustColor( base, -4.2033195e-4f, -0.38050595f,   0.011764705f, 0 )
+      res( 1 ) = ColorUtil.adjustColor( base, -0.0021489263f, -0.2891234f,   -0.05098039f,  0 )
+      res( 2 ) = ColorUtil.adjustColor( base, -0.006362498f,  -0.016311288f, -0.24313724f,  0 )
+      res( 3 ) = ColorUtil.adjustColor( base,  0.0f,          -0.17930403f,   0.02352941f,  0 )
       res
    }
 
@@ -150,9 +156,13 @@ object SubminCheckBoxPainter extends CheckBoxPainter {
 
    protected def selectedGrad2colr( base: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 3 )
-      res( 0 ) = ColorUtil.subAdjustColor( base, 0.004681647f,  -0.6197143f,  0.43137252f, 0 )
-      res( 1 ) = ColorUtil.subAdjustColor( base, 5.1498413e-4f, -0.44153953f, 0.2588235f,  0 )
-      res( 2 ) = ColorUtil.subAdjustColor( base, 5.1498413e-4f, -0.4602757f,  0.34509802f, 0 )
+      // brightness = nimbusBrightness.linlin( 0.2588235f, 0.43137252f, -0.43137252f, -0.2588235f )
+//      res( 0 ) = ColorUtil.adjustColor( base, 0.004681647f,  -0.6197143f,  -0.2588235f, 0 )
+//      res( 1 ) = ColorUtil.adjustColor( base, 5.1498413e-4f, -0.44153953f, -0.43137252f,  0 )
+//      res( 2 ) = ColorUtil.adjustColor( base, 5.1498413e-4f, -0.4602757f,  -0.34509802f, 0 )
+      res( 0 ) = ColorUtil.adjustColor( base, 0.004681647f,  -0.6197143f * 0.5f,  -0.2588235f, 0 )
+      res( 1 ) = ColorUtil.adjustColor( base, 5.1498413e-4f, -0.44153953f * 0.25f, -0.43137252f,  0 )
+      res( 2 ) = ColorUtil.adjustColor( base, 5.1498413e-4f, -0.4602757f * 0.5f,  -0.34509802f, 0 )
       res
    }
 
