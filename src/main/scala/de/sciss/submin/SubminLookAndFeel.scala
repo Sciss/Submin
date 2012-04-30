@@ -47,12 +47,12 @@ class SubminLookAndFeel extends BasicLookAndFeel {
 
       val uiDefaults = Array[ AnyRef ](
          "ButtonUI",       packageName + "SubminButtonUI",
+         "CheckBoxUI",     packageName + "SubminCheckBoxUI",
          "FileChooserUI",  packageName + "SubminFileChooserUI",    // laffy needs it...
          "LabelUI",        packageName + "SubminLabelUI",
          "PanelUI",        packageName + "SubminPanelUI",
          "TextAreaUI",     packageName + "SubminTextAreaUI"
 //         "ToggleButtonUI", packageName + "ButtonUI",
-//         "CheckBoxUI",     packageName + "CheckBoxUI",
 //         "SliderUI",       packageName + "SliderUI",
 //         "ListUI",         packageName + "ListUI",
 //         "ProgressBarUI",  packageName + "ProgressBarUI"

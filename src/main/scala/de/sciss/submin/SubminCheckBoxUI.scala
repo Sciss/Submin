@@ -1,5 +1,5 @@
 /*
- *  SubminButtonUI.scala
+ *  SubminCheckBoxUI.scala
  *  (Submin)
  *
  *  Copyright (c) 2012 Hanns Holger Rutz. All rights reserved.
@@ -25,30 +25,20 @@
 
 package de.sciss.submin
 
-import javax.swing.text.View
-import javax.swing.plaf.basic.{BasicHTML, BasicButtonUI}
+import javax.swing.plaf.ComponentUI
 import sun.swing.SwingUtilities2
-import java.awt.{RenderingHints, Dimension, Graphics2D, FontMetrics, Rectangle, Graphics}
-import javax.swing.{LookAndFeel, UIManager, JButton, SwingUtilities, JComponent, AbstractButton}
-import javax.swing.plaf.{ComponentUI, UIResource}
+import de.sciss.submin.SubminButtonUILike._
+import javax.swing.plaf.basic.{BasicHTML, BasicCheckBoxUI}
+import javax.swing.text.View
+import javax.swing.{LookAndFeel, UIManager, SwingUtilities, JComponent, AbstractButton}
+import java.awt.{Rectangle, RenderingHints, Graphics2D, Graphics, Dimension}
 
-/**
- * todo:
- *  - doesn't check the `DEFAULT` state flag
- *  - should recognise custom button color (currently `null` is passed into `NimbusButtonPainter`)
- */
-object SubminButtonUI {
-//   private val viewRect = new Rectangle()
-//   private val textRect = new Rectangle()
-//   private val iconRect = new Rectangle()
-
-   private val instance = new SubminButtonUI
+object SubminCheckBoxUI {
+   private val instance = new SubminCheckBoxUI
    def createUI( c: JComponent ) : ComponentUI = instance
 }
-final class SubminButtonUI extends BasicButtonUI with SubminButtonUILike {
-   ui =>
-
-   import SubminButtonUILike._
+final class SubminCheckBoxUI extends BasicCheckBoxUI with SubminButtonUILike {
+//   import SubminCheckBoxUI._
 
    protected def propertyPrefix = getPropertyPrefix
 
@@ -79,6 +69,8 @@ final class SubminButtonUI extends BasicButtonUI with SubminButtonUILike {
 
       val gap = UIManager.get( pp + "iconTextGap" )
       if( gap != null ) LookAndFeel.installProperty( b, "iconTextGap", gap )
+
+      icon = UIManager.getIcon( pp + "icon" )
    }
 
    override def getPreferredSize( c: JComponent ) : Dimension = {
@@ -101,18 +93,67 @@ final class SubminButtonUI extends BasicButtonUI with SubminButtonUILike {
    }
 
    override def paint( g: Graphics, c: JComponent ) {
-      val b       = c.asInstanceOf[ AbstractButton ]
-      val text    = layout( b, SwingUtilities2.getFontMetrics( c, g ), c.getWidth, c.getHeight )
+      val b             = c.asInstanceOf[ AbstractButton ]
+      val i             = c.getInsets
+      val width         = b.getWidth
+      val height        = b.getHeight
+      viewRect.x        = i.left
+      viewRect.y        = i.top
+      viewRect.width    = width  - (i.left + i.right)
+      viewRect.height   = height - (i.top + i.bottom)
+      iconRect.x        = 0
+      iconRect.y        = 0
+      iconRect.width    = 0
+      iconRect.height   = 0
+      textRect.x        = 0
+      textRect.y        = 0
+      textRect.width    = 0
+      textRect.height   = 0
+
+      val userIcon      = b.getIcon
+      val icon          = if( userIcon == null ) {
+         getDefaultIcon
+      } else {
+         val state = getComponentState( b )
+         val res2 = if( state.isEnabled ) {
+            if( state.isSelected ) {
+               b.getDisabledSelectedIcon
+            } else {
+               b.getDisabledIcon
+            }
+         } else if( state.isPressed  ) {
+            val res = b.getPressedIcon
+            if( res != null ) res else b.getSelectedIcon
+         } else if( state.isSelected ) {
+            if( b.isRolloverEnabled && state.isMouseOver ) {
+               val res = b.getRolloverSelectedIcon
+               if( res != null ) res else b.getSelectedIcon
+            } else {
+               b.getSelectedIcon
+            }
+         } else if( b.isRolloverEnabled && state.isMouseOver ) {
+            b.getRolloverIcon
+         } else userIcon
+
+         if( res2 != null ) res2 else userIcon
+      }
+
+      val str           = b.getText
+      val f             = c.getFont
+      g.setFont( f )
+      val fm            = SwingUtilities2.getFontMetrics( c, g, f )
+      val text          = SwingUtilities.layoutCompoundLabel(
+          c, fm, str, icon,
+          b.getVerticalAlignment, b.getHorizontalAlignment,
+          b.getVerticalTextPosition, b.getHorizontalTextPosition,
+          viewRect, iconRect, textRect, if( str == null ) 0 else b.getIconTextGap )
 
       clearTextShiftOffset()
 
-      val state   = getComponentState( b )
       val g2      = g.asInstanceOf[ Graphics2D ]
       g2.setRenderingHint( RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON )
-      val butPtr  = if( SubminUtil.getClosestBoolean( c, "submin" )) SubminButtonPainter else NimbusButtonPainter
-      butPtr.paint( state, null, g2, viewRect.x, viewRect.y, viewRect.width, viewRect.height )
 
-      if( b.getIcon != null ) paintIcon( g, c, iconRect )
+      icon.paintIcon( c, g, iconRect.x, iconRect.y )
 
       if( text != null && text != "" ) {
          val v = c.getClientProperty( BasicHTML.propertyKey ).asInstanceOf[ View ]

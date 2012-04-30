@@ -25,11 +25,10 @@
 
 package de.sciss.submin
 
-import javax.swing.plaf.{FontUIResource, InsetsUIResource, ColorUIResource}
 import javax.swing.text.DefaultEditorKit
-import java.awt.{Toolkit, Font, Color}
-import java.awt.event.InputEvent
+import java.awt.{Font, Color}
 import javax.swing.{JTextField, UIDefaults, UIManager}
+import javax.swing.plaf.{IconUIResource, FontUIResource, InsetsUIResource, ColorUIResource}
 
 object NimbusDefaults {
    private val defaultControlColor              = new Color( 214, 217, 223, 255 )
@@ -75,13 +74,17 @@ object NimbusDefaults {
       m.put( "Button.font",               fntSans12 )
       m.put( "Button.foreground",         new ColorUIResource( buttonForegroundColor ))
 
+      m.put( "CheckBox.contentMargins",   zeroInsets )
+      m.put( "CheckBox.font",             fntSans12 )
+      m.put( "CheckBox.icon",             new IconUIResource( SubminCheckBoxIcon ))
+
+      m.put( "Label.contentMargins",      zeroInsets )
+      m.put( "Label.font",                fntSans12 )
+
       m.put( "Panel.background",          new ColorUIResource( panelBackgroundColor ))
       m.put( "Panel.contentMargins",      zeroInsets )
       m.put( "Panel.font",                fntSans12 )
       m.put( "Panel.opaque",              true )
-
-      m.put( "Label.contentMargins",      zeroInsets )
-      m.put( "Label.font",                fntSans12 )
 
       // ---- keyboard actions ----
       val isMac   = sys.props( "os.name" ).toLowerCase.contains( "mac" )

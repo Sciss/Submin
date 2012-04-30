@@ -26,6 +26,8 @@
 package de.sciss.submin
 
 object State {
+   val DISABLED   = 0x00
+
    val ENABLED    = 0x01
    val MOUSE_OVER = 0x02
    val PRESSED    = 0x04

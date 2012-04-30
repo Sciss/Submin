@@ -1,7 +1,7 @@
 package de.sciss.submin
 
 import java.awt.{FlowLayout, BorderLayout, EventQueue}
-import javax.swing.{JTextField, JCheckBox, JSlider, JButton, JLabel, JPanel, WindowConstants, JSplitPane, JFrame}
+import javax.swing.{JTextArea, JTextField, JCheckBox, JSlider, JButton, JLabel, JPanel, WindowConstants, JSplitPane, JFrame}
 
 object PanelTest extends Runnable {
    def main( args: Array[ String ]) {
@@ -78,6 +78,8 @@ object PanelTest extends Runnable {
 //      smallSubmin2.putClientProperty( "submin", true )
       if( setUI ) smallSubmin2.setUI( new SubminButtonUI )
       submin.add( smallSubmin2 )
+
+      nimbus.add( new JTextArea( 40, 20 ))
 
       split.setLeftComponent( nimbus )
       split.setRightComponent( submin )
