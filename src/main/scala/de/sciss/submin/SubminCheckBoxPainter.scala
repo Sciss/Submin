@@ -92,25 +92,27 @@ object SubminCheckBoxPainter extends CheckBoxPainter {
 //      res( 0 ) = ColorUtil.adjustColor( base, 0.08801502f, -0.63174605f, -0.32549018f, 0 )
 //      res( 1 ) = ColorUtil.adjustColor( base, 0.032459438f, -0.5953556f, -0.43921566f, 0 )
 //      res( 2 ) = ColorUtil.adjustColor( base, 0.032459438f, -0.59942394f, -0.34117645f, 0 )
-      res( 0 ) = ColorUtil.adjustColor( base, 0.08801502f, -0.63174605f, -0.32549018f * 1.75f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( base, 0.032459438f, -0.5953556f, -0.43921566f * 1.75f, 0 )
-      res( 2 ) = ColorUtil.adjustColor( base, 0.032459438f, -0.59942394f, -0.34117645f * 1.75f, 0 )
+      res( 0 ) = ColorUtil.adjustColor( base, 0.08801502f,  -0.63174605f * 0.5f, -0.32549018f * 1.75f, 0 )
+      res( 1 ) = ColorUtil.adjustColor( base, 0.032459438f, -0.5953556f  * 0.5f, -0.43921566f * 1.75f, 0 )
+      res( 2 ) = ColorUtil.adjustColor( base, 0.032459438f, -0.59942394f * 0.5f, -0.34117645f * 1.75f, 0 )
       res
    }
 
    protected def disabledGrad2colr( base: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 3 )
-      res( 0 ) = ColorUtil.subAdjustColor( base, 0.032459438f, -0.60996324f, 0.36470586f, 0 )
-      res( 1 ) = ColorUtil.subAdjustColor( base, 0.02551502f,  -0.5996783f,  0.3215686f,  0 )
-      res( 2 ) = ColorUtil.subAdjustColor( base, 0.032459438f, -0.59624064f, 0.34509802f, 0 )
+      // .linlin( 0.3215686f, 0.36470586f, -0.36470586f, -0.3215686f )
+      res( 0 ) = ColorUtil.adjustColor( base, 0.032459438f, -0.60996324f * 0.5f, -0.3215686f  * 2.0f,  0 )
+      res( 1 ) = ColorUtil.adjustColor( base, 0.02551502f,  -0.5996783f  * 0.5f, -0.36470586f * 1.75f, 0 )
+      res( 2 ) = ColorUtil.adjustColor( base, 0.032459438f, -0.59624064f * 0.5f, -0.34117645f * 1.75f, 0 )
       res
    }
 
    protected def disabledSelectedGrad2colr( base: Color ) : Array[ Color ] = {
       val res = new Array[ Color ]( 3 )
-      res( 0 ) = ColorUtil.subAdjustColor( base, 0.021348298f, -0.59223604f, 0.35294116f, 0 )
-      res( 1 ) = ColorUtil.subAdjustColor( base, 0.021348298f, -0.56722116f, 0.3098039f,  0 )
-      res( 2 ) = ColorUtil.subAdjustColor( base, 0.021348298f, -0.56875f,    0.32941175f, 0 )
+      // .linlin( 0.3098039f, 0.35294116f, -0.35294116f, -0.3098039f )
+      res( 0 ) = ColorUtil.adjustColor( base, 0.021348298f, -0.59223604f * 0.5f, -0.3098039f  * 1.75f, 0 )
+      res( 1 ) = ColorUtil.adjustColor( base, 0.021348298f, -0.56722116f * 0.5f, -0.35294116f * 1.75f, 0 )
+      res( 2 ) = ColorUtil.adjustColor( base, 0.021348298f, -0.56875f    * 0.5f, -0.3333333f  * 1.75f, 0 )
       res
    }
 
@@ -173,7 +175,7 @@ object SubminCheckBoxPainter extends CheckBoxPainter {
       ColorUtil.subAdjustColor( base, -0.57865167f, -0.6357143f, -0.54901963f, 0 )
 
    protected def disabledSelectedCheckColor( base: Color ) : Color =
-      ColorUtil.subAdjustColor( base, 0.027408898f, -0.5735674f, 0.14509803f, 0 )
+      ColorUtil.adjustColor( base, 0.027408898f, -0.5735674f, -0.14509803f * 1.75f, 0 )
 
    protected def pressedSelectedBackColor( blueGrey: Color ) : Color =
       ColorUtil.subAdjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, -89 )

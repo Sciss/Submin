@@ -106,6 +106,10 @@ object PanelTest extends Runnable {
       val cbDisabled = new JCheckBox( "Disabled" )
       cbDisabled.setEnabled( false )
       p.add( cbDisabled )
+      val cbDisabledSel = new JCheckBox( "Disabled Sel" )
+      cbDisabledSel.setSelected( true )
+      cbDisabledSel.setEnabled( false )
+      p.add( cbDisabledSel )
       p.add( new JTextField( "Text Field" ))
    }
 }
