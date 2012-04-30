@@ -25,11 +25,11 @@
 
 package de.sciss.submin
 
-import javax.swing.{UIDefaults, UIManager}
 import javax.swing.plaf.{FontUIResource, InsetsUIResource, ColorUIResource}
 import javax.swing.text.DefaultEditorKit
 import java.awt.{Toolkit, Font, Color}
 import java.awt.event.InputEvent
+import javax.swing.{JTextField, UIDefaults, UIManager}
 
 object NimbusDefaults {
    private val defaultControlColor              = new Color( 214, 217, 223, 255 )
@@ -90,7 +90,7 @@ object NimbusDefaults {
       val mod3    = if( isMac ) "" else "control "
 
       // like synth look and feel, but mac aware modifiers
-      val mMultiLine = new UIDefaults.LazyInputMap( Array[ AnyRef ](
+      val itTextShare0 = IndexedSeq[ AnyRef ](
          // cut and paste
          mod1 + "X",          DefaultEditorKit.cutAction,
          mod1 + "C",          DefaultEditorKit.copyAction,
@@ -105,45 +105,107 @@ object NimbusDefaults {
          // cursor motion
          "LEFT",              DefaultEditorKit.backwardAction,
          "RIGHT",             DefaultEditorKit.forwardAction,
-         "UP",                DefaultEditorKit.upAction,
-         "DOWN",              DefaultEditorKit.downAction,
          "KP_LEFT",           DefaultEditorKit.backwardAction,
          "KP_RIGHT",          DefaultEditorKit.forwardAction,
          mod2 + "LEFT",       DefaultEditorKit.previousWordAction,
          mod2 + "RIGHT",      DefaultEditorKit.nextWordAction,
          (if( isMac ) "meta LEFT" else "HOME"), DefaultEditorKit.beginLineAction,
          (if( isMac ) "meta RIGHT" else "END"), DefaultEditorKit.endLineAction,
-         mod3 + "HOME",       DefaultEditorKit.beginAction,
-         mod3 + "END",        DefaultEditorKit.endAction,
-         "PAGE_UP",           DefaultEditorKit.pageUpAction,
-         "PAGE_DOWN",         DefaultEditorKit.pageDownAction,
+         "control B",         DefaultEditorKit.backwardAction,
+         "control F",         DefaultEditorKit.forwardAction,
 
          // selections
          "shift LEFT",        DefaultEditorKit.selectionBackwardAction,
          "shift RIGHT",       DefaultEditorKit.selectionForwardAction,
-         "shift UP",          DefaultEditorKit.selectionUpAction,
-         "shift DOWN",        DefaultEditorKit.selectionDownAction,
          mod2 + "shift LEFT", DefaultEditorKit.selectionPreviousWordAction,
          mod2 + "shift RIGHT", DefaultEditorKit.selectionNextWordAction,
+         mod1 + " A",         DefaultEditorKit.selectAllAction,
          (if( isMac ) "meta shift LEFT" else "shift HOME"), DefaultEditorKit.selectionBeginLineAction,
          (if( isMac ) "meta shift RIGHT" else "shift END"), DefaultEditorKit.selectionEndLineAction,
-         "shift PAGE_UP",     "selection-page-up",
-         "shift PAGE_DOWN",   "selection-page-down",
-         "ctrl shift PAGE_UP", "selection-page-left",
-         "ctrl shift PAGE_DOWN", "selection-page-right",
-         mod3 + "shift HOME", DefaultEditorKit.selectionBeginAction,
-         mod3 + "shift END",  DefaultEditorKit.selectionEndAction,
-         mod1 + " A",         DefaultEditorKit.selectAllAction,
          "control BACK_SLASH", "unselect" /* DefaultEditorKit.unselectAction */,
+         "control shift B",   DefaultEditorKit.selectionBackwardAction,
+         "control shift F",   DefaultEditorKit.selectionForwardAction,
 
          // deletions
          "BACK_SPACE",        DefaultEditorKit.deletePrevCharAction,
          "shift BACK_SPACE",  DefaultEditorKit.deletePrevCharAction,
-         "ctrl H",            DefaultEditorKit.deletePrevCharAction,
+         "control H",         DefaultEditorKit.deletePrevCharAction,
+         "control D",         DefaultEditorKit.deleteNextCharAction,
          "DELETE",            DefaultEditorKit.deleteNextCharAction,
-         "ctrl DELETE",       DefaultEditorKit.deleteNextWordAction,
-         "ctrl BACK_SPACE",   DefaultEditorKit.deletePrevWordAction,
-         // todo: mac: meta DELETE = deletetoBeginLine
+         "control DELETE",    DefaultEditorKit.deleteNextWordAction,
+         "control BACK_SPACE",DefaultEditorKit.deletePrevWordAction,
+
+         // misc
+         "control shift O",   "toggle-componentOrientation" /* DefaultEditorKit.toggleComponentOrientation */
+      )
+
+      // todo: mac: meta DELETE = deleteToBeginLine, ctrl K = deleteToEndLine,
+      // ctrl O = line break but no cursor motion, ctrl T = take character to the right,
+      // ctrl Y = some alternative paste??
+      val itTextShare = if( isMac ) itTextShare0 ++ IndexedSeq(
+         "control A",         DefaultEditorKit.beginLineAction,
+         "control E",         DefaultEditorKit.endLineAction,
+         "control shift E",   DefaultEditorKit.selectionEndLineAction
+      ) else itTextShare0
+
+      val itSingleShare = itTextShare ++ IndexedSeq(
+         // cursor motion
+         "HOME",              DefaultEditorKit.beginLineAction,
+         "END",               DefaultEditorKit.endLineAction,
+
+         // selections
+         "shift UP",          DefaultEditorKit.selectionBeginLineAction,
+         "shift DOWN",        DefaultEditorKit.selectionEndLineAction,
+         mod3 + "shift HOME", DefaultEditorKit.selectionBeginLineAction,
+         mod3 + "shift END",  DefaultEditorKit.selectionEndLineAction,
+
+         // misc
+         "ENTER",             JTextField.notifyAction
+      )
+
+      val itSingleLine = itSingleShare ++ IndexedSeq(
+         // cursor motion
+         "UP",                DefaultEditorKit.beginLineAction,
+         "DOWN",              DefaultEditorKit.endLineAction
+      )
+
+      val mSingleLine = new UIDefaults.LazyInputMap( itSingleLine.toArray )
+      m.put( "TextField.focusInputMap",     mSingleLine )
+      m.put( "PasswordField.focusInputMap", mSingleLine )
+
+      val itFormatted = itSingleShare ++ IndexedSeq(
+         "ESCAPE",            "reset-field-edit",
+         "UP",                "increment",
+         "KP_UP",             "increment",
+         "DOWN",              "decrement",
+         "KP_DOWN",           "decrement"
+      )
+
+      val mFormatted = new UIDefaults.LazyInputMap( itFormatted.toArray )
+      m.put( "FormattedTextField.focusInputMap", mFormatted )
+
+      val itMultiLine0 = itTextShare ++ IndexedSeq(
+         // cursor motion
+         "UP",                DefaultEditorKit.upAction,
+         "DOWN",              DefaultEditorKit.downAction,
+         mod3 + "HOME",       DefaultEditorKit.beginAction,
+         mod3 + "END",        DefaultEditorKit.endAction,
+         "PAGE_UP",           DefaultEditorKit.pageUpAction,
+         "PAGE_DOWN",         DefaultEditorKit.pageDownAction,
+         "control P",         DefaultEditorKit.upAction,
+         "control N",         DefaultEditorKit.downAction,
+
+         // selections
+         "shift UP",          DefaultEditorKit.selectionUpAction,
+         "shift DOWN",        DefaultEditorKit.selectionDownAction,
+         mod3 + "shift HOME", DefaultEditorKit.selectionBeginAction,
+         mod3 + "shift END",  DefaultEditorKit.selectionEndAction,
+         "shift PAGE_UP",     "selection-page-up",
+         "shift PAGE_DOWN",   "selection-page-down",
+         "control shift PAGE_UP", "selection-page-left",
+         "control shift PAGE_DOWN", "selection-page-right",
+         "control shift P",   DefaultEditorKit.selectionUpAction,
+         "control shift N",   DefaultEditorKit.selectionDownAction,
 
          // insertions
          "ENTER",             DefaultEditorKit.insertBreakAction,
@@ -152,10 +214,14 @@ object NimbusDefaults {
          // misc
          "control T",         "next-link-action",
          "control shift T",   "previous-link-action",
-         "control SPACE",     "activate-link-action",
-         "control shift O",   "toggle-componentOrientation" /* DefaultEditorKit.toggleComponentOrientation */
-      ))
+         "control SPACE",     "activate-link-action"
+      )
 
+      val itMultiLine = if( isMac ) itMultiLine0 ++ IndexedSeq(
+         "control shift V",   DefaultEditorKit.selectionEndAction
+      ) else itMultiLine0
+
+      val mMultiLine = new UIDefaults.LazyInputMap( itMultiLine.toArray )
       m.put( "TextArea.focusInputMap",   mMultiLine )
       m.put( "TextPane.focusInputMap",   mMultiLine )
       m.put( "EditorPane.focusInputMap", mMultiLine )
