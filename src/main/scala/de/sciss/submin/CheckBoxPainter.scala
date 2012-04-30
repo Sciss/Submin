@@ -32,133 +32,34 @@ import java.awt.{Graphics2D, MultipleGradientPaint, LinearGradientPaint, Paint, 
 trait CheckBoxPainter extends ButtonPainterLike {
    protected def defaults : Defaults
 
+   protected def enabledGrad1colr(           blueGrey: Color ) : Array[ Color ]
+   protected def disabledGrad1colr(          blueGrey: Color ) : Array[ Color ]
+   protected def disabledSelectedGrad1colr(  blueGrey: Color ) : Array[ Color ]
+   protected def pressedGrad1colr(           blueGrey: Color ) : Array[ Color ]
+   protected def overGrad1colr(              blueGrey: Color ) : Array[ Color ]
+   protected def pressedSelectedGrad1colr(   base: Color )     : Array[ Color ]
+   protected def overSelectedGrad1colr(      base: Color )     : Array[ Color ]
+   protected def selectedGrad1colr(          base: Color )     : Array[ Color ]
+   protected def enabledGrad2colr(           base: Color )     : Array[ Color ]
+   protected def disabledGrad2colr(          base: Color )     : Array[ Color ]
+   protected def disabledSelectedGrad2colr(  base: Color )     : Array[ Color ]
+   protected def pressedGrad2colr(           base: Color )     : Array[ Color ]
+   protected def pressedSelectedGrad2colr(   base: Color )     : Array[ Color ]
+   protected def overGrad2colr(              base: Color )     : Array[ Color ]
+   protected def overSelectedGrad2colr(      base: Color )     : Array[ Color ]
+   protected def selectedGrad2colr(          base: Color )     : Array[ Color ]
+
+   protected def enabledBackColor(           blueGrey: Color ) : Color
+   protected def selectedCheckColor(         base: Color )     : Color
+   protected def disabledSelectedCheckColor( base: Color )     : Color
+   protected def pressedSelectedBackColor(   blueGrey: Color ) : Color
+
    private val rrect = new RoundRectangle2D.Float()
    private val path  = new GeneralPath()
 
    private val grad1frac = Array[ Float ]( 0.0f, 1.0f )
    private val grad2frac = Array[ Float ]( 0.0f, 0.64457834f, 1.0f )
    private val pressedSelectedGrad2frac = Array[ Float ]( 0.0f, 0.11550152f, 0.64457834f, 1.0f )
-
-   private def enabledGrad1colr( blueGrey: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.05356429f,  -0.12549019f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.015789472f, -0.37254903f, 0 )
-      res
-   }
-
-   private def disabledGrad1colr( blueGrey: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.06766917f, 0.07843137f,  0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f, -0.06484103f, 0.027450979f, 0 )
-      res
-   }
-
-   private def disabledSelectedGrad1colr( blueGrey: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, -0.01111114f, -0.03771078f,  0.062745094f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, -0.02222222f, -0.032806106f, 0.011764705f, 0 )
-      res
-   }
-
-   private def pressedGrad1colr( blueGrey: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.055555582f, 0.8894737f,    -0.7176471f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.0f,         0.0016232133f, -0.3254902f, 0 )
-      res
-   }
-
-   private def pressedSelectedGrad1colr( base: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.adjustColor( base, -0.57865167f,  -0.6357143f,   -0.54901963f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( base, -3.528595e-5f,  0.026785731f, -0.23529413f, 0 )
-      res
-   }
-
-   private def overGrad1colr( blueGrey: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.adjustColor( blueGrey, 0.0f,        -0.020974077f, -0.21960783f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( blueGrey, 0.01010108f,  0.08947369f,  -0.5294118f,  0 )
-      res
-   }
-
-   private def overSelectedGrad1colr( base: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.adjustColor( base, 0.0013483167f, -0.1769987f, -0.12156865f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( base, 0.05468172f,    0.3642857f, -0.43137258f, 0 )
-      res
-   }
-
-   private def selectedGrad1colr( base: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 2 )
-      res( 0 ) = ColorUtil.adjustColor( base, 5.1498413e-4f, -0.34585923f, -0.007843137f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( base, 5.1498413e-4f, -0.10238093f, -0.25490198f,  0 )
-      res
-   }
-
-   private def enabledGrad2colr( base: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 3 )
-      res( 0 ) = ColorUtil.adjustColor( base, 0.08801502f, -0.63174605f, 0.43921566f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( base, 0.032459438f, -0.5953556f, 0.32549018f, 0 )
-      res( 2 ) = ColorUtil.adjustColor( base, 0.032459438f, -0.59942394f, 0.4235294f, 0 )
-      res
-   }
-
-   private def disabledGrad2colr( base: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 3 )
-      res( 0 ) = ColorUtil.adjustColor( base, 0.032459438f, -0.60996324f, 0.36470586f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( base, 0.02551502f,  -0.5996783f,  0.3215686f,  0 )
-      res( 2 ) = ColorUtil.adjustColor( base, 0.032459438f, -0.59624064f, 0.34509802f, 0 )
-      res
-   }
-
-   private def disabledSelectedGrad2colr( base: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 3 )
-      res( 0 ) = ColorUtil.adjustColor( base, 0.021348298f, -0.59223604f, 0.35294116f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( base, 0.021348298f, -0.56722116f, 0.3098039f,  0 )
-      res( 2 ) = ColorUtil.adjustColor( base, 0.021348298f, -0.56875f,    0.32941175f, 0 )
-      res
-   }
-
-   private def pressedGrad2colr( base: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 3 )
-      res( 0 ) = ColorUtil.adjustColor( base, 0.027408898f, -0.5847884f,  0.2980392f,  0 )
-      res( 1 ) = ColorUtil.adjustColor( base, 0.029681683f, -0.52701867f, 0.17254901f, 0 )
-      res( 2 ) = ColorUtil.adjustColor( base, 0.029681683f, -0.5376751f,  0.25098038f, 0 )
-      res
-   }
-
-   private def pressedSelectedGrad2colr( base: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 4 )
-      res( 0 ) = ColorUtil.adjustColor( base, -4.2033195e-4f, -0.38050595f,   0.20392156f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( base, -0.0021489263f, -0.2891234f,    0.14117646f, 0 )
-      res( 2 ) = ColorUtil.adjustColor( base, -0.006362498f,  -0.016311288f, -0.02352941f, 0 )
-      res( 3 ) = ColorUtil.adjustColor( base,  0.0f,          -0.17930403f,   0.21568626f, 0 )
-      res
-   }
-
-   private def overGrad2colr( base: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 3 )
-      res( 0 ) = ColorUtil.adjustColor( base, 0.08801502f, -0.6317773f, 0.4470588f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( base, 0.032459438f, -0.5985242f, 0.39999998f, 0 )
-      res( 2 ) = ColorUtil.adjustColor( base, 0.0f, -0.6357143f, 0.45098037f, 0 )
-      res
-   }
-
-   private def overSelectedGrad2colr( base: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 3 )
-      res( 0 ) = ColorUtil.adjustColor( base, 0.004681647f,  -0.6198413f,  0.43921566f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( base, 5.1498413e-4f, -0.4555341f,  0.3215686f,  0 )
-      res( 2 ) = ColorUtil.adjustColor( base, 5.1498413e-4f, -0.47377098f, 0.41960782f, 0 )
-      res
-   }
-
-   private def selectedGrad2colr( base: Color ) : Array[ Color ] = {
-      val res = new Array[ Color ]( 3 )
-      res( 0 ) = ColorUtil.adjustColor( base, 0.004681647f,  -0.6197143f,  0.43137252f, 0 )
-      res( 1 ) = ColorUtil.adjustColor( base, 5.1498413e-4f, -0.44153953f, 0.2588235f,  0 )
-      res( 2 ) = ColorUtil.adjustColor( base, 5.1498413e-4f, -0.4602757f,  0.34509802f, 0 )
-      res
-   }
 
    def paint( state: State, c: Color, g: Graphics2D, x: Int, y: Int, width: Int, height: Int ) {
       if( state.isEnabled ) {
@@ -374,7 +275,7 @@ trait CheckBoxPainter extends ButtonPainterLike {
       val e1w = width - 4f
       val e1h = 6f
       rrect.setRoundRect( e1x, e1y, e1w, e1h, 5.176f, 5.176f )
-      g.setColor( ColorUtil.adjustColor( blueGrey, 0.0f, 0.0f, 0.0f, -89 ))
+      g.setColor( enabledBackColor( blueGrey ))
       g.fill( rrect )
    }
 
@@ -421,12 +322,12 @@ trait CheckBoxPainter extends ButtonPainterLike {
    }
 
    private def paintSelectedCheck( g: Graphics2D, base: Color, x: Int, y: Int, width: Int, height: Int ) {
-      g.setColor( ColorUtil.adjustColor( base, -0.57865167f, -0.6357143f, -0.54901963f, 0 ))
+      g.setColor( selectedCheckColor( base ))
       paintSelectedCheckShape( g, x, y, width, height )
    }
 
    private def paintDisabledSelectedCheck( g: Graphics2D, base: Color, x: Int, y: Int, width: Int, height: Int ) {
-      g.setColor( ColorUtil.adjustColor( base, 0.027408898f, -0.5735674f, 0.14509803f, 0 ))
+      g.setColor( disabledSelectedCheckColor( base ))
       paintSelectedCheckShape( g, x, y, width, height )
    }
 
@@ -503,7 +404,7 @@ trait CheckBoxPainter extends ButtonPainterLike {
       val e1w = width - 4f
       val e1h = 6f
       rrect.setRoundRect( e1x, e1y, e1w, e1h, 5.176f, 5.176f )
-      g.setColor( ColorUtil.adjustColor( blueGrey, 0.0f, -0.110526316f, 0.25490195f, -89 ))
+      g.setColor( pressedSelectedBackColor( blueGrey ))
       g.fill( rrect )
 
       paintPressedSelectedTop( g, base, x, y, width, height )
