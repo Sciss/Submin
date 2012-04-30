@@ -31,4 +31,5 @@ trait Defaults {
    def blueGreyColor : Color
    def focusColor : Color
    def baseColor : Color
+   def disabledTextColor : Color
 }

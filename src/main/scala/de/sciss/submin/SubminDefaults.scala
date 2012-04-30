@@ -46,8 +46,6 @@ object SubminDefaults extends Defaults {
       ColorUtil.subminify( nimbus )
    }
 
-//   def focusColor : Color = NimbusDefaults.focusColor
-
    def baseColor : Color = {
       val nimbus = NimbusDefaults.baseColor
       ColorUtil.subminify( nimbus )
@@ -55,6 +53,12 @@ object SubminDefaults extends Defaults {
 
    def focusColor : Color = {
       val nimbus = NimbusDefaults.focusColor
+      ColorUtil.subminify( nimbus )
+   }
+
+   // XXX TODO perceived contrast higher as in nimbus equiv
+   def disabledTextColor : Color = {
+      val nimbus = NimbusDefaults.disabledTextColor
       ColorUtil.subminify( nimbus )
    }
 

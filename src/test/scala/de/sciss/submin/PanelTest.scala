@@ -98,7 +98,7 @@ object PanelTest extends Runnable {
       val lbSmall = new JLabel( "Small" )
       lbSmall.putClientProperty( "JComponent.sizeVariant", "small" )
       p.add( lbSmall )
-      p.add( new JSlider() )
+//      p.add( new JSlider() )
       p.add( new JCheckBox( "Check Box" ))
       val cbNoFocus = new JCheckBox( "No Focus" )
       cbNoFocus.setFocusable( false )
@@ -110,6 +110,6 @@ object PanelTest extends Runnable {
       cbDisabledSel.setSelected( true )
       cbDisabledSel.setEnabled( false )
       p.add( cbDisabledSel )
-      p.add( new JTextField( "Text Field" ))
+//      p.add( new JTextField( "Text Field" ))
    }
 }

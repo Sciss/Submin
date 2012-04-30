@@ -57,7 +57,10 @@ final class SubminButtonUI extends BasicButtonUI with SubminButtonUILike {
       val fm     = SwingUtilities2.getFontMetrics( b, g )
       val mnIdx  = b.getDisplayedMnemonicIndex
 
-      g.setColor( if( model.isEnabled ) b.getForeground else NimbusDefaults.disabledTextColor )
+      g.setColor( if( model.isEnabled ) b.getForeground else {
+         val defaults = if( SubminUtil.getClosestBoolean( b, "submin" )) SubminDefaults else NimbusDefaults
+         defaults.disabledTextColor
+      })
       SwingUtilities2.drawStringUnderlineCharAt( b, g, text, mnIdx,
          textRect.x + getTextShiftOffset, textRect.y + fm.getAscent + getTextShiftOffset )
    }
