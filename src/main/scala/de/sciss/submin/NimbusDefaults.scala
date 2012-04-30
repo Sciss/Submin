@@ -27,7 +27,9 @@ package de.sciss.submin
 
 import javax.swing.{UIDefaults, UIManager}
 import javax.swing.plaf.{FontUIResource, InsetsUIResource, ColorUIResource}
-import java.awt.{Font, Color}
+import javax.swing.text.DefaultEditorKit
+import java.awt.{Toolkit, Font, Color}
+import java.awt.event.InputEvent
 
 object NimbusDefaults {
    private val defaultControlColor              = new Color( 214, 217, 223, 255 )
@@ -80,6 +82,84 @@ object NimbusDefaults {
 
       m.put( "Label.contentMargins",      zeroInsets )
       m.put( "Label.font",                fntSans12 )
+
+      // ---- keyboard actions ----
+      val isMac   = sys.props( "os.name" ).toLowerCase.contains( "mac" )
+      val mod1    = if( isMac ) "meta " else "control "
+      val mod2    = if( isMac ) "alt "  else "control "
+      val mod3    = if( isMac ) "" else "control "
+
+      // like synth look and feel, but mac aware modifiers
+      val mMultiLine = new UIDefaults.LazyInputMap( Array[ AnyRef ](
+         // cut and paste
+         mod1 + "X",          DefaultEditorKit.cutAction,
+         mod1 + "C",          DefaultEditorKit.copyAction,
+         mod1 + "V",          DefaultEditorKit.pasteAction,
+         "COPY",              DefaultEditorKit.copyAction,
+         "CUT",               DefaultEditorKit.cutAction,
+         "PASTE",             DefaultEditorKit.pasteAction,
+         "control INSERT",    DefaultEditorKit.copyAction,
+         "shift INSERT",      DefaultEditorKit.pasteAction,
+         "shift DELETE",      DefaultEditorKit.cutAction,
+
+         // cursor motion
+         "LEFT",              DefaultEditorKit.backwardAction,
+         "RIGHT",             DefaultEditorKit.forwardAction,
+         "UP",                DefaultEditorKit.upAction,
+         "DOWN",              DefaultEditorKit.downAction,
+         "KP_LEFT",           DefaultEditorKit.backwardAction,
+         "KP_RIGHT",          DefaultEditorKit.forwardAction,
+         mod2 + "LEFT",       DefaultEditorKit.previousWordAction,
+         mod2 + "RIGHT",      DefaultEditorKit.nextWordAction,
+         (if( isMac ) "meta LEFT" else "HOME"), DefaultEditorKit.beginLineAction,
+         (if( isMac ) "meta RIGHT" else "END"), DefaultEditorKit.endLineAction,
+         mod3 + "HOME",       DefaultEditorKit.beginAction,
+         mod3 + "END",        DefaultEditorKit.endAction,
+         "PAGE_UP",           DefaultEditorKit.pageUpAction,
+         "PAGE_DOWN",         DefaultEditorKit.pageDownAction,
+
+         // selections
+         "shift LEFT",        DefaultEditorKit.selectionBackwardAction,
+         "shift RIGHT",       DefaultEditorKit.selectionForwardAction,
+         "shift UP",          DefaultEditorKit.selectionUpAction,
+         "shift DOWN",        DefaultEditorKit.selectionDownAction,
+         mod2 + "shift LEFT", DefaultEditorKit.selectionPreviousWordAction,
+         mod2 + "shift RIGHT", DefaultEditorKit.selectionNextWordAction,
+         (if( isMac ) "meta shift LEFT" else "shift HOME"), DefaultEditorKit.selectionBeginLineAction,
+         (if( isMac ) "meta shift RIGHT" else "shift END"), DefaultEditorKit.selectionEndLineAction,
+         "shift PAGE_UP",     "selection-page-up",
+         "shift PAGE_DOWN",   "selection-page-down",
+         "ctrl shift PAGE_UP", "selection-page-left",
+         "ctrl shift PAGE_DOWN", "selection-page-right",
+         mod3 + "shift HOME", DefaultEditorKit.selectionBeginAction,
+         mod3 + "shift END",  DefaultEditorKit.selectionEndAction,
+         mod1 + " A",         DefaultEditorKit.selectAllAction,
+         "control BACK_SLASH", "unselect" /* DefaultEditorKit.unselectAction */,
+
+         // deletions
+         "BACK_SPACE",        DefaultEditorKit.deletePrevCharAction,
+         "shift BACK_SPACE",  DefaultEditorKit.deletePrevCharAction,
+         "ctrl H",            DefaultEditorKit.deletePrevCharAction,
+         "DELETE",            DefaultEditorKit.deleteNextCharAction,
+         "ctrl DELETE",       DefaultEditorKit.deleteNextWordAction,
+         "ctrl BACK_SPACE",   DefaultEditorKit.deletePrevWordAction,
+         // todo: mac: meta DELETE = deletetoBeginLine
+
+         // insertions
+         "ENTER",             DefaultEditorKit.insertBreakAction,
+         "TAB",               DefaultEditorKit.insertTabAction,
+
+         // misc
+         "control T",         "next-link-action",
+         "control shift T",   "previous-link-action",
+         "control SPACE",     "activate-link-action",
+         "control shift O",   "toggle-componentOrientation" /* DefaultEditorKit.toggleComponentOrientation */
+      ))
+
+      m.put( "TextArea.focusInputMap",   mMultiLine )
+      m.put( "TextPane.focusInputMap",   mMultiLine )
+      m.put( "EditorPane.focusInputMap", mMultiLine )
+
       m
    }
 
