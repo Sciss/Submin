@@ -95,7 +95,5 @@ object NimbusButtonPainter extends ButtonPainter{
 
    protected val pressedBackColor = new Color( 245, 250, 255, 160 )
 
-   protected val enabledBackYOffset = 3
-
-   protected val pressedBackYOffset = 3
+   protected val backYOffset = 3
 }

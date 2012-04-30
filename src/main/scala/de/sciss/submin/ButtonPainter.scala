@@ -42,8 +42,8 @@ trait ButtonPainter extends ButtonPainterLike {
    protected def enabledBackColor(  blueGrey: Color ) : Color
    protected def pressedBackColor : Color
 
-   protected def enabledBackYOffset : Int
-   protected def pressedBackYOffset : Int
+//   protected def enabledBackYOffset : Int
+   protected def backYOffset : Int
 
    protected def defaults: Defaults
 
@@ -115,12 +115,16 @@ trait ButtonPainter extends ButtonPainterLike {
    }
 
    private def paintEnabledBack( g: Graphics2D, blueGrey: Color, x: Int, y: Int, width: Int, height: Int ) {
+      paintBack( g, enabledBackColor( blueGrey ), x, y, width, height )
+   }
+
+   private def paintBack( g: Graphics2D, colr: Color, x: Int, y: Int, width: Int, height: Int ) {
       val e1x = x + 2f
-      val e1y = y + enabledBackYOffset
+      val e1y = y + backYOffset
       val e1w = width - 4f
       val e1h = height - 4f
       rrect.setRoundRect( e1x, e1y, e1w, e1h, 12f, 12f )
-      g.setColor( enabledBackColor( blueGrey ))
+      g.setColor( colr )
       g.fill( rrect )
    }
 
@@ -185,13 +189,7 @@ trait ButtonPainter extends ButtonPainterLike {
    }
 
    private def paintPressedBack( g: Graphics2D, x: Int, y: Int, width: Int, height: Int ) {
-      val e1x = x + 2f
-      val e1y = y + pressedBackYOffset
-      val e1w = width - 4f
-      val e1h = height - 4f
-      rrect.setRoundRect( e1x, e1y, e1w, e1h, 12f, 12f )
-      g.setColor( pressedBackColor )
-      g.fill( rrect )
+      paintBack( g, pressedBackColor, x, y, width, height )
    }
 
    private def paintPressedTop( g: Graphics2D, blueGrey: Color, grad1Colors: Array[ Color ],
@@ -206,15 +204,8 @@ trait ButtonPainter extends ButtonPainterLike {
    }
 
    private def paintDisabled( g: Graphics2D, blueGrey: Color, x: Int, y: Int, width: Int, height: Int ) {
-      val e1x = x + 2f
-      val e1y = y + 3f
-      val e1w = width - 4f
-      val e1h = height - 4f
-      rrect.setRoundRect( e1x, e1y, e1w, e1h, 12f, 12f )
-      g.setColor( disabledBackColor( blueGrey ))
-      g.fill( rrect )
-
-      paintTop( g, disabledGrad1colr( blueGrey ), grad1frac,
-                   disabledGrad2colr( blueGrey ), grad2frac, x, y, width, height )
+      paintBack( g, disabledBackColor( blueGrey ), x, y, width, height )
+      paintTop(  g, disabledGrad1colr( blueGrey ), grad1frac,
+                    disabledGrad2colr( blueGrey ), grad2frac, x, y, width, height )
    }
 }

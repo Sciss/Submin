@@ -104,7 +104,5 @@ object SubminButtonPainter extends ButtonPainter {
 
    protected val pressedBackColor = ColorUtil.subminify( new Color( 245, 250, 255, 160 ))
 
-   protected val enabledBackYOffset = 1
-
-   protected val pressedBackYOffset = 1
+   protected val backYOffset = 1
 }
