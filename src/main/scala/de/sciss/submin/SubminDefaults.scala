@@ -29,7 +29,7 @@ import java.awt.Color
 import javax.swing.plaf.ColorUIResource
 import javax.swing.UIDefaults
 
-object SubminDefaults {
+object SubminDefaults extends Defaults {
 //   private val hsbArr   = new Array[ Float ]( 3 )
 
    private[submin] def map : UIDefaults = {

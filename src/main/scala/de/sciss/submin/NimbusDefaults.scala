@@ -30,7 +30,7 @@ import java.awt.{Font, Color}
 import javax.swing.{JTextField, UIDefaults, UIManager}
 import javax.swing.plaf.{IconUIResource, FontUIResource, InsetsUIResource, ColorUIResource}
 
-object NimbusDefaults {
+object NimbusDefaults extends Defaults {
    private val defaultControlColor              = new Color( 214, 217, 223, 255 )
    private val defaultFocusColor                = new Color( 115, 164, 209, 255 )
    private val defaultBaseColor                 = new Color(  51,  98, 140, 255 )

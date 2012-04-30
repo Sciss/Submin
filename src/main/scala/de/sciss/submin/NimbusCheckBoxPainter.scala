@@ -29,7 +29,7 @@ import java.awt.geom.{GeneralPath, RoundRectangle2D}
 import scala.{Array, Int}
 import java.awt.{Graphics2D, MultipleGradientPaint, LinearGradientPaint, Paint, Color}
 
-object NimbusCheckBoxPainter extends ButtonPainter {
+object NimbusCheckBoxPainter extends ButtonPainterLike {
    private val rrect = new RoundRectangle2D.Float()
    private val path  = new GeneralPath()
 
