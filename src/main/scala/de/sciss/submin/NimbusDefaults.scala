@@ -28,7 +28,7 @@ package de.sciss.submin
 import javax.swing.text.DefaultEditorKit
 import java.awt.{Font, Color}
 import javax.swing.{JTextField, UIDefaults, UIManager}
-import javax.swing.plaf.{IconUIResource, FontUIResource, InsetsUIResource, ColorUIResource}
+import javax.swing.plaf.{DimensionUIResource, IconUIResource, FontUIResource, InsetsUIResource, ColorUIResource}
 
 object NimbusDefaults extends Defaults {
    private val defaultControlColor              = new Color( 214, 217, 223, 255 )
@@ -85,6 +85,11 @@ object NimbusDefaults extends Defaults {
       m.put( "Panel.contentMargins",      zeroInsets )
       m.put( "Panel.font",                fntSans12 )
       m.put( "Panel.opaque",              true )
+
+      m.put( "ProgressBar.contentMargins", zeroInsets )
+      m.put( "ProgressBar.font",          fntSans12 )
+      m.put( "ProgressBar.horizontalSize", new DimensionUIResource( 150, 19 ))
+      m.put( "ProgressBar.horizontalSize", new DimensionUIResource( 19, 150 ))
 
       // ---- keyboard actions ----
       val isMac   = sys.props( "os.name" ).toLowerCase.contains( "mac" )

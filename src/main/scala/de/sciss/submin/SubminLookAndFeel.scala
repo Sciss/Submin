@@ -53,12 +53,12 @@ class SubminLookAndFeel extends BasicLookAndFeel {
          "FileChooserUI",  packageName + "SubminFileChooserUI",    // laffy needs it...
          "LabelUI",        packageName + "SubminLabelUI",
          "PanelUI",        packageName + "SubminPanelUI",
+         "ProgressBarUI",  packageName + "SubminProgressBarUI",
          "TextAreaUI",     packageName + "SubminTextAreaUI",
          "RootPaneUI",     packageName + rootPaneUI
 //         "ToggleButtonUI", packageName + "ButtonUI",
 //         "SliderUI",       packageName + "SliderUI",
 //         "ListUI",         packageName + "ListUI",
-//         "ProgressBarUI",  packageName + "ProgressBarUI"
       )
       table.putDefaults( uiDefaults )
    }
