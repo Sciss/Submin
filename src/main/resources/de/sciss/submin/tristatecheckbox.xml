@@ -1,0 +1,69 @@
+<skin>
+
+    <!-- com.alee.extended.checkbox.WebTristateCheckBox -->
+
+    <!-- Tristate checkbox -->
+    <style type="tristatecheckbox">
+        <component>
+            <foreground>216,220,224</foreground>
+        </component>
+        <painter class="SubminTristateCheckBoxPainter">
+            <selectedForeground>216,220,224</selectedForeground>
+            <disabledForeground>216,220,224,128</disabledForeground>
+            <drawShade>true</drawShade>
+            <shadeColor>24,26,28</shadeColor>
+            <shadeSize>2</shadeSize>
+            <shadeShadow>true</shadeShadow>
+            <shadeShiftY>0</shadeShiftY>
+
+            <!-- Check state painter -->
+            <checkStatePainter>
+                <decorations>
+                    <decoration size="20,20">
+                        <WebShape round="2" />
+                        <WebShadow type="outer" width="3" />
+                        <LineBorder color="16,16,16" />
+                        <GradientBackground type="linear" from="0,0" to="0,1">
+                            <color>64,64,64</color>
+                            <color>48,48,48</color>
+                        </GradientBackground>
+                    </decoration>
+                    <decoration states="checked">
+                        <CheckIcon bounds="margin" stroke="basic;2" color="180,180,180" />
+                    </decoration>
+                    <decoration states="mixed">
+                        <MixedIcon round="2" leftColor="180,180,180" rightColor="128,128,128" />
+                    </decoration>
+                    <decoration states="focused">
+                        <SubminFocusBorder color="16,16,16" />
+                    </decoration>
+                    <decoration states="pressed">
+                        <WebShadow type="outer" opacity="0" />
+                        <!-- <WebShadow type="outer" width="3" opacity="0.25" /> -->
+                        <WebShadow type="inner" width="6" />
+                        <ColorBackground color="48,48,48" />
+                    </decoration>
+                    <decoration states="pressed,checked">
+                        <CheckIcon stroke="basic;2" color="120,120,120" />
+                    </decoration>
+                    <decoration states="disabled">
+                        <WebShadow type="outer" opacity="0.5" />
+                        <LineBorder color="16,16,16,128" />
+                        <GradientBackground type="linear" from="0,0" to="0,1">
+                            <color>64,64,64,128</color>
+                            <color>48,48,48,128</color>
+                        </GradientBackground>
+                    </decoration>
+                    <decoration states="disabled,checked">
+                        <CheckIcon bounds="margin" color="160,160,160,128" />
+                    </decoration>
+                    <decoration states="disabled,mixed">
+                        <MixedIcon leftColor="140,140,140,128" rightColor="128,128,128,128" />
+                    </decoration>
+                </decorations>
+            </checkStatePainter>
+
+        </painter>
+    </style>
+
+</skin>

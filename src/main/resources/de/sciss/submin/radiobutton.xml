@@ -1,0 +1,56 @@
+<skin>
+
+    <!-- com.alee.laf.radiobutton.WebRadioButton -->
+
+    <!-- Tristate checkbox -->
+    <style type="radiobutton">
+        <component>
+            <!--<opaque>false</opaque>-->
+            <foreground>216,220,224</foreground>
+        </component>
+        <painter class="SubminRadioButtonPainter">
+            <selectedForeground>216,220,224</selectedForeground>
+            <disabledForeground>216,220,224,128</disabledForeground>
+            <drawShade>true</drawShade>
+            <shadeColor>24,26,28</shadeColor>
+            <shadeSize>2</shadeSize>
+            <shadeShadow>true</shadeShadow>
+            <shadeShiftY>0</shadeShiftY>
+
+            <!-- Radio state painter -->
+            <checkStatePainter>
+                <decorations>
+                    <decoration size="20,20">
+                        <WebShape round="7" />
+                        <WebShadow type="outer" width="3" />
+                        <LineBorder color="16,16,16" />
+                        <GradientBackground type="linear" from="0,0" to="0,1">
+                            <color>64,64,64</color>
+                            <color>48,48,48</color>
+                        </GradientBackground>
+                    </decoration>
+                    <decoration states="selected">
+                        <RadioIcon leftColor="180,180,180" rightColor="128,128,128" />
+                    </decoration>
+                    <decoration states="focused">
+                        <LineBorder color="48,77,130" />
+                        <!-- <SubminFocusBorder color="16,16,16" /> -->
+                    </decoration>
+                    <decoration states="disabled">
+                        <WebShadow type="outer" opacity="0" />
+                        <LineBorder color="16,16,16,128" />
+                        <GradientBackground type="linear" from="0,0" to="0,1">
+                            <color>64,64,64,128</color>
+                            <color>48,48,48,128</color>
+                        </GradientBackground>
+                    </decoration>
+                    <decoration states="disabled,selected">
+                        <RadioIcon leftColor="140,140,140,128" rightColor="128,128,128,128" />
+                    </decoration>
+                </decorations>
+            </checkStatePainter>
+
+        </painter>
+    </style>
+
+</skin>

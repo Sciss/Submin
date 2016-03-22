@@ -1,0 +1,38 @@
+<skin>
+
+    <!-- com.alee.extended.label.WebStyledLabel -->
+
+    <!-- Styled label -->
+    <style type="styledlabel">
+        <component>
+            <foreground>216,220,224</foreground>
+            <!--<background>32,36,40</background>-->
+        </component>
+        <painter class="SubminStyledLabelPainter">
+            <drawShade>false</drawShade>
+            <!--<shadeColor>18,18,18</shadeColor>-->
+            <shadeColor>24,26,28</shadeColor>
+            <shadeSize>2</shadeSize>
+            <rotation>none</rotation>
+            <preferredRowCount>1</preferredRowCount>
+            <ignoreColorSettings>false</ignoreColorSettings>
+            <scriptFontRatio>1.5</scriptFontRatio>
+            <truncatedTextSuffix>...</truncatedTextSuffix>
+        </painter>
+    </style>
+
+    <!-- Label with text shade -->
+    <style type="styledlabel" id="shade">
+        <painter class="SubminStyledLabelPainter">
+            <drawShade>true</drawShade>
+        </painter>
+    </style>
+
+    <!-- Vertical text -->
+    <style type="styledlabel" id="vertical">
+        <painter class="SubminStyledLabelPainter">
+            <rotation>counterClockwise</rotation>
+        </painter>
+    </style>
+
+</skin>

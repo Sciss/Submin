@@ -1,0 +1,14 @@
+<skin>
+
+    <!-- com.alee.laf.viewport.WebViewport -->
+
+    <!-- Viewport -->
+    <style type="viewport">
+        <component>
+            <opaque>false</opaque>
+            <background>32,36,40</background>
+        </component>
+        <painter />
+    </style>
+
+</skin>

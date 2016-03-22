@@ -1,0 +1,28 @@
+<skin>
+
+    <!-- com.alee.laf.menu.WebMenu -->
+
+    <!-- Menu bar -->
+    <style type="menu" padding="5,8,5,11">
+        <component>
+            <opaque>false</opaque>
+            <iconTextGap>7</iconTextGap>
+            <background>0,0,0,128</background> <!-- todo: this is currently used in opened menu from bar -->
+            <foreground>200,200,200</foreground>
+        </component>
+        <painter class="SubminMenuPainter">
+            <round>2</round>
+            <shadeWidth>2</shadeWidth>
+            <shadeColor>16,16,16</shadeColor>
+            <borderColor>32,32,32</borderColor>
+            <hoverOpacity>0.5</hoverOpacity>
+            <arrowGap>15</arrowGap>
+            <iconAlignment>0</iconAlignment>
+            <disabledFg>200,200,200,128</disabledFg>
+            <selectedTopBg>88,88,88</selectedTopBg>
+            <selectedBottomBg>76,76,76,200</selectedBottomBg>
+            <alignTextToMenuIcons>true</alignTextToMenuIcons>
+        </painter>
+    </style>
+
+</skin>

@@ -1,0 +1,25 @@
+<skin>
+
+    <!-- com.alee.laf.optionpane.WebOptionPane -->
+
+    <!-- Option pane -->
+    <style type="optionpane" padding="15,15,15,15">
+        <component>
+            <!--doesn't work:-->
+            <!--<foreground>216,220,224</foreground>-->
+            <background>32,36,40</background>
+        </component>
+        <!--<painter class="com.alee.managers.style.skin.web.WebOptionPanePainter" />-->
+        <painter />
+        <!--class="SubminOptionPanePainter"-->
+
+        <!-- Buttons -->
+        <style type="button" id="button" padding="2,10,2,10" />
+        <style type="button" id="yes" extends="button" />
+        <style type="button" id="no" extends="button" />
+        <style type="button" id="ok" extends="button" />
+        <style type="button" id="cancel" extends="button" />
+
+    </style>
+
+</skin>

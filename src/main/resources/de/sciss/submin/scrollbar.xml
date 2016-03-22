@@ -1,0 +1,101 @@
+<skin>
+
+    <!-- com.alee.laf.scroll.WebScrollBar -->
+
+    <!-- Scroll bar -->
+    <style type="scrollbar" padding="1,1,1,1">
+        <component>
+            <opaque>false</opaque>
+            <background>32,36,40</background>
+        </component>
+        <ui>
+            <paintButtons>true</paintButtons>
+            <paintTrack>false</paintTrack>
+            <minimumThumbSize>25,25</minimumThumbSize>
+        </ui>
+        <painter>
+            <thumbRound>8</thumbRound>
+            <thumbMargin>1,2,1,2</thumbMargin>
+            <scrollBarWidth>13</scrollBarWidth>
+            <trackBorderColor>20,23,26</trackBorderColor>
+            <trackBackgroundColor>32,36,40</trackBackgroundColor>
+            <thumbBorderColor>64,64,64,128</thumbBorderColor>
+            <thumbBackgroundColor>64,64,64</thumbBackgroundColor>
+            <thumbDisabledBorderColor>64,64,64,32</thumbDisabledBorderColor>
+            <thumbDisabledBackgroundColor>64,64,64,64</thumbDisabledBackgroundColor>
+            <thumbRolloverBorderColor>120,120,120,128</thumbRolloverBorderColor>
+            <thumbRolloverBackgroundColor>120,120,120</thumbRolloverBackgroundColor>
+            <thumbPressedBorderColor>84,84,84,128</thumbPressedBorderColor>
+            <thumbPressedBackgroundColor>84,84,84</thumbPressedBackgroundColor>
+        </painter>
+
+        <!-- Scroll bar button -->
+        <style type="button" id="button" padding="0">
+            <painter class="com.alee.laf.scroll.ScrollBarButtonPainter">
+                <size>13,13</size>
+                <borderColor>64,64,64,128</borderColor>
+                <backgroundColor>64,64,64</backgroundColor>
+                <disabledBorderColor>64,64,64,32</disabledBorderColor>
+                <disabledBackgroundColor>64,64,64,64</disabledBackgroundColor>
+                <rolloverBorderColor>120,120,120,128</rolloverBorderColor>
+                <rolloverBackgroundColor>120,120,120</rolloverBackgroundColor>
+                <pressedBorderColor>84,84,84,128</pressedBorderColor>
+                <pressedBackgroundColor>84,84,84</pressedBackgroundColor>
+            </painter>
+        </style>
+
+        <!-- Decrease (scroll up/left) scroll bar button -->
+        <style type="button" id="decrease" extends="button">
+            <painter class="com.alee.laf.scroll.ScrollBarButtonPainter">
+                <buttonType>decrease</buttonType>
+            </painter>
+        </style>
+
+        <!-- Increase (scroll down/right) scroll bar button -->
+        <style type="button" id="increase" extends="button">
+            <painter class="com.alee.laf.scroll.ScrollBarButtonPainter">
+                <buttonType>increase</buttonType>
+            </painter>
+        </style>
+
+    </style>
+
+    <!-- Decorated scrollbar -->
+    <style type="scrollbar" id="decorated">
+        <component>
+            <opaque>true</opaque>
+        </component>
+        <ui>
+            <paintButtons>true</paintButtons>
+            <paintTrack>true</paintTrack>
+        </ui>
+    </style>
+
+    <!-- Undecorated scrollbar -->
+    <style type="scrollbar" id="undecorated">
+        <ui>
+            <paintButtons>true</paintButtons>
+            <paintTrack>false</paintTrack>
+        </ui>
+    </style>
+
+    <!-- Button-less scrollbar -->
+    <style type="scrollbar" id="buttonless">
+        <component>
+            <opaque>true</opaque>
+        </component>
+        <ui>
+            <paintButtons>false</paintButtons>
+            <paintTrack>true</paintTrack>
+        </ui>
+    </style>
+
+    <!-- Undecorated button-less scrollbar -->
+    <style type="scrollbar" id="undecorated-buttonless">
+        <ui>
+            <paintButtons>false</paintButtons>
+            <paintTrack>false</paintTrack>
+        </ui>
+    </style>
+
+</skin>

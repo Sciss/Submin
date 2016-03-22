@@ -1,0 +1,44 @@
+<skin>
+
+    <!-- com.alee.laf.text.WebTextPane -->
+
+    <!-- Text pane -->
+    <style type="textpane" padding="2,4,2,4">
+        <component>
+            <opaque>true</opaque>
+            <background>black</background>
+            <selectionColor>200,200,200</selectionColor>
+            <foreground>200,200,200</foreground>
+            <selectedTextColor>black</selectedTextColor>
+            <caretColor>71,113,191</caretColor>
+        </component>
+        <painter>
+            <inputPromptHorizontalPosition>0</inputPromptHorizontalPosition>
+            <inputPromptVerticalPosition>0</inputPromptVerticalPosition>
+            <inputPromptForeground>160,160,160</inputPromptForeground>
+            <inputPromptOnlyWhenEditable>true</inputPromptOnlyWhenEditable>
+            <hideInputPromptOnFocus>true</hideInputPromptOnFocus>
+        </painter>
+    </style>
+
+    <!-- Decorated text pane -->
+    <style type="textpane" id="decorated">
+        <component>
+            <opaque>false</opaque>
+        </component>
+        <painter>
+            <decorations>
+                <decoration>
+                    <WebShape round="2" />
+                    <WebShadow type="outer" width="2" />
+                    <LineBorder color="black" />
+                    <ColorBackground color="black" />
+                </decoration>
+                <decoration states="focused">
+                    <LineBorder color="48,77,130" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+</skin>

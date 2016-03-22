@@ -1,0 +1,50 @@
+<skin>
+
+    <!-- com.alee.laf.progressbar.WebProgressBar -->
+
+    <!-- Progress bar -->
+    <style type="progressbar">
+        <component>
+            <opaque>false</opaque>
+            <foreground>216,220,224</foreground>
+        </component>
+        <painter>
+            <minimumContentSize>100,12</minimumContentSize>
+            <decorations>
+                <decoration>
+                    <WebShape round="2" />
+                    <WebShadow type="outer" width="2" />
+                    <WebShadow type="inner" width="6" />
+                    <LineBorder color="16,16,16" />
+                    <!-- <ColorBackground color="black" /> -->
+                    <GradientBackground type="linear" from="0,0" to="0,1">
+                        <!-- <color>29,32,36</color> -->
+                        <!-- <color>33,37,41</color> -->
+                        <!-- <color>35,39,43</color> -->
+                        <color>37,41,46</color>
+                        <color>41,46,51</color>
+                    </GradientBackground>
+                </decoration>
+            </decorations>
+
+            <!-- Progress line -->
+            <progressPainter>
+                <decorations>
+                    <decoration>
+                        <WebShape round="0" />
+                        <WebShadow type="outer" width="1" />
+                        <GradientBackground type="linear" from="0,0" to="0,1">
+                            <color>144,144,144</color>
+                            <color>108,108,108</color>
+                        </GradientBackground>
+                    </decoration>
+                    <decoration states="vertical">
+                        <GradientBackground to="1,0" />
+                    </decoration>
+                </decorations>
+            </progressPainter>
+
+        </painter>
+    </style>
+
+</skin>

@@ -1,0 +1,93 @@
+<skin>
+
+    <!-- com.alee.laf.button.WebButton -->
+
+    <!-- Button -->
+    <style type="button" padding="2,6,2,6">
+        <component>
+            <!--<background>32,32,32</background>-->
+            <foreground>220,220,220</foreground>
+            <horizontalAlignment>0</horizontalAlignment>
+            <verticalAlignment>0</verticalAlignment>
+        </component>
+        <painter class="SubminButtonPainter">
+            <selectedForeground>160,160,160</selectedForeground>
+            <disabledForeground>160,160,160,128</disabledForeground>
+            <drawShade>true</drawShade>
+            <shadeColor>20,20,20</shadeColor>
+            <shadeSize>2</shadeSize>
+            <pressedShiftY>1</pressedShiftY>
+            <decorations>
+                <decoration>
+                    <WebShape round="3" />
+                    <WebShadow type="outer" width="3" />
+                    <LineBorder color="16,16,16" />
+                    <GradientBackground type="linear" from="0,0" to="0,1">
+                        <color>64,64,64</color>
+                        <color>48,48,48</color>
+                    </GradientBackground>
+                </decoration>
+                <decoration states="focused">
+                    <!--<LineBorder color="20,20,20" />-->
+                    <!--<com.alee.demo.ui.examples.TestBorder color="48,77,130" />-->
+                    <SubminFocusBorder color="16,16,16" />
+                    <!-- <LineBorder color="48,77,130" /> -->
+                </decoration>
+                <decoration states="pressed">
+                    <WebShadow type="outer" opacity="0" />
+                    <!-- <WebShadow type="outer" width="3" opacity="0.25" /> -->
+                    <WebShadow type="inner" width="6" />
+                    <ColorBackground color="48,48,48" />
+                </decoration>
+                <decoration states="disabled">
+                    <WebShadow type="outer" opacity="0.5" />
+                    <LineBorder color="16,16,16,128" />
+                    <GradientBackground type="linear" from="0,0" to="0,1">
+                        <color>64,64,64,128</color>
+                        <color>48,48,48,128</color>
+                    </GradientBackground>
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Icon-only button -->
+    <style type="button" id="icon" padding="2">
+        <painter class="SubminButtonPainter">
+            <decorations>
+                <decoration>
+                    <WebShape round="2" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Hover-decorated-only button -->
+    <style type="button" id="hover">
+        <painter class="SubminButtonPainter">
+            <decorations>
+                <decoration opacity="0" />
+                <decoration states="focused">
+                    <LineBorder color="170,170,170" />
+                </decoration>
+                <decoration states="enabled,hover" opacity="1" />
+                <decoration states="enabled,pressed" opacity="1" />
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Icon-only and hover-decorated-only button -->
+    <style type="button" id="icon-hover" extends="icon">
+        <painter class="SubminButtonPainter">
+            <decorations>
+                <decoration opacity="0" />
+                <decoration states="focused">
+                    <LineBorder color="170,170,170" />
+                </decoration>
+                <decoration states="enabled,hover" opacity="1" />
+                <decoration states="enabled,pressed" opacity="1" />
+            </decorations>
+        </painter>
+    </style>
+
+</skin>

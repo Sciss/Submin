@@ -1,0 +1,73 @@
+<skin>
+
+    <!-- com.alee.laf.spinner.WebSpinner -->
+
+    <!-- Spinner -->
+    <style type="spinner">
+        <component>
+            <opaque>false</opaque>
+        </component>
+        <painter>
+            <decorations>
+                <decoration>
+                    <WebShape round="2" />
+                    <WebShadow type="outer" width="2" />
+                    <LineBorder color="black" />
+                    <ColorBackground color="black" />
+                </decoration>
+                <decoration states="focused">
+                    <LineBorder color="48,77,130	" />
+                </decoration>
+                <decoration states="disabled">
+                    <WebShadow type="outer" opacity="0" />
+                    <LineBorder color="16,18,20" />
+                </decoration>
+            </decorations>
+        </painter>
+
+        <!-- Editor container -->
+        <style type="panel" id="editor-container" extends="transparent" />
+
+        <!-- Editor field -->
+        <style type="formattedtextfield" id="editor" extends="undecorated" />
+
+        <!-- Buttons -->
+        <style type="button" id="button" extends="icon">
+            <component>
+                <focusable>false</focusable>
+            </component>
+            <painter class="SubminButtonPainter">
+                <decorations>
+                    <decoration>
+                        <WebShadow type="outer" width="0" />
+                        <ColorBackground color="black" />
+                        <!-- <GradientBackground type="linear" from="0,0" to="0,1">
+                            <color>64,64,64</color>
+                            <color>48,48,48</color>
+                        </GradientBackground> -->
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+        <style type="button" id="next" extends="button" padding="2,2,1,2">
+            <painter class="SubminButtonPainter">
+                <decorations>
+                    <decoration>
+                        <WebShape sides="0,0,0,0" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+        <style type="button" id="previous" extends="button" padding="0,2,2,2">
+            <painter class="SubminButtonPainter">
+                <decorations>
+                    <decoration>
+                        <WebShape sides="0,0,0,0" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+
+    </style>
+
+</skin>
