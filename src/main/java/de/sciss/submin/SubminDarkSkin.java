@@ -6,13 +6,9 @@ import com.alee.utils.XmlUtils;
 
 import javax.swing.*;
 
-/**
- * Created by hhrutz on 07/03/16.
- */
-public class SubminSkin extends CustomSkin
-{
-    public SubminSkin() {
-        super("skin.xml");
+public class SubminDarkSkin extends CustomSkin {
+    public SubminDarkSkin() {
+        super("dark/skin.xml");
     }
 
     /*
@@ -38,7 +34,7 @@ public class SubminSkin extends CustomSkin
      */
     public static void install() {
         initialize();
-        WebLookAndFeel.install(SubminSkin.class);
+        WebLookAndFeel.install(SubminDarkSkin.class);
         UIManager.put("dark-skin", true);
     }
 }

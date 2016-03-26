@@ -3,6 +3,7 @@ package de.sciss.submin;
 import com.alee.laf.label.ILabelPainter;
 import com.alee.laf.label.WebLabelUI;
 import com.alee.painter.decoration.IDecoration;
+import de.sciss.submin.AbstractLabelPainter;
 
 import javax.swing.*;
 

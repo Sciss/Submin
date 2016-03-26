@@ -3,6 +3,7 @@ package de.sciss.submin;
 import com.alee.laf.radiobutton.IRadioButtonPainter;
 import com.alee.laf.radiobutton.WebRadioButtonUI;
 import com.alee.painter.decoration.IDecoration;
+import de.sciss.submin.AbstractStateButtonPainter;
 
 import javax.swing.*;
 

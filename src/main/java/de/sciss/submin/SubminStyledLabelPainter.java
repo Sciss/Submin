@@ -7,6 +7,7 @@ import com.alee.painter.decoration.IDecoration;
 import com.alee.utils.FontUtils;
 import com.alee.utils.SwingUtils;
 import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
+import de.sciss.submin.AbstractLabelPainter;
 
 import javax.swing.*;
 import java.awt.*;

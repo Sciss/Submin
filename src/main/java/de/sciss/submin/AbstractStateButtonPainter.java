@@ -8,6 +8,7 @@ import com.alee.painter.PainterSupport;
 import com.alee.painter.SectionPainter;
 import com.alee.painter.decoration.IDecoration;
 import com.alee.utils.GraphicsUtils;
+import de.sciss.submin.AbstractButtonPainter;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicButtonUI;

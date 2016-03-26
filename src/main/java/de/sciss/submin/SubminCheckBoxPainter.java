@@ -4,6 +4,7 @@ import com.alee.laf.checkbox.ICheckBoxPainter;
 import com.alee.laf.checkbox.WebCheckBoxUI;
 import com.alee.painter.decoration.DecorationState;
 import com.alee.painter.decoration.IDecoration;
+import de.sciss.submin.AbstractStateButtonPainter;
 
 import javax.swing.*;
 import java.util.List;

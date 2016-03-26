@@ -6,6 +6,7 @@ import com.alee.extended.checkbox.WebTristateCheckBoxUI;
 import com.alee.laf.checkbox.CheckState;
 import com.alee.painter.decoration.DecorationState;
 import com.alee.painter.decoration.IDecoration;
+import de.sciss.submin.AbstractStateButtonPainter;
 
 import java.util.List;
 
