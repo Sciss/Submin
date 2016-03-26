@@ -21,7 +21,7 @@
                 <decorations>
                     <decoration opacity="0.25">
                         <WebShape round="0" />
-                        <GradientBackground type="linear" from="0,0" to="0,1">
+                        <GradientBackground>
                             <color>88,88,88</color>
                             <color>76,76,76</color>
                         </GradientBackground>
@@ -34,7 +34,7 @@
                 <decorations>
                     <decoration>
                         <WebShape round="0" />
-                        <GradientBackground type="linear" from="0,0" to="0,1">
+                        <GradientBackground>
                             <color>88,88,88</color>
                             <color>76,76,76</color>
                         </GradientBackground>

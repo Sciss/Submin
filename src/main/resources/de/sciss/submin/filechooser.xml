@@ -100,7 +100,7 @@
                     <decoration>
                         <WebShape round="0" />
                         <!--like tool-bar-->
-                        <GradientBackground type="linear" from="0,0.5" to="0,1">
+                        <GradientBackground from="0,0.5" to="0,1">
                             <color>37,41,46</color>
                             <color>29,32,36</color>
                         </GradientBackground>

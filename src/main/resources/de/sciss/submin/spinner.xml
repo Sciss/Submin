@@ -41,7 +41,7 @@
                     <decoration>
                         <WebShadow type="outer" width="0" />
                         <ColorBackground color="black" />
-                        <!-- <GradientBackground type="linear" from="0,0" to="0,1">
+                        <!-- <GradientBackground>
                             <color>64,64,64</color>
                             <color>48,48,48</color>
                         </GradientBackground> -->

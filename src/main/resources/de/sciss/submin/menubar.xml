@@ -13,7 +13,7 @@
                 <decoration>
                     <WebShape sides="0,0,1,0" />
                     <LineBorder color="16,16,16" />
-                    <GradientBackground type="linear" from="0,0" to="0,1">
+                    <GradientBackground>
                         <color>32,36,40</color>
                         <color>0,0,0</color>
                         <color>16,18,20</color>

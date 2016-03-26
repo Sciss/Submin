@@ -17,7 +17,7 @@
                     <WebShadow type="inner" width="6" />
                     <LineBorder color="16,16,16" />
                     <!-- <ColorBackground color="black" /> -->
-                    <GradientBackground type="linear" from="0,0" to="0,1">
+                    <GradientBackground>
                         <!-- <color>29,32,36</color> -->
                         <!-- <color>33,37,41</color> -->
                         <!-- <color>35,39,43</color> -->
@@ -33,13 +33,13 @@
                     <decoration>
                         <WebShape round="0" />
                         <WebShadow type="outer" width="1" />
-                        <GradientBackground type="linear" from="0,0" to="0,1">
+                        <GradientBackground from="0,0" to="0,1">
                             <color>144,144,144</color>
                             <color>108,108,108</color>
                         </GradientBackground>
                     </decoration>
                     <decoration states="vertical">
-                        <GradientBackground to="1,0" />
+                        <GradientBackground from="0,0" to="1,0" />
                     </decoration>
                 </decorations>
             </progressPainter>
