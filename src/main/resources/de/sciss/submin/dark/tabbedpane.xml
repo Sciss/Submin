@@ -15,8 +15,8 @@
             <topBg>126,126,126</topBg>
             <bottomBg>101,101,101</bottomBg>
             <tabBorderColor>84,84,84</tabBorderColor>
-            <contentBorderColor>gray</contentBorderColor>
-            <backgroundColor>32,36,40</backgroundColor>
+            <contentBorderColor>180,180,180</contentBorderColor>
+            <backgroundColor>180,180,180</backgroundColor>
             <paintBorderOnlyOnSelectedTab>false</paintBorderOnlyOnSelectedTab>
             <forceUseSelectedTabBgColors>true</forceUseSelectedTabBgColors>
             <paintOnlyTopBorder>false</paintOnlyTopBorder>

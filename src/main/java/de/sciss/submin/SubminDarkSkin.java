@@ -18,8 +18,7 @@ import com.alee.managers.style.CustomSkin;
 import com.alee.utils.XmlUtils;
 
 import javax.swing.*;
-import javax.swing.text.Style;
-import javax.swing.text.html.HTML;
+import javax.swing.plaf.ColorUIResource;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
 
@@ -53,6 +52,9 @@ public class SubminDarkSkin extends CustomSkin {
         initialize();
         WebLookAndFeel.install(SubminDarkSkin.class);
         UIManager.put("dark-skin", true);
+        // XXX TODO -- not cool, this is used from private `configureMessageLabel` of `BasicOptionPaneUI`.
+        UIManager.put("OptionPane.messageForeground", new ColorUIResource(216, 220, 224));
+        // UIManager.put("OptionPane.messageForeground", null);
 
         // cf. https://stackoverflow.com/questions/26749495/customize-detault-html-link-color-in-java-swing
         HTMLEditorKit kit = new HTMLEditorKit();

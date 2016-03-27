@@ -3,10 +3,10 @@
     <!-- com.alee.laf.menu.WebMenu -->
 
     <!-- Menu bar -->
-    <style type="menu" padding="5,8,5,11">
+    <style type="menu" padding="5,8,5,8">
         <component>
             <opaque>false</opaque>
-            <iconTextGap>7</iconTextGap>
+            <iconTextGap>4</iconTextGap>
             <background>0,0,0,128</background> <!-- todo: this is currently used in opened menu from bar -->
             <foreground>200,200,200</foreground>
         </component>
@@ -16,7 +16,7 @@
             <shadeColor>16,16,16</shadeColor>
             <borderColor>32,32,32</borderColor>
             <hoverOpacity>0.5</hoverOpacity>
-            <arrowGap>15</arrowGap>
+            <arrowGap>8</arrowGap>
             <iconAlignment>0</iconAlignment>
             <disabledFg>200,200,200,128</disabledFg>
             <selectedTopBg>88,88,88</selectedTopBg>
