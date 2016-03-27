@@ -24,6 +24,7 @@
     <include>dark/combobox.xml</include>
     <!--<include>dark/customtooltip.xml</include>-->
     <include>dark/dialog.xml</include>
+    <include>dark/editorpane.xml</include>
     <include>dark/filechooser.xml</include>
     <!--<include>dark/filelist.xml</include>-->
     <include>dark/formattedtextfield.xml</include>

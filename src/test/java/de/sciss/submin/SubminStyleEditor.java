@@ -1,10 +1,12 @@
 package de.sciss.submin;
 
 import com.alee.extended.style.StyleEditor;
+import com.alee.laf.label.WebLabel;
 import com.alee.laf.menu.WebMenu;
 import com.alee.laf.menu.WebMenuBar;
 import com.alee.laf.menu.WebMenuItem;
 import com.alee.laf.progressbar.WebProgressBar;
+import com.alee.laf.text.WebEditorPane;
 import com.alee.managers.style.Skin;
 import com.alee.utils.xml.ResourceFile;
 import com.alee.utils.xml.ResourceLocation;
@@ -36,6 +38,14 @@ public class SubminStyleEditor {
                 progress.setString("Label");
                 progress.setStringPainted(true);
                 addViewComponent("Progress (indeterminate)", progress, progress, true);
+
+                final WebLabel label = new WebLabel("<html><body>An <i>HTML</i> <b>label</b>.<br><A HREF=\"foo\">link</A></body>");
+                addViewComponent("Label with HTML", label, label, true);
+
+                final String editorHTML = "<html><body><h1>Heading</h1><p>Paragraph</p><ul><li>List 1</li><li>List 2</li></ul></body>";
+                final WebEditorPane editor = new WebEditorPane("text/html", editorHTML);
+                editor.putClientProperty("styleId", "decorated");
+                addViewComponent("Editor pane with HTML", editor, editor, true);
             }
         };
         final WebMenuBar mb = new WebMenuBar();
@@ -50,8 +60,5 @@ public class SubminStyleEditor {
         mb.add(m2);
         styleEditor.setJMenuBar(mb);
         styleEditor.setVisible(true);
-
-        System.out.println(new JComponent() {
-        }.getForeground());
     }
 }

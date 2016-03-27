@@ -18,6 +18,10 @@ import com.alee.managers.style.CustomSkin;
 import com.alee.utils.XmlUtils;
 
 import javax.swing.*;
+import javax.swing.text.Style;
+import javax.swing.text.html.HTML;
+import javax.swing.text.html.HTMLEditorKit;
+import javax.swing.text.html.StyleSheet;
 
 public class SubminDarkSkin extends CustomSkin {
     public SubminDarkSkin() {
@@ -49,5 +53,10 @@ public class SubminDarkSkin extends CustomSkin {
         initialize();
         WebLookAndFeel.install(SubminDarkSkin.class);
         UIManager.put("dark-skin", true);
+
+        // cf. https://stackoverflow.com/questions/26749495/customize-detault-html-link-color-in-java-swing
+        HTMLEditorKit kit = new HTMLEditorKit();
+        StyleSheet styleSheet = kit.getStyleSheet();
+        styleSheet.addRule("a {color:#304d82;}\nbody {color:#dcdcdc;}");
     }
 }
