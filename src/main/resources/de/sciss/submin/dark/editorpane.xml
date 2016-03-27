@@ -6,7 +6,7 @@
     <style type="editorpane" padding="2,4,2,4">
         <component>
             <opaque>true</opaque>
-            <background>32,36,40</background>
+            <background>29,32,36</background>
             <selectionColor>200,200,200</selectionColor>
             <foreground>200,200,200</foreground>
             <selectedTextColor>black</selectedTextColor>
@@ -31,8 +31,8 @@
                 <decoration>
                     <WebShape round="2" />
                     <WebShadow type="outer" width="2" />
-                    <LineBorder color="black" />
-                    <ColorBackground color="32,36,40" />
+                    <LineBorder color="20,23,26" />
+                    <ColorBackground color="29,32,36" />
                 </decoration>
                 <decoration states="focused">
                     <LineBorder color="48,77,130" />
