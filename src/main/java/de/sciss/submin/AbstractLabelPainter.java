@@ -1,3 +1,16 @@
+/*
+ *  AbstractLabelPainter.scala
+ *  (Submin)
+ *
+ *  Copyright (c) 2012-2016 Hanns Holger Rutz. All rights reserved.
+ *
+ *  This software is published under the GNU General Public License v3+
+ *
+ *
+ *  For further information, please contact Hanns Holger Rutz at
+ *  contact@sciss.de
+ */
+
 package de.sciss.submin;
 
 import com.alee.painter.decoration.IDecoration;
@@ -13,8 +26,7 @@ import java.awt.*;
  * (defaults to <tt>0</tt>) and shadow-mode (defaults to <tt>false</tt>).
  */
 public abstract class AbstractLabelPainter<E extends JLabel, U extends BasicLabelUI, D extends IDecoration<E, D>>
-        extends com.alee.laf.label.AbstractLabelPainter<E, U, D>
-{
+        extends com.alee.laf.label.AbstractLabelPainter<E, U, D> {
     /**
      * Style settings.
      */
@@ -27,8 +39,7 @@ public abstract class AbstractLabelPainter<E extends JLabel, U extends BasicLabe
      *
      * @return true if text shade is painted softer
      */
-    public boolean isShadeShadow ()
-    {
+    public boolean isShadeShadow() {
         return shadeShadow;
     }
 
@@ -37,8 +48,7 @@ public abstract class AbstractLabelPainter<E extends JLabel, U extends BasicLabe
      *
      * @param value whether text shade is painted softer
      */
-    public void setShadeShadow ( final boolean value )
-    {
+    public void setShadeShadow(final boolean value) {
         shadeShadow = value;
     }
 
@@ -47,8 +57,7 @@ public abstract class AbstractLabelPainter<E extends JLabel, U extends BasicLabe
      *
      * @return vertical shift in pixels
      */
-    public int getShadeShiftY ()
-    {
+    public int getShadeShiftY() {
         return shadeShiftY;
     }
 
@@ -57,8 +66,7 @@ public abstract class AbstractLabelPainter<E extends JLabel, U extends BasicLabe
      *
      * @param value text shade vertical shift in pixels
      */
-    public void setShadeShiftY ( final int value )
-    {
+    public void setShadeShiftY(final int value) {
         shadeShiftY = value;
     }
 
@@ -67,8 +75,7 @@ public abstract class AbstractLabelPainter<E extends JLabel, U extends BasicLabe
      *
      * @return text shade color
      */
-    public Color getDisabledForeground ()
-    {
+    public Color getDisabledForeground() {
         return disabledForeground;
     }
 
@@ -77,24 +84,21 @@ public abstract class AbstractLabelPainter<E extends JLabel, U extends BasicLabe
      *
      * @param disabledForeground text shade color
      */
-    public void setDisabledForeground ( final Color disabledForeground )
-    {
+    public void setDisabledForeground(final Color disabledForeground) {
         this.disabledForeground = disabledForeground;
     }
 
     @Override
-    protected void paintShadowText ( Graphics2D g2d, String text, int textX, int textY )
-    {
-        g2d.translate ( textX, textY );
-        GraphicsUtils.paintTextEffect ( g2d, text, shadeColor, shadeSize, -shadeSize, shadeShiftY - shadeSize, shadeShadow );
-        g2d.translate ( -textX, -textY );
+    protected void paintShadowText(Graphics2D g2d, String text, int textX, int textY) {
+        g2d.translate(textX, textY);
+        GraphicsUtils.paintTextEffect(g2d, text, shadeColor, shadeSize, -shadeSize, shadeShiftY - shadeSize, shadeShadow);
+        g2d.translate(-textX, -textY);
     }
 
     @Override
-    protected void paintDisabledText ( final E label, final Graphics2D g2d, final String text, final int textX, final int textY )
-    {
-        final int accChar = label.getDisplayedMnemonicIndex ();
-        g2d.setPaint ( disabledForeground );
-        SwingUtils.drawStringUnderlineCharAt ( g2d, text, accChar, textX, textY );
+    protected void paintDisabledText(final E label, final Graphics2D g2d, final String text, final int textX, final int textY) {
+        final int accChar = label.getDisplayedMnemonicIndex();
+        g2d.setPaint(disabledForeground);
+        SwingUtils.drawStringUnderlineCharAt(g2d, text, accChar, textX, textY);
     }
 }

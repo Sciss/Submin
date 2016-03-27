@@ -1,3 +1,16 @@
+/*
+ *  SubminTristateCheckBoxPainter.scala
+ *  (Submin)
+ *
+ *  Copyright (c) 2012-2016 Hanns Holger Rutz. All rights reserved.
+ *
+ *  This software is published under the GNU General Public License v3+
+ *
+ *
+ *  For further information, please contact Hanns Holger Rutz at
+ *  contact@sciss.de
+ */
+
 package de.sciss.submin;
 
 import com.alee.extended.checkbox.ITristateCheckBoxPainter;
@@ -6,7 +19,6 @@ import com.alee.extended.checkbox.WebTristateCheckBoxUI;
 import com.alee.laf.checkbox.CheckState;
 import com.alee.painter.decoration.DecorationState;
 import com.alee.painter.decoration.IDecoration;
-import de.sciss.submin.AbstractStateButtonPainter;
 
 import java.util.List;
 
@@ -18,19 +30,15 @@ import java.util.List;
  */
 
 public class SubminTristateCheckBoxPainter<E extends WebTristateCheckBox, U extends WebTristateCheckBoxUI, D extends IDecoration<E, D>>
-        extends AbstractStateButtonPainter<E, U, D> implements ITristateCheckBoxPainter<E, U>
-{
+        extends AbstractStateButtonPainter<E, U, D> implements ITristateCheckBoxPainter<E, U> {
     @Override
-    protected List<String> getDecorationStates ()
-    {
-        final List<String> states = super.getDecorationStates ();
-        if ( component.getState () == CheckState.checked )
-        {
-            states.add ( DecorationState.checked );
+    protected List<String> getDecorationStates() {
+        final List<String> states = super.getDecorationStates();
+        if (component.getState() == CheckState.checked) {
+            states.add(DecorationState.checked);
         }
-        if ( component.getState () == CheckState.mixed )
-        {
-            states.add ( DecorationState.mixed );
+        if (component.getState() == CheckState.mixed) {
+            states.add(DecorationState.mixed);
         }
         return states;
     }

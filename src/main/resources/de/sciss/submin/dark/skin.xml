@@ -1,9 +1,9 @@
 <skin>
 
     <!-- Skin information -->
-    <id>sciss.submin</id>
-    <title>Submin skin</title>
-    <description>Submin WebLaF skin</description>
+    <id>sciss.submin.dark</id>
+    <title>Submin dark skin</title>
+    <description>Submin dark skin</description>
     <author>Hanns Holger Rutz</author>
     <supportedSystems>all</supportedSystems>
 

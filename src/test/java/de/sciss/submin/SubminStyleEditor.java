@@ -1,7 +1,6 @@
 package de.sciss.submin;
 
 import com.alee.extended.style.StyleEditor;
-import com.alee.laf.WebLookAndFeel;
 import com.alee.laf.menu.WebMenu;
 import com.alee.laf.menu.WebMenuBar;
 import com.alee.laf.menu.WebMenuItem;
@@ -14,21 +13,16 @@ import javax.swing.*;
 
 public class SubminStyleEditor {
     public static void main(String[] args) {
-//        StyleEditor.main(args);
-//        if (true) return;
+        final boolean isDark = args.length > 0 && args[0].equals("--dark");
 
-        final Class<? extends Skin> skinClass = SubminDarkSkin.class;
-//        final Class<? extends Skin> skinClass = DefaultSkin.class;
+        final Class<? extends Skin> skinClass = isDark ? SubminDarkSkin.class : SubminLightSkin.class;
 
-//        JFrame.setDefaultLookAndFeelDecorated(true);    // XXX TODO - has no effect
+        Submin.install(isDark);
 
-        SubminDarkSkin.initialize();
-
-        // Custom StyleEditor skin for WebLaF
-        WebLookAndFeel.install(skinClass);
+        final String prefix = isDark ? "dark" : "light";
 
         // Edited skin file
-        final ResourceFile skin = new ResourceFile(ResourceLocation.nearClass, "dark/skin.xml", skinClass);
+        final ResourceFile skin = new ResourceFile(ResourceLocation.nearClass, prefix + "/skin.xml", skinClass);
 
         // Displaying StyleEditor
         final StyleEditor styleEditor = new StyleEditor(skin) {

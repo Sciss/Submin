@@ -1,3 +1,16 @@
+/*
+ *  AbstractButtonPainter.scala
+ *  (Submin)
+ *
+ *  Copyright (c) 2012-2016 Hanns Holger Rutz. All rights reserved.
+ *
+ *  This software is published under the GNU General Public License v3+
+ *
+ *
+ *  For further information, please contact Hanns Holger Rutz at
+ *  contact@sciss.de
+ */
+
 package de.sciss.submin;
 
 import com.alee.laf.button.IAbstractButtonPainter;
@@ -14,8 +27,7 @@ import java.util.Map;
 
 public abstract class AbstractButtonPainter<E extends AbstractButton, U extends BasicButtonUI, D extends IDecoration<E, D>>
         extends com.alee.laf.button.AbstractButtonPainter<E, U, D>
-        implements IAbstractButtonPainter<E, U>
-{
+        implements IAbstractButtonPainter<E, U> {
     /**
      * Style settings.
      */
@@ -32,8 +44,7 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      *
      * @return true if text shade is displayed, false otherwise
      */
-    public boolean isDrawShade ()
-    {
+    public boolean isDrawShade() {
         return drawShade;
     }
 
@@ -42,8 +53,7 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      *
      * @param drawShade whether text shade is displayed or not
      */
-    public void setDrawShade ( final boolean drawShade )
-    {
+    public void setDrawShade(final boolean drawShade) {
         this.drawShade = drawShade;
     }
 
@@ -52,8 +62,7 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      *
      * @return text shade color
      */
-    public Color getShadeColor ()
-    {
+    public Color getShadeColor() {
         return shadeColor;
     }
 
@@ -62,8 +71,7 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      *
      * @param shadeColor text shade color
      */
-    public void setShadeColor ( final Color shadeColor )
-    {
+    public void setShadeColor(final Color shadeColor) {
         this.shadeColor = shadeColor;
     }
 
@@ -72,8 +80,7 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      *
      * @return true if text shade is painted softer
      */
-    public boolean isShadeShadow ()
-    {
+    public boolean isShadeShadow() {
         return shadeShadow;
     }
 
@@ -82,8 +89,7 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      *
      * @param value whether text shade is painted softer
      */
-    public void setShadeShadow ( final boolean value )
-    {
+    public void setShadeShadow(final boolean value) {
         shadeShadow = value;
     }
 
@@ -92,8 +98,7 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      *
      * @return vertical shift in pixels
      */
-    public int getShadeShiftY ()
-    {
+    public int getShadeShiftY() {
         return shadeShiftY;
     }
 
@@ -102,8 +107,7 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      *
      * @param value text shade vertical shift in pixels
      */
-    public void setShadeShiftY ( final int value )
-    {
+    public void setShadeShiftY(final int value) {
         shadeShiftY = value;
     }
 
@@ -112,8 +116,7 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      *
      * @return text shade color
      */
-    public Color getDisabledForeground ()
-    {
+    public Color getDisabledForeground() {
         return disabledForeground;
     }
 
@@ -122,8 +125,7 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      *
      * @param disabledForeground text shade color
      */
-    public void setDisabledForeground ( final Color disabledForeground )
-    {
+    public void setDisabledForeground(final Color disabledForeground) {
         this.disabledForeground = disabledForeground;
     }
 
@@ -132,8 +134,7 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      *
      * @return vertical shift in pixels
      */
-    public int getPressedShiftY ()
-    {
+    public int getPressedShiftY() {
         return pressedShiftY;
     }
 
@@ -142,29 +143,23 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      *
      * @param value text pressed vertical shift in pixels
      */
-    public void setPressedShiftY ( final int value )
-    {
+    public void setPressedShiftY(final int value) {
         pressedShiftY = value;
     }
 
     @Override
-    protected void paintText ( final Graphics2D g2d )
-    {
-        final String text = component.getText ();
-        if ( text != null && !text.equals ( "" ) )
-        {
-            final Map map = SwingUtils.setupTextAntialias ( g2d );
-            final View v = ( View ) component.getClientProperty ( BasicHTML.propertyKey );
-            if ( v != null )
-            {
-                v.paint ( g2d, textRect );
-            }
-            else
-            {
+    protected void paintText(final Graphics2D g2d) {
+        final String text = component.getText();
+        if (text != null && !text.equals("")) {
+            final Map map = SwingUtils.setupTextAntialias(g2d);
+            final View v = (View) component.getClientProperty(BasicHTML.propertyKey);
+            if (v != null) {
+                v.paint(g2d, textRect);
+            } else {
                 // Drawing text
-                paintText ( g2d, component, text );
+                paintText(g2d, component, text);
             }
-            SwingUtils.restoreTextAntialias ( g2d, map );
+            SwingUtils.restoreTextAntialias(g2d, map);
         }
     }
 
@@ -175,30 +170,25 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      * @param label painted component
      * @param text  label text
      */
-    protected void paintText ( final Graphics2D g2d, final E label, final String text )
-    {
-        final FontMetrics fm    = SwingUtils.getFontMetrics ( label, g2d );
-        final ButtonModel model = label.getModel ();
-        final boolean enabled   = label.isEnabled ();
-        final boolean sel       = enabled && ( model.isPressed () || model.isSelected () );
-        final int textX         = textRect.x;
-        final int textY         = textRect.y + fm.getAscent () + (sel ? pressedShiftY : 0);
-        g2d.setColor ( enabled ? ( sel ? selectedForeground : label.getForeground () ) : disabledForeground );
-        final int mnemonicIndex = enabled ? label.getDisplayedMnemonicIndex () : -1;
-        if ( enabled && drawShade )
-        {
-            paintShadowText ( g2d, text, textX, textY );
+    protected void paintText(final Graphics2D g2d, final E label, final String text) {
+        final FontMetrics fm = SwingUtils.getFontMetrics(label, g2d);
+        final ButtonModel model = label.getModel();
+        final boolean enabled = label.isEnabled();
+        final boolean sel = enabled && (model.isPressed() || model.isSelected());
+        final int textX = textRect.x;
+        final int textY = textRect.y + fm.getAscent() + (sel ? pressedShiftY : 0);
+        g2d.setColor(enabled ? (sel ? selectedForeground : label.getForeground()) : disabledForeground);
+        final int mnemonicIndex = enabled ? label.getDisplayedMnemonicIndex() : -1;
+        if (enabled && drawShade) {
+            paintShadowText(g2d, text, textX, textY);
 
-            if ( mnemonicIndex >= 0 && mnemonicIndex < text.length () )
-            {
-                g2d.fillRect ( textX + fm.stringWidth ( text.substring ( 0, mnemonicIndex ) ),
-                        textY + fm.getDescent () - 1,
-                        fm.charWidth ( text.charAt ( mnemonicIndex ) ), 1 );
+            if (mnemonicIndex >= 0 && mnemonicIndex < text.length()) {
+                g2d.fillRect(textX + fm.stringWidth(text.substring(0, mnemonicIndex)),
+                        textY + fm.getDescent() - 1,
+                        fm.charWidth(text.charAt(mnemonicIndex)), 1);
             }
-        }
-        else
-        {
-            SwingUtils.drawStringUnderlineCharAt ( g2d, text, mnemonicIndex, textX, textY );
+        } else {
+            SwingUtils.drawStringUnderlineCharAt(g2d, text, mnemonicIndex, textX, textY);
         }
     }
 
@@ -210,10 +200,9 @@ public abstract class AbstractButtonPainter<E extends AbstractButton, U extends 
      * @param textX text X coordinate
      * @param textY text Y coordinate
      */
-    protected void paintShadowText ( final Graphics2D g2d, final String text, final int textX, final int textY )
-    {
-        g2d.translate ( textX, textY );
-        GraphicsUtils.paintTextEffect ( g2d, text, shadeColor, shadeSize, -shadeSize, shadeShiftY - shadeSize, shadeShadow );
-        g2d.translate ( -textX, -textY );
+    protected void paintShadowText(final Graphics2D g2d, final String text, final int textX, final int textY) {
+        g2d.translate(textX, textY);
+        GraphicsUtils.paintTextEffect(g2d, text, shadeColor, shadeSize, -shadeSize, shadeShiftY - shadeSize, shadeShadow);
+        g2d.translate(-textX, -textY);
     }
 }

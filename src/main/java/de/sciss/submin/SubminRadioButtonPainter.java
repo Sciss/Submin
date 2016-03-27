@@ -1,9 +1,21 @@
+/*
+ *  SubminRadioButtonPainter.scala
+ *  (Submin)
+ *
+ *  Copyright (c) 2012-2016 Hanns Holger Rutz. All rights reserved.
+ *
+ *  This software is published under the GNU General Public License v3+
+ *
+ *
+ *  For further information, please contact Hanns Holger Rutz at
+ *  contact@sciss.de
+ */
+
 package de.sciss.submin;
 
 import com.alee.laf.radiobutton.IRadioButtonPainter;
 import com.alee.laf.radiobutton.WebRadioButtonUI;
 import com.alee.painter.decoration.IDecoration;
-import de.sciss.submin.AbstractStateButtonPainter;
 
 import javax.swing.*;
 
@@ -15,6 +27,5 @@ import javax.swing.*;
  */
 
 public class SubminRadioButtonPainter<E extends JRadioButton, U extends WebRadioButtonUI, D extends IDecoration<E, D>>
-        extends AbstractStateButtonPainter<E, U, D> implements IRadioButtonPainter<E, U>
-{
+        extends AbstractStateButtonPainter<E, U, D> implements IRadioButtonPainter<E, U> {
 }
