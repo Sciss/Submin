@@ -9,7 +9,7 @@
             <!-- <background>black</background> -->
             <foreground>220,220,220</foreground>
         </component>
-        <painter>
+        <painter class="SubminSliderPainter">
             <trackHeight>8</trackHeight>
             <trackRound>4</trackRound>
             <trackShadeWidth>2</trackShadeWidth>
@@ -31,7 +31,8 @@
             <angledThumb>true</angledThumb>
             <sharpThumbAngle>true</sharpThumbAngle>
             <rolloverDarkBorderOnly>false</rolloverDarkBorderOnly>
-            <animated>true</animated>
+            <animated>false</animated>
+            <tickColor>200,200,200</tickColor>
         </painter>
     </style>
 

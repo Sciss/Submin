@@ -14,4 +14,7 @@
     <include nearClass="com.alee.skin.web.WebSkin">resources/skin.xml</include>
 
     <include>light/label.xml</include>
+    <include>light/menu.xml</include>
+    <include>light/menuitem.xml</include>
+    <include>light/progressbar.xml</include>
 </skin>

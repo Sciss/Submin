@@ -6,9 +6,9 @@
     <style type="menu" padding="5,8,5,8">
         <component>
             <opaque>false</opaque>
-            <iconTextGap>4</iconTextGap>
             <background>0,0,0,128</background> <!-- todo: this is currently used in opened menu from bar -->
             <foreground>200,200,200</foreground>
+            <iconTextGap>4</iconTextGap>
         </component>
         <painter class="SubminMenuPainter">
             <round>2</round>

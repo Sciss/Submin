@@ -59,6 +59,6 @@ public class SubminDarkSkin extends CustomSkin {
         // cf. https://stackoverflow.com/questions/26749495/customize-detault-html-link-color-in-java-swing
         HTMLEditorKit kit = new HTMLEditorKit();
         StyleSheet styleSheet = kit.getStyleSheet();
-        styleSheet.addRule("a {color:#304d82;}\nbody {color:#dcdcdc;}");
+        styleSheet.addRule("a {color:#5e97ff;}\nbody {color:#dcdcdc;}");
     }
 }
