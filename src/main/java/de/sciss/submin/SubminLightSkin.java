@@ -28,7 +28,7 @@ public class SubminLightSkin extends CustomSkin {
      * Sets UI default <tt>"dark-skin"</tt> to <tt>false</tt>.
      */
     public static void install() {
-        WebLookAndFeel.install(SubminLightSkin.class);
+        SubminLookAndFeel.install(SubminLightSkin.class);
         UIManager.put("dark-skin", false);
     }
 }

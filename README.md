@@ -17,6 +17,8 @@ not expand to Submin which is an independently maintained library. If you cannot
 links to Submin under a GPL and own a commercial Web-LaF license, you may get in touch to discuss opportunities
 of obtaining a commercial license for Submin as well.
 
+![icons](screenshot.png)
+
 ## linking
 
 The following artifact will be available from Maven Central:
@@ -25,9 +27,39 @@ The following artifact will be available from Maven Central:
 
 The current version `v` is `"0.1.0"`.
 
+## using
+
+The look-and-feel class name is `de.sciss.submin.SubminLookAndFeel`, which
+provides a name `"Submin"` and an id `"submin"`.
+
+Installing this look-and-feel is as simple as the following one line call:
+
+    import de.sciss.submin.Submin
+    
+    Submin.install(true)  // dark-skin
+
+The boolean argument is `true` for the dark skin and `false` for the light skin.
+
 ## building
 
 Submin builds with sbt 0.13. It is written in Java and should run on a Java 6 runtime.
+
+## extensions
+
+Except for the customised look, this library provides the following changes
+
+- `FileChooserUI`: under Linux/Gnome we populate the file tree with the Gnome
+  favourites as per `~/.config/gtk-3.0/bookmarks`. To support other window managers
+  and other operating systems, we require your help. If you can provide information
+  on how to obtain favourites e.g. under KDE, on OS X, or Windows, please let me know.
+
+## to-do
+
+- file-chooser: should not expand the user home tree under Gnome
+- slider: looks bad in dark skin
+- progress-bar: lacks specific indeterminate state painter
+- scroll-pane: corner should not be white under dark skin
+- tabbed-pane: border decoration looks bad in dark skin. work-around: use `styleId` `"attached"`.
 
 ## contributing
 

@@ -9,6 +9,10 @@
 
     <!-- Main content panel -->
     <style type="panel" id="filechooser">
+        <!--doesn't work:-->
+        <!--<component>-->
+            <!--<viewType>table</viewType>-->
+        <!--</component>-->
 
         <!-- Toolbar -->
         <style type="toolbar" id="decorated-bar" extends="attached">

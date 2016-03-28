@@ -1,5 +1,5 @@
 name                := "Submin"
-version             := "0.1.0-SNAPSHOT"
+version             := "0.1.0"
 organization        := "de.sciss"
 licenses            := Seq("GPL v3+" -> url("http://www.gnu.org/licenses/gpl-3.0.txt"))
 scalaVersion        := "2.11.8"
@@ -7,7 +7,7 @@ autoScalaLibrary    := false
 crossPaths          := false
 homepage            := Some(url(s"https://github.com/Sciss/${name.value}"))
 
-def weblafVersion   = "1.29-SNAPSHOT"
+def weblafVersion   = "2.0.0"
 def rsyntaxVersion  = "2.5.8"
 
 libraryDependencies ++= Seq(
@@ -35,16 +35,16 @@ publishTo := {
 publishArtifact in Test := false
 pomIncludeRepository := { _ => false }
   
-pomExtra := { val n = name.value.toLowerCase
+pomExtra := { val n = name.value
   <scm>
-    <url>git@github.com:mgarin/{n}.git</url>
-    <connection>scm:git:git@github.com:mgarin/{n}.git</connection>
+    <url>git@github.com:Sciss/{n}.git</url>
+    <connection>scm:git:git@github.com:Sciss/{n}.git</connection>
   </scm>
     <developers>
       <developer>
-        <id>mgarin</id>
-        <name>Mikle Garin</name>
-        <url>http://weblookandfeel.com</url>
+        <id>sciss</id>
+        <name>Hanns Holger Rutz</name>
+        <url>http://www.sciss.de</url>
       </developer>
     </developers>
 }

@@ -13,7 +13,6 @@
 
 package de.sciss.submin;
 
-import com.alee.laf.WebLookAndFeel;
 import com.alee.managers.style.CustomSkin;
 import com.alee.utils.XmlUtils;
 
@@ -50,7 +49,7 @@ public class SubminDarkSkin extends CustomSkin {
      */
     public static void install() {
         initialize();
-        WebLookAndFeel.install(SubminDarkSkin.class);
+        SubminLookAndFeel.install(SubminDarkSkin.class);
         UIManager.put("dark-skin", true);
         // XXX TODO -- not cool, this is used from private `configureMessageLabel` of `BasicOptionPaneUI`.
         UIManager.put("OptionPane.messageForeground", new ColorUIResource(216, 220, 224));
