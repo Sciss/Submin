@@ -31,30 +31,54 @@
 
         <!-- Scroll bar button -->
         <style type="button" id="button" padding="0">
-            <painter class="com.alee.laf.scroll.ScrollBarButtonPainter">
-                <size>13,13</size>
-                <borderColor>64,64,64,128</borderColor>
-                <backgroundColor>64,64,64</backgroundColor>
-                <disabledBorderColor>64,64,64,32</disabledBorderColor>
-                <disabledBackgroundColor>64,64,64,64</disabledBackgroundColor>
-                <rolloverBorderColor>120,120,120,128</rolloverBorderColor>
-                <rolloverBackgroundColor>120,120,120</rolloverBackgroundColor>
-                <pressedBorderColor>84,84,84,128</pressedBorderColor>
-                <pressedBackgroundColor>84,84,84</pressedBackgroundColor>
+            <painter>
+                <decorations>
+                    <decoration size="13,13">
+                        <ArrowShape />
+                        <WebShadow type="outer" width="0" />
+                        <ColorBackground color="64,64,64" />
+                    </decoration>
+                    <decoration states="pressed">
+                        <ColorBackground color="84,84,84" />
+                    </decoration>
+                    <decoration states="disabled">
+                        <ColorBackground color="64,64,64,64" />
+                    </decoration>
+                    <decoration states="hover">
+                        <ColorBackground color="120,120,120" />
+                    </decoration>
+                    <decoration states="hover,pressed">
+                        <ColorBackground color="84,84,84" />
+                    </decoration>
+                </decorations>
             </painter>
         </style>
 
         <!-- Decrease (scroll up/left) scroll bar button -->
         <style type="button" id="decrease" extends="button">
-            <painter class="com.alee.laf.scroll.ScrollBarButtonPainter">
-                <buttonType>decrease</buttonType>
+            <painter>
+                <decorations>
+                    <decoration states="vertical">
+                        <ArrowShape direction="north" />
+                    </decoration>
+                    <decoration states="horizontal">
+                        <ArrowShape direction="west" />
+                    </decoration>
+                </decorations>
             </painter>
         </style>
 
         <!-- Increase (scroll down/right) scroll bar button -->
         <style type="button" id="increase" extends="button">
-            <painter class="com.alee.laf.scroll.ScrollBarButtonPainter">
-                <buttonType>increase</buttonType>
+            <painter>
+                <decorations>
+                    <decoration states="vertical">
+                        <ArrowShape direction="south" />
+                    </decoration>
+                    <decoration states="horizontal">
+                        <ArrowShape direction="east" />
+                    </decoration>
+                </decorations>
             </painter>
         </style>
 

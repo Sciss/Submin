@@ -8,6 +8,10 @@
             <opaque>false</opaque>
             <background>32,36,40</background>
         </component>
+        <ui>
+            <cornerBackground>32,36,40</cornerBackground>
+            <cornerLineColor>20,23,26</cornerLineColor>
+        </ui>
         <painter>
             <decorations>
                 <decoration>

@@ -53,7 +53,9 @@ public class SubminDarkSkin extends CustomSkin {
         UIManager.put("dark-skin", true);
         // XXX TODO -- not cool, this is used from private `configureMessageLabel` of `BasicOptionPaneUI`.
         UIManager.put("OptionPane.messageForeground", new ColorUIResource(216, 220, 224));
-        // UIManager.put("OptionPane.messageForeground", null);
+        UIManager.put("Table.background", new ColorUIResource(29, 32, 36));
+        UIManager.put("Table.foreground", new ColorUIResource(220, 220, 220));
+        UIManager.put("Panel.background", new ColorUIResource(32, 36, 40));
 
         // cf. https://stackoverflow.com/questions/26749495/customize-detault-html-link-color-in-java-swing
         HTMLEditorKit kit = new HTMLEditorKit();

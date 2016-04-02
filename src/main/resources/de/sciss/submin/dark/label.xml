@@ -13,7 +13,7 @@
             <drawShade>true</drawShade>
             <!--<shadeColor>18,18,18</shadeColor>-->
             <shadeColor>24,26,28</shadeColor>
-            <disabledForeground>216,220,224,128</disabledForeground>
+            <disabledForeground>216,220,224,96</disabledForeground>
             <shadeSize>2</shadeSize>
             <shadeShadow>true</shadeShadow>
             <shadeShiftY>0</shadeShiftY>

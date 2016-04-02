@@ -12,7 +12,7 @@
         </component>
         <painter class="SubminButtonPainter">
             <selectedForeground>160,160,160</selectedForeground>
-            <disabledForeground>160,160,160,128</disabledForeground>
+            <disabledForeground>160,160,160,96</disabledForeground>
             <drawShade>true</drawShade>
             <shadeColor>20,20,20</shadeColor>
             <shadeSize>2</shadeSize>
@@ -62,14 +62,18 @@
         </painter>
     </style>
 
+    <style type="button" id="icon-space" padding="2">
+        <painter class="SubminButtonPainter" />
+    </style>
+
     <!-- Hover-decorated-only button -->
     <style type="button" id="hover">
         <painter class="SubminButtonPainter">
             <decorations>
                 <decoration opacity="0" />
-                <decoration states="focused">
-                    <LineBorder color="170,170,170" />
-                </decoration>
+                <!--<decoration states="focused">-->
+                    <!--<LineBorder color="170,170,170" />-->
+                <!--</decoration>-->
                 <decoration states="enabled,hover" opacity="1" />
                 <decoration states="enabled,pressed" opacity="1" />
             </decorations>
@@ -81,9 +85,9 @@
         <painter class="SubminButtonPainter">
             <decorations>
                 <decoration opacity="0" />
-                <decoration states="focused">
-                    <LineBorder color="170,170,170" />
-                </decoration>
+                <!--<decoration states="focused">-->
+                    <!--<LineBorder color="170,170,170" />-->
+                <!--</decoration>-->
                 <decoration states="enabled,hover" opacity="1" />
                 <decoration states="enabled,pressed" opacity="1" />
             </decorations>

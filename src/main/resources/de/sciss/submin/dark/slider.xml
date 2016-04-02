@@ -10,29 +10,19 @@
             <foreground>220,220,220</foreground>
         </component>
         <painter class="SubminSliderPainter">
-            <trackHeight>8</trackHeight>
-            <trackRound>4</trackRound>
-            <trackShadeWidth>2</trackShadeWidth>
-            <progressRound>2</progressRound>
-            <progressShadeWidth>2</progressShadeWidth>
-            <thumbWidth>6</thumbWidth>
-            <thumbHeight>18</thumbHeight>
-            <thumbRound>2</thumbRound>
-            <thumbAngleLength>4</thumbAngleLength>
-            <trackBgTop>48,48,48</trackBgTop>
-            <trackBgBottom>32,36,40</trackBgBottom>
-            <progressTrackBgTop>160,160,160</progressTrackBgTop>
-            <progressTrackBgBottom>220,220,220</progressTrackBgBottom>
+            <trackBgTop>37,41,46</trackBgTop>
+            <trackBgBottom>41,46,51</trackBgBottom>
+            <progressTrackBgTop>144,144,144</progressTrackBgTop>
+            <progressTrackBgBottom>108,108,108</progressTrackBgBottom>
             <progressBorderColor>128,128,128</progressBorderColor>
-            <thumbBgTop>64,64,64</thumbBgTop>
-            <thumbBgBottom>48,48,48</thumbBgBottom>
-            <drawProgress>true</drawProgress>
-            <drawThumb>true</drawThumb>
-            <angledThumb>true</angledThumb>
-            <sharpThumbAngle>true</sharpThumbAngle>
-            <rolloverDarkBorderOnly>false</rolloverDarkBorderOnly>
+            <thumbBgTop>84,84,84</thumbBgTop>
+            <thumbBgBottom>72,72,72</thumbBgBottom>
             <animated>false</animated>
             <tickColor>200,200,200</tickColor>
+            <darkBorderColor>16,16,16</darkBorderColor>
+            <disabledBorderColor>16,16,16,128</disabledBorderColor>
+            <focusColor>48,77,130</focusColor>
+            <shadeColor>29,30,31</shadeColor>
         </painter>
     </style>
 

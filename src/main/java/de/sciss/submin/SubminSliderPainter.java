@@ -15,6 +15,7 @@ package de.sciss.submin;
 
 import com.alee.laf.slider.SliderPainter;
 import com.alee.laf.slider.WebSliderUI;
+import com.alee.utils.GraphicsUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +24,20 @@ public class SubminSliderPainter<E extends JSlider, U extends WebSliderUI> exten
     /**
      * Style settings.
      */
+    protected Color focusColor;
     protected Color tickColor;
+    protected Color shadeColor;
+    protected Color borderColor;
+    protected Color darkBorderColor;
+    protected Color disabledBorderColor;
+
+    public Color getFocusColor() {
+        return focusColor;
+    }
+
+    public void setFocusColor(Color focusColor) {
+        this.focusColor = focusColor;
+    }
 
     public Color getTickColor() {
         return tickColor;
@@ -31,6 +45,39 @@ public class SubminSliderPainter<E extends JSlider, U extends WebSliderUI> exten
 
     public void setTickColor(Color tickColor) {
         this.tickColor = tickColor;
+    }
+
+    public Color getShadeColor() {
+        return shadeColor;
+    }
+
+    public void setShadeColor(Color shadeColor) {
+        this.shadeColor = shadeColor;
+    }
+
+    @Override
+    public Color getBorderColor() {
+        return borderColor;
+    }
+
+    public void setBorderColor(Color borderColor) {
+        this.borderColor = borderColor;
+    }
+
+    public Color getDarkBorderColor() {
+        return darkBorderColor;
+    }
+
+    public void setDarkBorderColor(Color darkBorderColor) {
+        this.darkBorderColor = darkBorderColor;
+    }
+
+    public Color getDisabledBorderColor() {
+        return disabledBorderColor;
+    }
+
+    public void setDisabledBorderColor(Color disabledBorderColor) {
+        this.disabledBorderColor = disabledBorderColor;
     }
 
     @Override
@@ -105,6 +152,92 @@ public class SubminSliderPainter<E extends JSlider, U extends WebSliderUI> exten
                 }
             }
             g.translate(-tickBounds.x, 0);
+        }
+    }
+
+    @Override
+    public void paintTrack(final Graphics2D g2d) {
+        final Object aa = GraphicsUtils.setupAntialias(g2d);
+
+        // Track shape
+        final Shape ss = getTrackShape();
+
+        // Track background & shade
+        {
+            // Track shade
+            if (component.isEnabled()) {
+                GraphicsUtils.drawShade(g2d, ss, component.isFocusOwner() ? focusColor : shadeColor,
+                        trackShadeWidth);
+            }
+
+            // Track background
+            if (component.getOrientation() == JSlider.HORIZONTAL) {
+                g2d.setPaint(new GradientPaint(0, trackRect.y, trackBgTop, 0, trackRect.y + trackRect.height, trackBgBottom));
+            } else {
+                g2d.setPaint(new GradientPaint(trackRect.x, 0, trackBgTop, trackRect.x + trackRect.width, 0, trackBgBottom));
+            }
+            g2d.fill(ss);
+        }
+
+        // Inner progress line
+        if (drawProgress) {
+            // Progress shape
+            final Shape ps = getProgressShape();
+
+            // Progress shade
+            if (component.isEnabled()) {
+                GraphicsUtils.drawShade(g2d, ps, shadeColor, progressShadeWidth);
+            }
+
+            // Progress background
+            final Rectangle bounds = ss.getBounds();
+            if (component.getOrientation() == JSlider.HORIZONTAL) {
+                g2d.setPaint(new GradientPaint(0, bounds.y + progressShadeWidth, progressTrackBgTop, 0,
+                        bounds.y + bounds.height - progressShadeWidth, progressTrackBgBottom));
+            } else {
+                g2d.setPaint(new GradientPaint(bounds.x + progressShadeWidth, 0, progressTrackBgTop,
+                        bounds.x + bounds.width - progressShadeWidth, 0, progressTrackBgBottom));
+            }
+            g2d.fill(ps);
+
+            // Progress border
+            g2d.setPaint(component.isEnabled() ? progressBorderColor : disabledBorderColor);
+            g2d.draw(ps);
+        }
+
+        // Track border & focus
+        {
+            // Track border
+            g2d.setPaint(
+                    component.isEnabled() ? rolloverDarkBorderOnly && !dragging ? getBorderColor() : darkBorderColor :
+                            disabledBorderColor);
+            g2d.draw(ss);
+        }
+
+        GraphicsUtils.restoreAntialias(g2d, aa);
+    }
+
+    @Override
+    public void paintThumb(final Graphics2D g2d) {
+        if (drawThumb) {
+            final Object aa = GraphicsUtils.setupAntialias(g2d);
+
+            // Thumb shape
+            final Shape ts = getThumbShape();
+
+            // Thumb background
+            if (component.getOrientation() == JSlider.HORIZONTAL) {
+                g2d.setPaint(new GradientPaint(0, thumbRect.y, thumbBgTop, 0, thumbRect.y + thumbRect.height, thumbBgBottom));
+            } else {
+                g2d.setPaint(new GradientPaint(thumbRect.x, 0, thumbBgTop, thumbRect.x + thumbRect.width, 0, thumbBgBottom));
+            }
+            g2d.fill(ts);
+
+            // Thumb border
+            g2d.setPaint(component.isEnabled() ? darkBorderColor : disabledBorderColor);
+            g2d.draw(ts);
+
+            GraphicsUtils.restoreAntialias(g2d, aa);
         }
     }
 }

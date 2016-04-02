@@ -27,6 +27,7 @@ import javax.swing.*;
  */
 public class SubminLookAndFeel extends WebLookAndFeel {
     public static String fileChooserUI = SubminFileChooserUI.class.getCanonicalName ();
+    // public static String scrollPaneUI  = SubminScrollPaneUI .class.getCanonicalName ();
 
     @Override
     public String getName() {
@@ -41,7 +42,8 @@ public class SubminLookAndFeel extends WebLookAndFeel {
     @Override
     protected void initClassDefaults(final UIDefaults table) {
         super.initClassDefaults(table);
-        table.put ( "FileChooserUI", SubminLookAndFeel.fileChooserUI );
+        table.put("FileChooserUI", SubminLookAndFeel.fileChooserUI);
+        // table.put("ScrollPaneUI" , SubminLookAndFeel.scrollPaneUI );
     }
 
     @Override

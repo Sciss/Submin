@@ -9,7 +9,7 @@
         </component>
         <painter class="SubminTristateCheckBoxPainter">
             <selectedForeground>216,220,224</selectedForeground>
-            <disabledForeground>216,220,224,128</disabledForeground>
+            <disabledForeground>216,220,224,96</disabledForeground>
             <drawShade>true</drawShade>
             <shadeColor>24,26,28</shadeColor>
             <shadeSize>2</shadeSize>

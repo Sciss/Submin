@@ -1,0 +1,7 @@
+<skin>
+    <style type="slider">
+        <painter>
+            <animated>false</animated>
+        </painter>
+    </style>
+</skin>

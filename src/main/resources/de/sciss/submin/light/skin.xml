@@ -13,8 +13,13 @@
     <!-- Including WebLaF default skin, will use its style as a base -->
     <include nearClass="com.alee.skin.web.WebSkin">resources/skin.xml</include>
 
+    <include>light/button.xml</include>
+    <include>light/combobox.xml</include>
     <include>light/label.xml</include>
     <include>light/menu.xml</include>
     <include>light/menuitem.xml</include>
     <include>light/progressbar.xml</include>
+    <include>light/slider.xml</include>
+    <include>light/table.xml</include>
+    <include>light/togglebutton.xml</include>
 </skin>

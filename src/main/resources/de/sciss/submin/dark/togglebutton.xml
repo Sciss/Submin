@@ -12,7 +12,7 @@
         </component>
         <painter class="SubminToggleButtonPainter">
             <selectedForeground>160,160,160</selectedForeground>
-            <disabledForeground>160,160,160,128</disabledForeground>
+            <disabledForeground>160,160,160,96</disabledForeground>
             <drawShade>true</drawShade>
             <shadeColor>20,20,20</shadeColor>
             <shadeSize>2</shadeSize>
@@ -69,7 +69,17 @@
 
     <!-- Icon-only toggle button -->
     <style type="togglebutton" id="icon" padding="2">
-        <painter>
+        <painter class="SubminToggleButtonPainter">
+            <decorations>
+                <decoration>
+                    <WebShape round="2" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <style type="togglebutton" id="icon-space" padding="2,4,2,4">
+        <painter class="SubminToggleButtonPainter">
             <decorations>
                 <decoration>
                     <WebShape round="2" />
@@ -80,7 +90,7 @@
 
     <!-- Hover-decorated-only toggle button -->
     <style type="togglebutton" id="hover">
-        <painter>
+        <painter class="SubminToggleButtonPainter">
             <decorations>
                 <decoration opacity="0" />
                 <decoration states="focused">
@@ -95,7 +105,7 @@
 
     <!-- Icon-only and hover-decorated-only toggle button -->
     <style type="togglebutton" id="icon-hover" extends="icon">
-        <painter>
+        <painter class="SubminToggleButtonPainter">
             <decorations>
                 <decoration opacity="0" />
                 <decoration states="focused">

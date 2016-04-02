@@ -18,7 +18,7 @@
             <hoverOpacity>0.5</hoverOpacity>
             <arrowGap>8</arrowGap>
             <iconAlignment>0</iconAlignment>
-            <disabledFg>200,200,200,128</disabledFg>
+            <disabledFg>200,200,200,96</disabledFg>
             <selectedTopBg>88,88,88</selectedTopBg>
             <selectedBottomBg>76,76,76,200</selectedBottomBg>
             <alignTextToMenuIcons>true</alignTextToMenuIcons>
