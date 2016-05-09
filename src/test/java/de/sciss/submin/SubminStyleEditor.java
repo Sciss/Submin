@@ -6,6 +6,7 @@ import com.alee.laf.menu.WebMenu;
 import com.alee.laf.menu.WebMenuBar;
 import com.alee.laf.menu.WebMenuItem;
 import com.alee.laf.progressbar.WebProgressBar;
+import com.alee.laf.scroll.WebScrollBar;
 import com.alee.laf.text.WebEditorPane;
 import com.alee.managers.style.Skin;
 import com.alee.utils.xml.ResourceFile;
@@ -46,6 +47,10 @@ public class SubminStyleEditor {
                 final WebEditorPane editor = new WebEditorPane("text/html", editorHTML);
                 editor.putClientProperty("styleId", "decorated");
                 addViewComponent("Editor pane with HTML", editor, editor, true);
+
+                final WebScrollBar hsb = new WebScrollBar ( WebScrollBar.VERTICAL, 45, 10, 0, 100 );
+                hsb.setOrientation(WebScrollBar.HORIZONTAL);
+                addViewComponent ( "Horizontal scroll bar", hsb, hsb, false );
             }
         };
         final WebMenuBar mb = new WebMenuBar();
