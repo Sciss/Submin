@@ -1,5 +1,5 @@
 name                := "Submin"
-version             := "0.2.1"
+version             := "0.2.2-SNAPSHOT"
 organization        := "de.sciss"
 licenses            := Seq("GPL v3+" -> url("http://www.gnu.org/licenses/gpl-3.0.txt"))
 scalaVersion        := "2.11.8"
@@ -7,7 +7,7 @@ autoScalaLibrary    := false
 crossPaths          := false
 homepage            := Some(url(s"https://github.com/Sciss/${name.value}"))
 
-def weblafVersion   = "2.1.1"
+def weblafVersion   = "2.1.3"
 def rsyntaxVersion  = "2.5.8"
 
 libraryDependencies ++= Seq(
