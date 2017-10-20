@@ -1,6 +1,5 @@
 # Submin
 
-[![Flattr this](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=sciss&url=https%3A%2F%2Fgithub.com%2FSciss%2Submin&title=Submin%20Look%20and%20Feel&language=Java&tags=github&category=software)
 [![Build Status](https://travis-ci.org/Sciss/Submin.svg?branch=master)](https://travis-ci.org/Sciss/Submin)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.sciss/submin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.sciss/submin)
 
@@ -25,7 +24,7 @@ The following artifact will be available from Maven Central:
 
     "de.sciss" % "submin" % v
 
-The current version `v` is `"0.2.1"`.
+The current version `v` is `"0.2.2"`.
 
 ## using
 
