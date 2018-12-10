@@ -1,19 +1,21 @@
 name                := "Submin"
-version             := "0.2.2"
+version             := "0.2.3"
 organization        := "de.sciss"
 licenses            := Seq("GPL v3+" -> url("http://www.gnu.org/licenses/gpl-3.0.txt"))
-scalaVersion        := "2.11.11"
+scalaVersion        := "2.12.8"
 autoScalaLibrary    := false
 crossPaths          := false
 homepage            := Some(url(s"https://github.com/Sciss/${name.value}"))
 
-def weblafVersion   = "2.1.3"
+def weblafVersion   = "2.1.4"
 def rsyntaxVersion  = "2.6.1"
 
 libraryDependencies ++= Seq(
   "de.sciss"      % "weblaf"          % weblafVersion,
-  "com.fifesoft"  % "rsyntaxtextarea" % rsyntaxVersion % "test"
+  "com.fifesoft"  % "rsyntaxtextarea" % rsyntaxVersion % Test
 )
+
+mainClass in (Test, run) := Some("de.sciss.submin.SubminStyleEditor")
 
 def commonJavaOptions = Seq("-source", "1.6")
 
