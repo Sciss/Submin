@@ -6,7 +6,7 @@
 ## statement
 
 Submin is a pair of skins (one dark, one light) based on the Web Look-and-FeeL for the Swing toolkit.
-It is (C)opyright 2012&ndash;2016 by Hanns Holger Rutz. All rights reserved. Submin is released under 
+It is (C)opyright 2012&ndash;2018 by Hanns Holger Rutz. All rights reserved. Submin is released under 
 the [GNU General Public License](http://github.com/Sciss/Submin/blob/master/licenses/Submin-License.txt) v3+ 
 and comes with  absolutely no warranties. To contact the author, send an email to `contact at sciss.de`.
 
@@ -24,7 +24,7 @@ The following artifact will be available from Maven Central:
 
     "de.sciss" % "submin" % v
 
-The current version `v` is `"0.2.3"`.
+The current version `v` is `"0.2.4"`.
 
 ## using
 
@@ -41,7 +41,7 @@ The boolean argument is `true` for the dark skin and `false` for the light skin.
 
 ## building
 
-Submin builds with sbt 0.13. It is written in Java and should run on a Java 6 runtime.
+Submin builds with sbt. It is written in Java and should run on a Java 6 runtime.
 
 ## running
 
@@ -63,7 +63,7 @@ Except for the customised look, this library provides the following changes
 - file-chooser: should not expand the user home tree under Gnome
 - slider: looks bad in dark skin
 - progress-bar: lacks specific indeterminate state painter
-- scroll-pane: corner should not be white under dark skin
+- (fixed?) scroll-pane: corner should not be white under dark skin
 - tabbed-pane: border decoration looks bad in dark skin. work-around: use `styleId` `"attached"`.
 
 ## contributing

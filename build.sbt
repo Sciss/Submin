@@ -1,11 +1,11 @@
 name                := "Submin"
-version             := "0.2.3"
+version             := "0.2.4"
 organization        := "de.sciss"
 licenses            := Seq("GPL v3+" -> url("http://www.gnu.org/licenses/gpl-3.0.txt"))
 scalaVersion        := "2.12.8"
 autoScalaLibrary    := false
 crossPaths          := false
-homepage            := Some(url(s"https://github.com/Sciss/${name.value}"))
+homepage            := Some(url(s"https://git.iem.at/sciss/${name.value}"))
 
 def weblafVersion   = "2.1.4"
 def rsyntaxVersion  = "2.6.1"
@@ -39,8 +39,8 @@ pomIncludeRepository := { _ => false }
   
 pomExtra := { val n = name.value
   <scm>
-    <url>git@github.com:Sciss/{n}.git</url>
-    <connection>scm:git:git@github.com:Sciss/{n}.git</connection>
+    <url>git@git.iem.at:sciss/{n}.git</url>
+    <connection>scm:git:git@git.iem.at:sciss/{n}.git</connection>
   </scm>
     <developers>
       <developer>
