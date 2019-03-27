@@ -19,7 +19,6 @@ import com.alee.managers.log.Log;
 import com.alee.painter.decoration.IDecoration;
 import com.alee.utils.FontUtils;
 import com.alee.utils.SwingUtils;
-import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -145,8 +144,7 @@ public class SubminStyledLabelPainter<E extends WebStyledLabel, U extends WebSty
         final int endX = w + startX;
 
         int mnemonicIndex = label.getDisplayedMnemonicIndex();
-        if (UIManager.getLookAndFeel() instanceof WebLookAndFeel && WebLookAndFeel.isMnemonicHidden() ||
-                UIManager.getLookAndFeel() instanceof WindowsLookAndFeel && WindowsLookAndFeel.isMnemonicHidden()) {
+        if (UIManager.getLookAndFeel() instanceof WebLookAndFeel && WebLookAndFeel.isMnemonicHidden()) {
             mnemonicIndex = -1;
         }
 
@@ -609,9 +607,6 @@ public class SubminStyledLabelPainter<E extends WebStyledLabel, U extends WebSty
         paintWidth = Math.min(paintWidth, rightMostX - leftAlignmentX);
 
         int mnemonicIndex = label.getDisplayedMnemonicIndex();
-        if (UIManager.getLookAndFeel() instanceof WindowsLookAndFeel && WindowsLookAndFeel.isMnemonicHidden()) {
-            mnemonicIndex = -1;
-        }
 
         int charDisplayed = 0;
         boolean displayMnemonic;

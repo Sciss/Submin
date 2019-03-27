@@ -6,7 +6,7 @@
 ## statement
 
 Submin is a pair of skins (one dark, one light) based on the Web Look-and-FeeL for the Swing toolkit.
-It is (C)opyright 2012&ndash;2018 by Hanns Holger Rutz. All rights reserved. Submin is released under 
+It is (C)opyright 2012&ndash;2019 by Hanns Holger Rutz. All rights reserved. Submin is released under 
 the [GNU General Public License](http://github.com/Sciss/Submin/blob/master/licenses/Submin-License.txt) v3+ 
 and comes with  absolutely no warranties. To contact the author, send an email to `contact at sciss.de`.
 
@@ -24,7 +24,7 @@ The following artifact will be available from Maven Central:
 
     "de.sciss" % "submin" % v
 
-The current version `v` is `"0.2.4"`.
+The current version `v` is `"0.2.5"`.
 
 ## using
 
