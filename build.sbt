@@ -1,25 +1,27 @@
 name                := "Submin"
-version             := "0.2.5"
+version             := "0.3.0-SNAPSHOT"
 organization        := "de.sciss"
 licenses            := Seq("GPL v3+" -> url("http://www.gnu.org/licenses/gpl-3.0.txt"))
-scalaVersion        := "2.12.8"
+scalaVersion        := "2.12.10"
 autoScalaLibrary    := false
 crossPaths          := false
 homepage            := Some(url(s"https://git.iem.at/sciss/${name.value}"))
 
-def weblafVersion   = "2.1.5"
+def weblafVersion   = "1.2.10"
 def rsyntaxVersion  = "2.6.1"
 
 libraryDependencies ++= Seq(
-  "de.sciss"      % "weblaf"          % weblafVersion,
-  "com.fifesoft"  % "rsyntaxtextarea" % rsyntaxVersion % Test
+  // "de.sciss"      % "weblaf"          % weblafVersion,
+  "com.weblookandfeel" % "weblaf-core"     % weblafVersion,
+  "com.weblookandfeel" % "weblaf-ui"       % weblafVersion,
+  "com.fifesoft"       % "rsyntaxtextarea" % rsyntaxVersion % Test
 )
 
 mainClass in (Test, run) := Some("de.sciss.submin.SubminStyleEditor")
 
-def commonJavaOptions = Seq("-source", "1.6")
+def commonJavaOptions = Seq("-source", "1.8")
 
-javacOptions        := commonJavaOptions ++ Seq("-target", "1.6", "-g", "-Xlint:deprecation" /*, "-Xlint:unchecked" */)
+javacOptions        := commonJavaOptions ++ Seq("-target", "1.8", "-g", "-Xlint:deprecation" /*, "-Xlint:unchecked" */)
 javacOptions in doc := commonJavaOptions
   
 // ---- publishing to Maven Central ----

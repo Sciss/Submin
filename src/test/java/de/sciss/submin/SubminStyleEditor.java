@@ -1,6 +1,7 @@
 package de.sciss.submin;
 
 import com.alee.extended.style.StyleEditor;
+import com.alee.laf.WebLookAndFeel;
 import com.alee.laf.label.WebLabel;
 import com.alee.laf.menu.WebMenu;
 import com.alee.laf.menu.WebMenuBar;
@@ -9,23 +10,29 @@ import com.alee.laf.progressbar.WebProgressBar;
 import com.alee.laf.scroll.WebScrollBar;
 import com.alee.laf.text.WebEditorPane;
 import com.alee.managers.style.Skin;
-import com.alee.utils.xml.ResourceFile;
-import com.alee.utils.xml.ResourceLocation;
+import com.alee.skin.web.WebSkin;
+import com.alee.utils.xml.Resource;
 
-import javax.swing.*;
+import javax.swing.KeyStroke;
 
 public class SubminStyleEditor {
     public static void main(String[] args) {
         final boolean isDark = args.length > 0 && args[0].equals("--dark");
 
-        final Class<? extends Skin> skinClass = isDark ? SubminDarkSkin.class : SubminLightSkin.class;
+        // XXX TODO
+//        final Class<? extends Skin> skinClass = isDark ? SubminDarkSkin.class : SubminLightSkin.class;
+        final Class<? extends Skin> skinClass = WebSkin.class;
 
-        Submin.install(isDark);
+        // XXX TODO
+//        Submin.install(isDark);
+        WebLookAndFeel.install(skinClass);
 
         final String prefix = isDark ? "dark" : "light";
 
         // Edited skin file
-        final ResourceFile skin = new ResourceFile(ResourceLocation.nearClass, prefix + "/skin.xml", skinClass);
+        // XXX TODO
+//        final Resource skin = new Resource(skinClass, prefix + "/skin.xml");
+        final Resource skin = new Resource(skinClass, "resources/skin.xml");
 
         // Displaying StyleEditor
         final StyleEditor styleEditor = new StyleEditor(skin) {

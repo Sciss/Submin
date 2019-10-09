@@ -13,17 +13,17 @@
 
 package de.sciss.submin;
 
-import com.alee.managers.style.CustomSkin;
+import com.alee.managers.style.XmlSkin;
 import com.alee.utils.XmlUtils;
 
-import javax.swing.*;
+import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
 
-public class SubminDarkSkin extends CustomSkin {
+public class SubminDarkSkin extends XmlSkin {
     public SubminDarkSkin() {
-        super("dark/skin.xml");
+        super(SubminDarkSkin.class, "dark/skin.xml");
     }
 
     /*
@@ -37,9 +37,9 @@ public class SubminDarkSkin extends CustomSkin {
     public static synchronized void initialize() {
         if (!initialized) {
             initialized = true;
-
-            // Class aliases
-            XmlUtils.processAnnotations(SubminFocusBorder.class);
+            // XXX TODO
+//            // Class aliases
+//            XmlUtils.processAnnotations(SubminFocusBorder.class);
         }
     }
 
@@ -47,7 +47,7 @@ public class SubminDarkSkin extends CustomSkin {
      * Initializes the skin and sets the L&amp;F to <tt>WebLookAndFeel</tt> using this skin.
      * Sets UI default <tt>"dark-skin"</tt> to <tt>true"</tt>.
      */
-    public static void install() {
+    public void install() {
         initialize();
         SubminLookAndFeel.install(SubminDarkSkin.class);
         UIManager.put("dark-skin", true);

@@ -13,6 +13,7 @@
 
 package de.sciss.submin;
 
+import com.alee.laf.LookAndFeelException;
 import com.alee.laf.WebLookAndFeel;
 import com.alee.managers.style.Skin;
 import com.alee.managers.style.StyleManager;
@@ -26,8 +27,8 @@ import javax.swing.*;
  * Otherwise, changes id and name.
  */
 public class SubminLookAndFeel extends WebLookAndFeel {
-    public static String fileChooserUI = SubminFileChooserUI.class.getCanonicalName ();
-    // public static String scrollPaneUI  = SubminScrollPaneUI .class.getCanonicalName ();
+    // XXX TODO
+//    public static String fileChooserUI = SubminFileChooserUI.class.getCanonicalName ();
 
     @Override
     public String getName() {
@@ -42,8 +43,8 @@ public class SubminLookAndFeel extends WebLookAndFeel {
     @Override
     protected void initClassDefaults(final UIDefaults table) {
         super.initClassDefaults(table);
-        table.put("FileChooserUI", SubminLookAndFeel.fileChooserUI);
-        // table.put("ScrollPaneUI" , SubminLookAndFeel.scrollPaneUI );
+        // XXX TODO
+//        table.put("FileChooserUI", SubminLookAndFeel.fileChooserUI);
     }
 
     @Override
@@ -67,16 +68,14 @@ public class SubminLookAndFeel extends WebLookAndFeel {
         StyleManager.setDefaultSkin(skin);
 
         // Installing LookAndFeel
-        if (LafUtils.setupLookAndFeelSafely(SubminLookAndFeel.class)) {
+        try {
+            LafUtils.setupLookAndFeel(SubminLookAndFeel.class);
             // Updating already created components tree
             if (updateUI) {
                 updateAllComponentUIs();
             }
-
-            // Installed successfully
             return true;
-        } else {
-            // Installation failed
+        } catch (LookAndFeelException e) {
             return false;
         }
     }
