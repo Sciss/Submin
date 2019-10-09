@@ -52,31 +52,31 @@ public class SubminLookAndFeel extends WebLookAndFeel {
         return "WebLaF based cross-platform look and feel with light and dark skin";
     }
 
-    public static boolean install(final Class<? extends Skin> skin) {
-        return install(skin, false);
-    }
+//    public static boolean install(final Class<? extends Skin> skin) {
+//        return install(skin, false);
+//    }
 
-    /**
-     * Installs look and feel in one simple call.
-     *
-     * @param skin     initially installed skin class
-     * @param updateUI whether should update visual representation of all existing components or not
-     * @return true if look and feel was successfully installed, false otherwise
-     */
-    public static boolean install(final Class<? extends Skin> skin, final boolean updateUI) {
-        // Preparing initial skin
-        StyleManager.setDefaultSkin(skin);
-
-        // Installing LookAndFeel
-        try {
-            LafUtils.setupLookAndFeel(SubminLookAndFeel.class);
-            // Updating already created components tree
-            if (updateUI) {
-                updateAllComponentUIs();
-            }
-            return true;
-        } catch (LookAndFeelException e) {
-            return false;
-        }
-    }
+//    /**
+//     * Installs look and feel in one simple call.
+//     *
+//     * @param skin     initially installed skin class
+//     * @param updateUI whether should update visual representation of all existing components or not
+//     * @return true if look and feel was successfully installed, false otherwise
+//     */
+//    public static boolean install(final Class<? extends Skin> skin, final boolean updateUI) {
+//        // Preparing initial skin
+//        StyleManager.setDefaultSkin(skin);
+//
+//        // Installing LookAndFeel
+//        try {
+//            LafUtils.setupLookAndFeel(SubminLookAndFeel.class);
+//            // Updating already created components tree
+//            if (updateUI) {
+//                updateAllComponentUIs();
+//            }
+//            return true;
+//        } catch (LookAndFeelException e) {
+//            return false;
+//        }
+//    }
 }

@@ -1,68 +1,66 @@
-<skin>
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- Skin settings -->
+    <id>sciss.submin.dark</id>
+    <class>de.sciss.submin.SubminDarkSkin</class>
+    <supportedSystems>all</supportedSystems>
 
     <!-- Skin information -->
-    <id>sciss.submin.dark</id>
     <title>Submin dark skin</title>
     <description>Submin dark skin</description>
     <author>Hanns Holger Rutz</author>
-    <supportedSystems>all</supportedSystems>
-
-    <!-- Base skin class, included resources with no specified "nearClass" attribute will use this class -->
-    <class>de.sciss.submin.SubminDarkSkin</class>
 
     <!-- Including WebLaF default skin, will use its style as a base -->
     <include nearClass="com.alee.skin.web.WebSkin">resources/skin.xml</include>
 
-    <!-- Styles separated into meaningful groups -->
-    <!--<include>dark/separator.xml</include>-->
-    <!--<include>dark/hotkeylabel.xml</include>-->
-    <!--<include>dark/rootpane.xml</include>-->
-    <!--<include>dark/memorybar.xml</include>-->
-    <include>dark/button.xml</include>
-    <include>dark/checkbox.xml</include>
-    <include>dark/checkboxmenuitem.xml</include>
-    <include>dark/combobox.xml</include>
-    <!--<include>dark/customtooltip.xml</include>-->
+    <!-- Styles placed in strict initialization order -->
+<!--    <include>dark/button.xml</include>-->
+<!--    <include>dark/checkbox.xml</include>-->
+<!--    <include>dark/checkboxmenuitem.xml</include>-->
+<!--    <include>dark/combobox.xml</include>-->
     <include>dark/dialog.xml</include>
     <include>dark/editorpane.xml</include>
-    <include>dark/filechooser.xml</include>
+<!--    <include>dark/filechooser.xml</include>-->
     <include>dark/filelist.xml</include>
-    <!--<include>dark/filelist.xml</include>-->
     <include>dark/formattedtextfield.xml</include>
     <include>dark/frame.xml</include>
-    <include>dark/hotkeylabel.xml</include>
-    <include>dark/label.xml</include>
-    <include>dark/list.xml</include>
-    <include>dark/menu.xml</include>
+<!--    <include>dark/hotkeylabel.xml</include>-->
+<!--    <include>dark/label.xml</include>-->
+    <include>dark/labelNew.xml</include>
+<!--    <include>dark/list.xml</include>-->
+<!--    <include>dark/menu.xml</include>-->
     <include>dark/menubar.xml</include>
-    <include>dark/menuitem.xml</include>
+<!--    <include>dark/menuitem.xml</include>-->
     <include>dark/optionpane.xml</include>
     <include>dark/panel.xml</include>
     <include>dark/popupmenu.xml</include>
-    <include>dark/popupmenuseparator.xml</include>
+<!--    <include>dark/popupmenuseparator.xml</include>-->
     <include>dark/progressbar.xml</include>
-    <include>dark/radiobutton.xml</include>
-    <include>dark/radiobuttonmenuitem.xml</include>
-    <include>dark/scrollbar.xml</include>
-    <include>dark/scrollpane.xml</include>
-    <include>dark/separator.xml</include>
+<!--    <include>dark/radiobutton.xml</include>-->
+<!--    <include>dark/radiobuttonmenuitem.xml</include>-->
+<!--    <include>dark/scrollbar.xml</include>-->
+<!--    <include>dark/scrollpane.xml</include>-->
+<!--    <include>dark/separator.xml</include>-->
+    <include>dark/separatorNew.xml</include>
     <include>dark/slider.xml</include>
-    <include>dark/spinner.xml</include>
-    <include>dark/splitpane.xml</include>
+<!--    <include>dark/spinner.xml</include>-->
+<!--    <include>dark/splitpane.xml</include>-->
     <include>dark/statusbar.xml</include>
-    <include>dark/styledlabel.xml</include>
-    <include>dark/styleeditor.xml</include>
-    <include>dark/tabbedpane.xml</include>
-    <include>dark/table.xml</include>
-    <include>dark/tableheader.xml</include>
+<!--    <include>dark/styledlabel.xml</include>-->
+<!--    <include>dark/styleeditor.xml</include>-->
+    <include>dark/styleeditorNew.xml</include>
+<!--    <include>dark/tabbedpane.xml</include>-->
+    <include>dark/tabbedpaneNew.xml</include>
+<!--    <include>dark/table.xml</include>-->
+<!--    <include>dark/tableheader.xml</include>-->
     <include>dark/textarea.xml</include>
     <include>dark/textfield.xml</include>
     <include>dark/textpane.xml</include>
-    <include>dark/togglebutton.xml</include>
-    <include>dark/toolbar.xml</include>
-    <include>dark/toolbarseparator.xml</include>
-    <include>dark/tree.xml</include>
-    <include>dark/tristatecheckbox.xml</include>
+<!--    <include>dark/togglebutton.xml</include>-->
+<!--    <include>dark/toolbar.xml</include>-->
+<!--    <include>dark/toolbarseparator.xml</include>-->
+<!--    <include>dark/tree.xml</include>-->
+<!--    <include>dark/tristatecheckbox.xml</include>-->
     <include>dark/viewport.xml</include>
 
 </skin>

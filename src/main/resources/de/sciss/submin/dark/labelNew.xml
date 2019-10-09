@@ -1,0 +1,50 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.label.WebLabel -->
+
+    <!-- Label -->
+    <style type="label">
+        <painter>
+            <decorations>
+                <decoration>
+                    <LabelLayout>
+                        <LabelIcon constraints="icon" />
+                        <LabelText constraints="text" color="216,220,224" shadow="true" shadowColor="24,26,28" />
+                    </LabelLayout>
+                </decoration>
+                <decoration states="disabled">
+                    <LabelLayout>
+                        <LabelText color="216,220,224,96" />
+                    </LabelLayout>
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Label with text shadow -->
+    <style type="label" id="shadow">
+        <painter>
+            <decorations>
+                <decoration>
+                    <LabelLayout>
+                        <LabelText shadowColor="24,26,28" />
+                    </LabelLayout>
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Label without text shadow -->
+    <style type="label" id="no-shadow">
+        <painter>
+            <decorations>
+                <decoration>
+                    <LabelLayout>
+                        <LabelText shadow="false" />
+                    </LabelLayout>
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+</skin>

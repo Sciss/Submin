@@ -47,7 +47,7 @@ public class SubminDarkSkin extends XmlSkin {
      * Initializes the skin and sets the L&amp;F to <tt>WebLookAndFeel</tt> using this skin.
      * Sets UI default <tt>"dark-skin"</tt> to <tt>true"</tt>.
      */
-    public void install() {
+    public static void installSkin() {
         initialize();
         SubminLookAndFeel.install(SubminDarkSkin.class);
         UIManager.put("dark-skin", true);

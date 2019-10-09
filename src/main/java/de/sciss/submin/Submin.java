@@ -30,7 +30,7 @@ public class Submin {
 //        XStream.setupDefaultSecurity(xs);
         xs.allowTypesByWildcard(new String[] { "com.alee.**" });
 
-        if (isDark) new SubminDarkSkin  ().install();
-        else        new SubminLightSkin ().install();
+        if (isDark) SubminDarkSkin  .installSkin();
+        else        SubminLightSkin .installSkin();
     }
 }

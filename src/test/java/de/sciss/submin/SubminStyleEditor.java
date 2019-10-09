@@ -7,10 +7,8 @@ import com.alee.laf.menu.WebMenu;
 import com.alee.laf.menu.WebMenuBar;
 import com.alee.laf.menu.WebMenuItem;
 import com.alee.laf.progressbar.WebProgressBar;
-import com.alee.laf.scroll.WebScrollBar;
 import com.alee.laf.text.WebEditorPane;
 import com.alee.managers.style.Skin;
-import com.alee.skin.web.WebSkin;
 import com.alee.utils.xml.Resource;
 
 import javax.swing.KeyStroke;
@@ -20,19 +18,19 @@ public class SubminStyleEditor {
         final boolean isDark = args.length > 0 && args[0].equals("--dark");
 
         // XXX TODO
-//        final Class<? extends Skin> skinClass = isDark ? SubminDarkSkin.class : SubminLightSkin.class;
-        final Class<? extends Skin> skinClass = WebSkin.class;
+        final Class<? extends Skin> skinClass = isDark ? SubminDarkSkin.class : SubminLightSkin.class;
+//        final Class<? extends Skin> skinClass = SubminDarkSkin.class; // WebSkin.class;
 
         // XXX TODO
-//        Submin.install(isDark);
-        WebLookAndFeel.install(skinClass);
+        Submin.install(isDark);
+//        WebLookAndFeel.install(skinClass);
 
         final String prefix = isDark ? "dark" : "light";
 
         // Edited skin file
         // XXX TODO
-//        final Resource skin = new Resource(skinClass, prefix + "/skin.xml");
-        final Resource skin = new Resource(skinClass, "resources/skin.xml");
+        final Resource skin = new Resource(skinClass, prefix + "/skin.xml");
+//        final Resource skin = new Resource(skinClass, "resources/skin.xml");
 
         // Displaying StyleEditor
         final StyleEditor styleEditor = new StyleEditor(skin) {
@@ -54,10 +52,6 @@ public class SubminStyleEditor {
                 final WebEditorPane editor = new WebEditorPane("text/html", editorHTML);
                 editor.putClientProperty("styleId", "decorated");
                 addViewComponent("Editor pane with HTML", editor, editor, true);
-
-                final WebScrollBar hsb = new WebScrollBar ( WebScrollBar.VERTICAL, 45, 10, 0, 100 );
-                hsb.setOrientation(WebScrollBar.HORIZONTAL);
-                addViewComponent ( "Horizontal scroll bar", hsb, hsb, false );
             }
         };
         final WebMenuBar mb = new WebMenuBar();

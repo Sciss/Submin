@@ -1,0 +1,77 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.extended.style.StyleEditor -->
+
+    <!-- StyleEditor frame -->
+    <style type="rootpane" id="styleeditor" extends="frame">
+
+        <!-- Content split -->
+        <style type="multisplitpane" id="split">
+
+            <!-- Preview panel -->
+            <style type="panel" id="preview">
+
+                <!-- Previews scroll -->
+                <style type="scrollpane" id="scroll" extends="undecorated">
+
+                    <!-- Custom panel styling with inner shadow used for components preview -->
+                    <style type="panel" id="pane">
+                        <painter>
+                            <decorations>
+                                <decoration>
+                                    <ColorBackground color="32,36,40" />
+                                </decoration>
+                            </decorations>
+                        </painter>
+
+                        <!-- Single preview panel -->
+                        <style type="panel" id="single" extends="transparent">
+
+                            <!-- Preview component title label -->
+                            <style type="label" id="title" extends="shadow" />
+
+                            <!-- Custom panel styling with inner shadow used for components preview -->
+                            <style type="panel" id="shadow">
+                                <painter>
+                                    <decorations>
+                                        <decoration>
+                                            <ColorBackground color="32,36,40" />
+                                        </decoration>
+                                    </decorations>
+                                </painter>
+                            </style>
+
+                            <!-- Custom panel styling with dashed/empty border used for components bounds preview -->
+                            <style type="panel" id="dashed" extends="transparent">
+                                <painter>
+                                    <decorations>
+                                        <decoration>
+                                            <LineBorder color="gray" stroke="basic;1;round;round;0;4,5" />
+                                        </decoration>
+                                    </decorations>
+                                </painter>
+                            </style>
+                            <style type="panel" id="empty" extends="transparent">
+                                <painter>
+                                    <decorations>
+                                        <!--<decoration visible="false" />-->
+                                        <decoration>
+                                            <LineBorder color="32,36,40" stroke="basic;1" />
+                                        </decoration>
+                                    </decorations>
+                                </painter>
+                            </style>
+
+                        </style>
+
+                    </style>
+
+                </style>
+
+            </style>
+
+        </style>
+
+    </style>
+
+</skin>

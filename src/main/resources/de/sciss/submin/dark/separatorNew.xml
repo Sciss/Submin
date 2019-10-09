@@ -1,0 +1,27 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.separator.WebSeparator -->
+
+    <!-- Separator -->
+    <style type="separator" padding="1,1,1,1">
+        <painter>
+            <decorations>
+                <decoration>
+                    <SeparatorStripes>
+                        <Stripe>
+                            <color fraction="0.0">0,0,0,5</color>
+                            <color fraction="0.5">black</color>
+                            <color fraction="1.0">0,0,0,5</color>
+                        </Stripe>
+                        <Stripe>
+                            <color fraction="0.0">255,255,255,5</color>
+                            <color fraction="0.5">255,255,255,15</color>
+                            <color fraction="1.0">255,255,255,5</color>
+                        </Stripe>
+                    </SeparatorStripes>
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+</skin>
