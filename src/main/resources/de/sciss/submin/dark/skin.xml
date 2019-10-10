@@ -15,6 +15,7 @@
 
     <!-- Styles placed in strict initialization order -->
 <!--    <include>dark/button.xml</include>-->
+    <include>dark/buttonNew.xml</include>
 <!--    <include>dark/checkbox.xml</include>-->
 <!--    <include>dark/checkboxmenuitem.xml</include>-->
 <!--    <include>dark/combobox.xml</include>-->

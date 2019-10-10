@@ -1,0 +1,85 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.button.WebButton -->
+
+    <!-- Button -->
+    <style type="button">
+        <painter>
+            <decorations>
+                <decoration>
+                    <WebShadow type="outer" width="3" />
+                    <LineBorder color="16,16,16" />
+                    <GradientBackground>
+                        <color>64,64,64</color>
+                        <color>48,48,48</color>
+                    </GradientBackground>
+                    <ButtonLayout>
+                        <ButtonIcon constraints="icon" />
+                        <ButtonText constraints="text" color="220,220,220" />
+                    </ButtonLayout>
+                </decoration>
+                <decoration states="focused">
+                    <SubminFocusBorder color="16,16,16" />
+                </decoration>
+                <decoration states="pressed">
+                    <WebShadow type="outer" opacity="0" />
+                    <WebShadow type="inner" width="6" />
+                    <ColorBackground color="48,48,48" />
+                </decoration>
+                <decoration states="disabled">
+                    <WebShadow type="outer" opacity="0" />
+                    <LineBorder color="lightGray" />
+                    <ButtonLayout>
+                        <ButtonText color="120,120,120" />
+                    </ButtonLayout>
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Button supporting styled text -->
+    <style type="button" id="styled">
+        <painter>
+            <decorations>
+                <decoration>
+                    <ButtonLayout>
+                        <StyledButtonText constraints="text" color="black" />
+                    </ButtonLayout>
+                </decoration>
+                <decoration states="disabled">
+                    <ButtonLayout>
+                        <StyledButtonText color="120,120,120" ignoreStyleColors="true" />
+                    </ButtonLayout>
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Hover-decorated-only button -->
+    <style type="button" id="hover">
+        <painter>
+            <decorations>
+                <decoration opacity="0" />
+                <decoration states="focused">
+                    <LineBorder color="170,170,170" />
+                </decoration>
+                <decoration states="enabled,hover" opacity="1" />
+                <decoration states="enabled,pressed" opacity="1" />
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Icon-only and hover-decorated-only button -->
+    <style type="button" id="icon-hover" extends="icon">
+        <painter>
+            <decorations>
+                <decoration opacity="0" />
+                <decoration states="focused">
+                    <LineBorder color="170,170,170" />
+                </decoration>
+                <decoration states="enabled,hover" opacity="1" />
+                <decoration states="enabled,pressed" opacity="1" />
+            </decorations>
+        </painter>
+    </style>
+</skin>

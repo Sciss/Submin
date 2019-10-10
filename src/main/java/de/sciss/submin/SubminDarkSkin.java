@@ -37,9 +37,8 @@ public class SubminDarkSkin extends XmlSkin {
     public static synchronized void initialize() {
         if (!initialized) {
             initialized = true;
-            // XXX TODO
-//            // Class aliases
-//            XmlUtils.processAnnotations(SubminFocusBorder.class);
+            // Class aliases
+            XmlUtils.processAnnotations(SubminFocusBorder.class);
         }
     }
 
