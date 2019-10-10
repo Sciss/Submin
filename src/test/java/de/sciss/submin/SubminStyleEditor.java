@@ -21,6 +21,9 @@ public class SubminStyleEditor {
         final Class<? extends Skin> skinClass = isDark ? SubminDarkSkin.class : SubminLightSkin.class;
 //        final Class<? extends Skin> skinClass = SubminDarkSkin.class; // WebSkin.class;
 
+        // trick to set global font size:
+//        WebLookAndFeel.globalControlFont = WebLookAndFeel.globalControlFont.deriveFont ( 15f );
+
         // XXX TODO
         Submin.install(isDark);
 //        WebLookAndFeel.install(skinClass);
