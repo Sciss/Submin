@@ -14,9 +14,8 @@
     <include nearClass="com.alee.skin.web.WebSkin">resources/skin.xml</include>
 
     <!-- Styles placed in strict initialization order -->
-<!--    <include>dark/button.xml</include>-->
     <include>dark/buttonNew.xml</include>
-<!--    <include>dark/checkbox.xml</include>-->
+    <include>dark/checkboxNew.xml</include>
 <!--    <include>dark/checkboxmenuitem.xml</include>-->
 <!--    <include>dark/combobox.xml</include>-->
     <include>dark/dialog.xml</include>
@@ -41,16 +40,13 @@
 <!--    <include>dark/radiobuttonmenuitem.xml</include>-->
 <!--    <include>dark/scrollbar.xml</include>-->
 <!--    <include>dark/scrollpane.xml</include>-->
-<!--    <include>dark/separator.xml</include>-->
     <include>dark/separatorNew.xml</include>
     <include>dark/slider.xml</include>
 <!--    <include>dark/spinner.xml</include>-->
 <!--    <include>dark/splitpane.xml</include>-->
     <include>dark/statusbar.xml</include>
 <!--    <include>dark/styledlabel.xml</include>-->
-<!--    <include>dark/styleeditor.xml</include>-->
     <include>dark/styleeditorNew.xml</include>
-<!--    <include>dark/tabbedpane.xml</include>-->
     <include>dark/tabbedpaneNew.xml</include>
 <!--    <include>dark/table.xml</include>-->
 <!--    <include>dark/tableheader.xml</include>-->
