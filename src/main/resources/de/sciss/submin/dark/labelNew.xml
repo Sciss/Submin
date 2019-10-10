@@ -9,12 +9,12 @@
                 <decoration>
                     <LabelLayout>
                         <LabelIcon constraints="icon" />
-                        <LabelText constraints="text" color="216,220,224" shadow="true" shadowColor="24,26,28" />
+                        <SubminLabelText constraints="text" color="216,220,224" shadow="true" shadowColor="24,26,28" />
                     </LabelLayout>
                 </decoration>
                 <decoration states="disabled">
                     <LabelLayout>
-                        <LabelText color="216,220,224,96" />
+                        <SubminLabelText color="216,220,224,96" />
                     </LabelLayout>
                 </decoration>
             </decorations>
@@ -27,7 +27,7 @@
             <decorations>
                 <decoration>
                     <LabelLayout>
-                        <LabelText shadowColor="24,26,28" />
+                        <SubminLabelText shadowColor="24,26,28" />
                     </LabelLayout>
                 </decoration>
             </decorations>
@@ -40,7 +40,7 @@
             <decorations>
                 <decoration>
                     <LabelLayout>
-                        <LabelText shadow="false" />
+                        <SubminLabelText shadow="false" />
                     </LabelLayout>
                 </decoration>
             </decorations>

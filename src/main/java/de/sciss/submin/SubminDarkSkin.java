@@ -40,6 +40,7 @@ public class SubminDarkSkin extends XmlSkin {
             // Class aliases
             XmlUtils.processAnnotations(SubminFocusBorder   .class);
             XmlUtils.processAnnotations(SubminButtonText    .class);
+            XmlUtils.processAnnotations(SubminLabelText     .class);
         }
     }
 
