@@ -38,9 +38,10 @@ public class SubminDarkSkin extends XmlSkin {
         if (!initialized) {
             initialized = true;
             // Class aliases
-            XmlUtils.processAnnotations(SubminFocusBorder   .class);
-            XmlUtils.processAnnotations(SubminButtonText    .class);
-            XmlUtils.processAnnotations(SubminLabelText     .class);
+            XmlUtils.processAnnotations(SubminFocusBorder    .class);
+            XmlUtils.processAnnotations(SubminButtonText     .class);
+            XmlUtils.processAnnotations(SubminLabelText      .class);
+            XmlUtils.processAnnotations(SubminStyledLabelText.class);
         }
     }
 

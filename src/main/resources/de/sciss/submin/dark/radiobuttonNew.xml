@@ -1,0 +1,57 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.radiobutton.WebRadioButton -->
+
+    <!-- Radio button -->
+    <style type="radiobutton">
+        <painter>
+            <decorations>
+                <decoration>
+                    <ButtonLayout>
+                        <SubminButtonText constraints="text" color="216,220,224" shadowColor="24,26,28" />
+                    </ButtonLayout>
+                </decoration>
+                <decoration states="disabled">
+                    <ButtonLayout>
+                        <SubminButtonText color="216,220,224,96" />
+                    </ButtonLayout>
+                </decoration>
+            </decorations>
+
+            <!-- Radio state painter -->
+            <checkStatePainter>
+                <decorations>
+                    <decoration size="20,20">
+                        <!--looks bad: EllipseShape-->
+                        <WebShape round="7" />
+                        <WebShadow type="outer" width="3" />
+                        <LineBorder color="16,16,16" />
+                        <GradientBackground>
+                            <color>64,64,64</color>
+                            <color>48,48,48</color>
+                        </GradientBackground>
+                    </decoration>
+                    <decoration states="checked">
+                        <RadioIcon leftColor="180,180,180" rightColor="128,128,128" />
+                    </decoration>
+                    <decoration states="focused">
+                        <LineBorder color="48,77,130" />
+                    </decoration>
+                    <decoration states="disabled">
+                        <WebShadow type="outer" opacity="0" />
+                        <LineBorder color="16,16,16,128" />
+                        <GradientBackground>
+                            <color>64,64,64,128</color>
+                            <color>48,48,48,128</color>
+                        </GradientBackground>
+                    </decoration>
+                    <decoration states="disabled,checked">
+                        <RadioIcon leftColor="140,140,140,128" rightColor="128,128,128,128" />
+                    </decoration>
+                </decorations>
+            </checkStatePainter>
+
+        </painter>
+    </style>
+
+</skin>

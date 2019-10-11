@@ -1,0 +1,36 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.extended.label.WebStyledLabel -->
+
+    <!-- Styled label -->
+    <style type="styledlabel">
+        <painter>
+            <decorations>
+                <decoration>
+                    <LabelLayout>
+                        <SubminStyledLabelText constraints="text" color="216,220,224" shadow="true" shadowColor="24,26,28" />
+                    </LabelLayout>
+                </decoration>
+                <decoration states="disabled">
+                    <LabelLayout>
+                        <SubminStyledLabelText color="216,220,224,96" ignoreStyleColors="true" />
+                    </LabelLayout>
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Label with text shadow -->
+    <style type="styledlabel" id="shadow">
+        <painter>
+            <decorations>
+                <decoration>
+                    <LabelLayout>
+                        <SubminStyledLabelText shadow="true" shadowColor="24,26,28" />
+                    </LabelLayout>
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+</skin>

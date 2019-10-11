@@ -66,11 +66,12 @@ Except for the customised look, this library provides the following changes
 - tri-state-checkbox: label color does not checked when disabled (bug?)
 - file-chooser: should not expand the user home tree under Gnome
 - slider: looks bad in dark skin
-- (fixed?) scroll-pane: corner should not be white under dark skin
-- tabbed-pane: (OLD) border decoration looks bad in dark skin. work-around: use `styleId` `"attached"`.
 - tabbed-pane: original design was dark text
 - spinner: arrow icons color
-- combo-box: label color, arrow icon color
+- combo-box: arrow icon color
+- hovering scrollpane: colors (should get brighter not darker when pressed)
+- text-area: background not dimmed when disabled
+- text-field: missing style 'undecorated' (Mellite Freesound Retrieval)
 
 ## contributing
 

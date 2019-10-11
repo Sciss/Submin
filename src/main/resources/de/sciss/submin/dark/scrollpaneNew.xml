@@ -1,0 +1,89 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.scroll.WebScrollPane -->
+
+    <!-- Scroll pane -->
+    <style type="scrollpane">
+        <component>
+            <background>32,36,40</background>
+        </component>
+        <painter>
+            <decorations>
+                <decoration>
+                    <LineBorder color="20,23,26" />
+                    <ColorBackground color="32,36,40" />
+                </decoration>
+                <decoration states="focused">
+                    <LineBorder color="48,77,130" />
+                </decoration>
+            </decorations>
+        </painter>
+
+        <!-- Corners -->
+        <style type="canvas" id="corner">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <LineBorder color="20,23,26" />
+                        <ColorBackground color="32,36,40" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+
+    </style>
+
+    <!-- Scroll pane with no focus display -->
+    <style type="scrollpane" id="nofocus">
+        <painter>
+            <decorations>
+                <decoration states="focused">
+                    <LineBorder color="20,23,26" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Hovering scroll pane -->
+    <style type="scrollpane" id="hovering">
+        <!-- Scroll bars -->
+        <style type="scrollbar" id="scrollbar" extends="undecorated-buttonless">
+            <painter>
+                <thumbRound>0</thumbRound>
+                <thumbMargin>0,0,0,0</thumbMargin>
+                <scrollBarWidth>9</scrollBarWidth>
+                <thumbBorderColor>120,120,120,48</thumbBorderColor>
+                <thumbBackgroundColor>128,128,128,48</thumbBackgroundColor>
+                <thumbDisabledBorderColor>120,120,120,24</thumbDisabledBorderColor>
+                <thumbDisabledBackgroundColor>128,128,128,24</thumbDisabledBackgroundColor>
+                <thumbRolloverBorderColor>60,60,60,64</thumbRolloverBorderColor>
+                <thumbRolloverBackgroundColor>64,64,64,64</thumbRolloverBackgroundColor>
+                <thumbPressedBorderColor>60,60,60,64</thumbPressedBorderColor>
+                <thumbPressedBackgroundColor>60,60,60,86</thumbPressedBackgroundColor>
+            </painter>
+        </style>
+
+    </style>
+
+    <!-- Popup scroll pane -->
+    <style type="scrollpane" id="popup" extends="transparent-hovering">
+        <!-- Popup list scrollbar -->
+        <style type="scrollbar" id="vertical" extends="undecorated-buttonless">
+            <painter>
+                <thumbRound>2</thumbRound>
+                <thumbMargin>0,0,0,3</thumbMargin>
+                <scrollBarWidth>10</scrollBarWidth>
+                <thumbBorderColor>120,120,120,48</thumbBorderColor>
+                <thumbBackgroundColor>128,128,128,48</thumbBackgroundColor>
+                <thumbDisabledBorderColor>120,120,120,24</thumbDisabledBorderColor>
+                <thumbDisabledBackgroundColor>128,128,128,24</thumbDisabledBackgroundColor>
+                <thumbRolloverBorderColor>60,60,60,64</thumbRolloverBorderColor>
+                <thumbRolloverBackgroundColor>64,64,64,64</thumbRolloverBackgroundColor>
+                <thumbPressedBorderColor>60,60,60,64</thumbPressedBorderColor>
+                <thumbPressedBackgroundColor>60,60,60,86</thumbPressedBackgroundColor>
+            </painter>
+        </style>
+
+    </style>
+
+</skin>

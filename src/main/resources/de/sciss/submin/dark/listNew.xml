@@ -1,0 +1,63 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.list.WebList -->
+
+    <!-- List -->
+    <style type="list">
+        <component>
+            <background>29,32,36</background>
+            <foreground>200,200,200</foreground>
+        </component>
+        <painter>
+            <decorations>
+                <decoration>
+                    <ColorBackground color="29,32,36" />
+                </decoration>
+            </decorations>
+
+            <!-- Item background painter -->
+            <itemPainter>
+                <decorations>
+                    <decoration states="enabled,unselected,hover" opacity="0.4">
+                        <GradientBackground>
+                            <!-- mix 126,126,126 and 101,101,101 with 48,77,130,96 -->
+                            <color>97,108,128</color>
+                            <color>81,92,112</color>
+                        </GradientBackground>
+                    </decoration>
+                </decorations>
+            </itemPainter>
+
+            <!-- Selected cells background painter -->
+            <selectionPainter>
+                <decorations>
+                    <decoration>
+                        <WebShape round="0" />
+                        <GradientBackground>
+                            <color>96,96,96</color>
+                            <color>80,80,80</color>
+                        </GradientBackground>
+                    </decoration>
+                    <decoration states="disabled" opacity="0.5" />
+                </decorations>
+            </selectionPainter>
+
+        </painter>
+
+        <!-- Text cell editor -->
+        <style type="textfield" id="editor" extends="non-opaque">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <LineBorder color="16,16,16" />
+                    </decoration>
+                    <decoration states="focused">
+                        <LineBorder color="48,77,130" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+
+    </style>
+
+</skin>

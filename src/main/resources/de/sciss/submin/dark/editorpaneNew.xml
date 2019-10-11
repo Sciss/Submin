@@ -1,0 +1,43 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.text.WebEditorPane -->
+
+    <!-- Editor pane -->
+    <style type="editorpane">
+        <component>
+            <background>29,32,36</background>
+            <foreground>200,200,200</foreground>
+            <selectedTextColor>black</selectedTextColor>
+            <selectionColor>200,200,200</selectionColor>
+            <caretColor>71,113,191</caretColor>
+        </component>
+        <painter>
+            <inputPromptForeground>160,160,160</inputPromptForeground>
+            <decorations>
+                <decoration>
+                    <ColorBackground color="29,32,36" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Decorated editor pane -->
+    <style type="editorpane" id="decorated" extends="non-opaque">
+        <painter>
+            <decorations>
+                <decoration>
+                    <LineBorder color="20,23,26" />
+                    <ColorBackground color="29,32,36" />
+                </decoration>
+                <decoration states="focused">
+                    <LineBorder color="48,77,130" />
+                </decoration>
+                <decoration states="disabled">
+                    <WebShadow type="outer" opacity="0" />
+                    <LineBorder color="20,23,26,128" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+</skin>

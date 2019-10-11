@@ -1,58 +1,21 @@
 package de.sciss.submin;
 
+import com.alee.extended.label.AbstractStyledTextContent;
 import com.alee.painter.decoration.IDecoration;
-import com.alee.painter.decoration.content.AbstractTextContent;
 import com.alee.utils.ColorUtils;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 import javax.swing.JComponent;
-import javax.swing.SwingConstants;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Composite;
-import java.awt.FontMetrics;
 import java.awt.Graphics2D;
-import java.awt.Rectangle;
 import java.awt.RenderingHints;
 
-/** A slight variant of `AbstractTextContent` that doesn't shift the shadow position, and supports y-shift */
-public abstract class SubminTextContent<C extends JComponent, D extends IDecoration<C, D>, I extends SubminTextContent<C, D, I>>
-        extends AbstractTextContent<C, D, I> implements SwingConstants
-{
-    /**
-     * Shade color.
-     */
-    @XStreamAsAttribute
-    protected int textShiftY;
+/** A slight variant of `AbstractStyledTextContent` that doesn't shift the shadow position */
+public abstract class SubminStyledTextContent<C extends JComponent, D extends IDecoration<C, D>, I extends AbstractStyledTextContent<C, D, I>>
+        extends AbstractStyledTextContent<C, D, I> {
 
-    // @Override
-    public int getTextShiftY() {
-        return textShiftY;
-    }
-
-    @Override
-    protected void paintText (final Graphics2D g2d, final Rectangle bounds, final C c, final D d )
-    {
-        // Painting settings
-        final String text = getText ( c, d );
-        final FontMetrics fontMetrics = getFontMetrics ( c, d );
-        final int textWidth = fontMetrics.stringWidth ( text );
-        final int horizontalAlignment = getAdjustedHorizontalAlignment ( c, d );
-        final int mnemonicIndex = getMnemonicIndex ( c, d );
-
-        // Calculating text coordinates
-        final int textX = getTextX ( c, d, bounds, textWidth, horizontalAlignment );
-        // --- begin modifications HHR ---
-        final int textY = getTextY ( c, d, bounds, fontMetrics ) + getTextShiftY();
-        // --- end modifications HHR ---
-
-        // Truncating text if needed
-        final String paintedText = getPaintedText ( c, d, bounds, text, fontMetrics, textWidth, horizontalAlignment );
-
-        // Painting text
-        paintTextFragment ( c, d, g2d, paintedText, textX, textY, mnemonicIndex );
-    }
-
+    // XXX TODO: complete DRY with SubminTextContent
     @Override
     protected void paintTextShadow (final C c, final D d, final Graphics2D g2d, final String text, final int textX, final int textY )
     {

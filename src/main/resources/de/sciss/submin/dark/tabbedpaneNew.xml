@@ -5,7 +5,7 @@
     <!-- Tabbed pane -->
     <style type="tabbedpane">
         <component>
-            <background>180,180,180</background>
+            <background>32,36,40</background>
         </component>
 
         <!-- Tab area -->
@@ -14,10 +14,18 @@
                 <decorations>
                     <decoration>
                         <BoundsShape />
-                        <ColorBackground color="180,180,180" />
+                        <ColorBackground color="32,36,40" />
+                        <!-- same as Separator -->
                         <Stripes orientation="horizontal" align="bottom" bounds="margin">
                             <Stripe>
-                                <color>180,180,180</color>
+                                <color fraction="0.0">0,0,0,5</color>
+                                <color fraction="0.5">black</color>
+                                <color fraction="1.0">0,0,0,5</color>
+                            </Stripe>
+                            <Stripe>
+                                <color fraction="0.0">255,255,255,5</color>
+                                <color fraction="0.5">255,255,255,15</color>
+                                <color fraction="1.0">255,255,255,5</color>
                             </Stripe>
                         </Stripes>
                     </decoration>
@@ -94,75 +102,6 @@
                                     <LabelLayout>
                                         <StyledLabelText color="180,180,180" ignoreStyleColors="true" />
                                     </LabelLayout>
-                                </decoration>
-                            </decorations>
-                        </painter>
-                    </style>
-
-                </style>
-
-            </style>
-
-            <!-- Tab menu button -->
-            <style type="button" id="tab-menu-button" extends="undecorated" padding="6,6,6,6">
-                <painter>
-                    <decorations overwrite="true">
-                        <decoration>
-                            <SetIcon constraints="icon" icon="menu-dimmed" />
-                        </decoration>
-                        <decoration states="hover">
-                            <SetIcon constraints="icon" icon="menu-hover" />
-                        </decoration>
-                    </decorations>
-                </painter>
-
-                <!-- Popup style -->
-                <style type="popupmenu" id="menu">
-                    <painter>
-                        <popupStyle>simple</popupStyle>
-                        <round>2</round>
-                        <shadeWidth>2</shadeWidth>
-                        <opacity>0.98</opacity>
-                    </painter>
-
-                    <!-- Menu item -->
-                    <style type="menuitem" id="item" />
-
-                </style>
-
-            </style>
-
-        </style>
-
-    </style>
-
-    <!-- Tabbed pane with rotated left/right tabs -->
-    <style type="tabbedpane" id="rotated">
-
-        <!-- Tab area -->
-        <style type="panel" id="tab-area">
-
-            <!-- Tab viewport -->
-            <style type="viewport" id="viewport">
-
-                <!-- Tab container -->
-                <style type="panel" id="container">
-
-                    <!-- Tab title -->
-                    <style type="styledlabel" id="tab">
-                        <painter>
-                            <decorations>
-                                <decoration states="top">
-                                    <LabelLayout rotation="counterClockwise" />
-                                </decoration>
-                                <decoration states="left">
-                                    <LabelLayout rotation="counterClockwise" />
-                                </decoration>
-                                <decoration states="bottom">
-                                    <LabelLayout rotation="counterClockwise" />
-                                </decoration>
-                                <decoration states="right">
-                                    <LabelLayout rotation="clockwise" />
                                 </decoration>
                             </decorations>
                         </painter>
