@@ -6,21 +6,10 @@
     <style type="tabbedpane">
         <component>
             <background>180,180,180</background>
-            <layout class="TabbedPaneLayout$UIResource">
-                <ContentSize type="preferred" />
-            </layout>
         </component>
-        <painter>
-            <decorations>
-                <decoration states="focused" />
-            </decorations>
-        </painter>
 
         <!-- Tab area -->
         <style type="panel" id="tab-area" extends="transparent">
-            <component>
-                <layout class="TabAreaLayout$UIResource" />
-            </component>
             <painter>
                 <decorations>
                     <decoration>
@@ -28,18 +17,9 @@
                         <ColorBackground color="180,180,180" />
                         <Stripes orientation="horizontal" align="bottom" bounds="margin">
                             <Stripe>
-                                <color>156,167,184</color>
+                                <color>180,180,180</color>
                             </Stripe>
                         </Stripes>
-                    </decoration>
-                    <decoration states="left">
-                        <Stripes orientation="vertical" align="right" bounds="margin" />
-                    </decoration>
-                    <decoration states="right">
-                        <Stripes orientation="vertical" align="left" bounds="margin" />
-                    </decoration>
-                    <decoration states="bottom">
-                        <Stripes align="top" />
                     </decoration>
                 </decorations>
             </painter>
@@ -49,52 +29,43 @@
 
                 <!-- Tab container -->
                 <style type="panel" id="container" extends="transparent">
-                    <component>
-                        <layout class="TabContainerLayout$UIResource">
-                            <tabStretchType>multiline</tabStretchType>
-                        </layout>
-                    </component>
-
                     <!-- Tab title -->
                     <style type="styledlabel" id="tab" padding="6,10,6,8">
-                        <component>
-                            <horizontalAlignment>0</horizontalAlignment>
-                        </component>
                         <painter>
-                            <decorations overwrite="true">
+                            <decorations>
                                 <decoration>
-                                    <BoundsShape />
-                                    <ColorBackground color="180,180,180" />
+                                    <GradientBackground>
+                                        <color>126,126,126</color>
+                                        <color>101,101,101</color>
+                                    </GradientBackground>
                                     <Stripes orientation="horizontal" align="bottom" bounds="margin">
                                         <Stripe>
-                                            <color>156,167,184</color>
+                                            <color>84,84,84</color>
                                         </Stripe>
                                     </Stripes>
                                 </decoration>
-                                <decoration states="left">
-                                    <Stripes orientation="vertical" align="right" bounds="margin" />
-                                </decoration>
-                                <decoration states="right">
-                                    <Stripes orientation="vertical" align="left" bounds="margin" />
-                                </decoration>
-                                <decoration states="bottom">
-                                    <Stripes align="top" />
-                                </decoration>
                                 <decoration states="enabled,hover">
-                                    <ColorBackground color="218,218,218" />
+                                    <GradientBackground>
+                                        <!-- mix with 48,77,130,96 -->
+                                        <color>97,108,128</color>
+                                        <color>81,92,112</color>
+                                    </GradientBackground>
                                 </decoration>
                                 <decoration states="selected">
-                                    <ColorBackground color="white" />
+                                    <GradientBackground>
+                                        <color>80,80,80</color>
+                                        <color>96,96,96</color>
+                                    </GradientBackground>
                                     <Stripes>
                                         <Stripe stroke="basic;5">
-                                            <color>156,167,184</color>
+                                            <color>72,72,72</color>
                                         </Stripe>
                                     </Stripes>
                                 </decoration>
                                 <decoration states="selected,in-focused-parent">
                                     <Stripes>
                                         <Stripe stroke="basic;5">
-                                            <color>64,131,201</color>
+                                            <color>48,77,130</color>
                                         </Stripe>
                                     </Stripes>
                                 </decoration>
@@ -204,5 +175,8 @@
         </style>
 
     </style>
+
+    <!-- Attached tabbed pane: this is obsolete and no-op now -->
+    <style type="tabbedpane" id="attached" />
 
 </skin>

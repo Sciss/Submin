@@ -1,12 +1,13 @@
 <skin xmlns="http://weblookandfeel.com/XmlSkin">
 
-    <!-- com.alee.laf.button.WebButton -->
+    <!-- com.alee.laf.button.WebToggleButton -->
 
-    <!-- Button -->
-    <style type="button" padding="2,6,2,6">
+    <!-- Toggle button -->
+    <style type="togglebutton" padding="2,6,2,6">
         <painter>
             <decorations>
                 <decoration>
+                    <WebShape round="3" />
                     <WebShadow type="outer" width="3" />
                     <LineBorder color="16,16,16" />
                     <GradientBackground>
@@ -15,6 +16,18 @@
                     </GradientBackground>
                     <ButtonLayout>
                         <SubminButtonText constraints="text" color="220,220,220" />
+                    </ButtonLayout>
+                </decoration>
+                <decoration states="selected">
+                    <WebShadow type="outer" opacity="0.5" color="210,210,210" />
+                    <WebShadow type="inner" width="6" />
+                    <LineBorder color="120,120,120" />
+                    <GradientBackground>
+                        <color>36,36,36</color>
+                        <color>48,48,48</color>
+                    </GradientBackground>
+                    <ButtonLayout>
+                        <SubminButtonText color="160,160,160" />
                     </ButtonLayout>
                 </decoration>
                 <decoration states="focused">
@@ -43,52 +56,6 @@
         </painter>
     </style>
 
-    <!-- Button supporting styled text -->
-    <style type="button" id="styled">
-        <painter>
-            <decorations>
-                <decoration>
-                    <ButtonLayout>
-                        <StyledButtonText constraints="text" color="black" />
-                    </ButtonLayout>
-                </decoration>
-                <decoration states="disabled">
-                    <ButtonLayout>
-                        <StyledButtonText color="120,120,120" ignoreStyleColors="true" />
-                    </ButtonLayout>
-                </decoration>
-            </decorations>
-        </painter>
-    </style>
-
-    <!-- Hover-decorated-only button -->
-    <style type="button" id="hover">
-        <painter>
-            <decorations>
-                <decoration opacity="0" />
-                <decoration states="focused">
-                    <LineBorder color="170,170,170" />
-                </decoration>
-                <decoration states="enabled,hover" opacity="1" />
-                <decoration states="enabled,pressed" opacity="1" />
-            </decorations>
-        </painter>
-    </style>
-
-    <!-- Icon-only and hover-decorated-only button -->
-    <style type="button" id="icon-hover" extends="icon">
-        <painter>
-            <decorations>
-                <decoration opacity="0" />
-                <decoration states="focused">
-                    <LineBorder color="170,170,170" />
-                </decoration>
-                <decoration states="enabled,hover" opacity="1" />
-                <decoration states="enabled,pressed" opacity="1" />
-            </decorations>
-        </painter>
-    </style>
-
     <!-- Used by Mellite for tool icons; like 'icon' but more spacing -->
-    <style type="button" id="icon-space" padding="2,3,2,3" />
+    <style type="togglebutton" id="icon-space" padding="2,3,2,3" />
 </skin>

@@ -1,0 +1,13 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.menu.WebPopupMenu -->
+
+    <!-- Popup menu -->
+    <style type="popupmenu">
+        <painter>
+            <background>black</background>
+            <borderColor>0,0,0,128</borderColor>
+        </painter>
+    </style>
+
+</skin>

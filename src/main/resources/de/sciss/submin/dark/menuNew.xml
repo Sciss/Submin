@@ -1,0 +1,38 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.menu.WebMenu -->
+
+    <!-- Menu -->
+    <style type="menu">
+        <painter>
+            <decorations>
+                <decoration states="menubar">
+                    <WebShape round="2" />
+                    <MenuItemLayout padding="4,2,4,8" iconTextGap="6" textArrowGap="10">
+                        <ButtonText constraints="text" color="200,200,200" />
+                    </MenuItemLayout>
+                </decoration>
+                <decoration states="menubar,enabled,hover">
+                    <ColorBackground color="48,77,130,96" />
+                </decoration>
+                <decoration states="popupmenu">
+                    <MenuItemLayout>
+                        <ButtonText constraints="text" color="200,200,200" />
+                    </MenuItemLayout>
+                </decoration>
+                <decoration states="selected">
+                    <GradientBackground>
+                        <color>88,88,88</color>
+                        <color>76,76,76,200</color>
+                    </GradientBackground>
+                </decoration>
+                <decoration states="disabled">
+                    <MenuItemLayout>
+                        <ButtonText color="200,200,200,96" />
+                    </MenuItemLayout>
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+</skin>

@@ -55,7 +55,7 @@ public class SubminFocusBorder<C extends JComponent, D extends IDecoration<C, D>
     /**
      * Default border color.
      */
-    private static final Color defaultFocusColor = new Color(48, 77, 130);
+    private static final Color defaultFocusColor = new Color(48,77,130);
 
     // @Override
     public Color getFocusColor() {

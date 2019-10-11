@@ -1,0 +1,34 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.menu.WebMenuItem -->
+
+    <!-- Menu item -->
+    <style type="menuitem">
+        <painter>
+            <decorations>
+                <decoration>
+                    <MenuItemLayout>
+                        <ButtonText constraints="text" color="200,200,200" />
+                        <RoundRectangle constraints="accelerator">
+                            <ColorBackground color="0,0,0,200" />
+                        </RoundRectangle>
+                        <AcceleratorText constraints="accelerator" color="90,90,90" />
+                    </MenuItemLayout>
+                </decoration>
+                <decoration states="selected">
+                    <GradientBackground>
+                        <color>88,88,88</color>
+                        <color>76,76,76,200</color>
+                    </GradientBackground>
+                </decoration>
+                <decoration states="disabled">
+                    <MenuItemLayout>
+                        <ButtonText color="200,200,200,96" />
+                        <AcceleratorText color="90,90,90,96" />
+                    </MenuItemLayout>
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+</skin>

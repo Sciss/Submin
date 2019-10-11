@@ -1,0 +1,34 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.scroll.WebScrollBar -->
+
+    <!-- Scroll bar -->
+    <style type="scrollbar">
+        <component>
+            <background>32,36,40</background>
+        </component>
+        <painter>
+            <trackBorderColor>20,23,26</trackBorderColor>
+            <trackBackgroundColor>32,36,40</trackBackgroundColor>
+            <thumbBorderColor>64,64,64,128</thumbBorderColor>
+            <thumbBackgroundColor>64,64,64</thumbBackgroundColor>
+            <thumbDisabledBorderColor>64,64,64,32</thumbDisabledBorderColor>
+            <thumbDisabledBackgroundColor>64,64,64,64</thumbDisabledBackgroundColor>
+            <thumbRolloverBorderColor>120,120,120,128</thumbRolloverBorderColor>
+            <thumbRolloverBackgroundColor>120,120,120</thumbRolloverBackgroundColor>
+            <thumbPressedBorderColor>84,84,84,128</thumbPressedBorderColor>
+            <thumbPressedBackgroundColor>84,84,84</thumbPressedBackgroundColor>
+        </painter>
+
+        <!-- Scroll bar button -->
+        <style type="button" id="button">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <ColorBackground color="64,64,64" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+    </style>
+</skin>

@@ -35,7 +35,7 @@
     </style>
 
     <!-- Label without text shadow -->
-    <style type="label" id="no-shadow">
+    <style type="label" id="noshade">
         <painter>
             <decorations>
                 <decoration>

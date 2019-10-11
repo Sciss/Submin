@@ -1,0 +1,39 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.filechooser.WebFileChooser -->
+
+    <!-- Main content panel -->
+    <style type="panel" id="filechooser">
+
+        <!-- Central panel -->
+        <style type="panel" id="center">
+            <component>
+                <background>229,233,238</background>
+            </component>
+        </style>
+
+        <!-- South panel -->
+        <style type="panel" id="south" padding="4,4,4,4">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <!--like tool-bar-->
+                        <GradientBackground from="0,0.5" to="0,1">
+                            <color>37,41,46</color>
+                            <color>29,32,36</color>
+                        </GradientBackground>
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+
+        <!-- Files removal confirmation list -->
+        <style type="panel" id="removal" padding="4,4,4,4">
+            <component>
+                <background>black</background>
+            </component>
+        </style>
+
+    </style>
+
+</skin>

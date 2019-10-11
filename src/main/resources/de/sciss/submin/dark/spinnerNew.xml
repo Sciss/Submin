@@ -1,0 +1,57 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.spinner.WebSpinner -->
+
+    <!-- Spinner -->
+    <style type="spinner">
+        <painter>
+            <decorations>
+                <decoration>
+                    <LineBorder color="black" />
+                    <ColorBackground color="black" />
+                </decoration>
+                <decoration states="focused">
+                    <LineBorder color="48,77,130" />
+                </decoration>
+                <decoration states="disabled">
+                    <WebShadow type="outer" opacity="0" />
+                    <LineBorder color="16,18,20" />
+                </decoration>
+            </decorations>
+        </painter>
+
+        <!-- Buttons -->
+        <style type="button" id="button" extends="icon">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <ColorBackground color="black" />
+                    </decoration>
+                    <decoration states="in-focused-parent">
+                        <LineBorder color="48,77,130" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+        <style type="button" id="next" extends="button" padding="2,2,1,2">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <WebShape sides="0,1,0,0" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+        <style type="button" id="previous" extends="button" padding="0,2,2,2">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <WebShape sides="0,1,0,0" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+
+    </style>
+
+</skin>

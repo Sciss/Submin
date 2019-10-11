@@ -1,9 +1,9 @@
 <skin xmlns="http://weblookandfeel.com/XmlSkin">
 
-    <!-- com.alee.laf.checkbox.WebCheckBox -->
+    <!-- com.alee.extended.checkbox.WebTristateCheckBox -->
 
-    <!-- Checkbox -->
-    <style type="checkbox">
+    <!-- Tristate checkbox -->
+    <style type="tristatecheckbox">
         <painter>
             <decorations>
                 <decoration>
@@ -13,6 +13,7 @@
                 </decoration>
                 <decoration states="disabled">
                     <ButtonLayout>
+                        <!-- TODO: this does not seem to have an effect -->
                         <SubminButtonText color="216,220,224,96" />
                     </ButtonLayout>
                 </decoration>
@@ -25,7 +26,7 @@
                         <WebShape round="2" />
                         <WebShadow type="outer" width="3" />
                         <LineBorder color="16,16,16" />
-                        <GradientBackground type="linear" from="0.0,0.0" to="0.0,2.0">
+                        <GradientBackground type="linear" from="0.0,0.0" to="0,2.0">
                             <color>64,64,64</color>
                             <color>48,48,48</color>
                         </GradientBackground>
@@ -33,13 +34,11 @@
                     <decoration states="checked">
                         <CheckIcon bounds="margin" stroke="basic;2" color="180,180,180" />
                     </decoration>
+                    <decoration states="mixed">
+                        <MixedIcon round="2" leftColor="180,180,180" rightColor="128,128,128" />
+                    </decoration>
                     <decoration states="focused">
                         <SubminFocusBorder color="16,16,16" />
-                    </decoration>
-                    <decoration states="pressed">
-                        <WebShadow type="outer" opacity="0" />
-                        <WebShadow type="inner" width="6" />
-                        <ColorBackground color="48,48,48" />
                     </decoration>
                     <decoration states="disabled">
                         <WebShadow type="outer" opacity="0.5" />
@@ -49,11 +48,11 @@
                             <color>48,48,48,128</color>
                         </GradientBackground>
                     </decoration>
-                    <decoration states="pressed,checked">
-                        <CheckIcon stroke="basic;2" color="120,120,120" />
-                    </decoration>
                     <decoration states="disabled,checked">
                         <CheckIcon bounds="margin" color="160,160,160,128" />
+                    </decoration>
+                    <decoration states="disabled,mixed">
+                        <MixedIcon leftColor="gray" rightColor="lightGray" />
                     </decoration>
                 </decorations>
             </checkStatePainter>
@@ -61,21 +60,4 @@
         </painter>
     </style>
 
-    <!-- Checkbox supporting styled text -->
-    <style type="checkbox" id="styled">
-        <painter>
-            <decorations>
-                <decoration>
-                    <ButtonLayout>
-                        <StyledButtonText constraints="text" color="216,220,224" />
-                    </ButtonLayout>
-                </decoration>
-                <decoration states="disabled">
-                    <ButtonLayout>
-                        <StyledButtonText color="216,220,224,96" ignoreStyleColors="true" />
-                    </ButtonLayout>
-                </decoration>
-            </decorations>
-        </painter>
-    </style>
 </skin>

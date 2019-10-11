@@ -57,14 +57,20 @@ Except for the customised look, this library provides the following changes
   favourites as per `~/.config/gtk-3.0/bookmarks`. To support other window managers
   and other operating systems, we require your help. If you can provide information
   on how to obtain favourites e.g. under KDE, on OS X, or Windows, please let me know.
+  
+- style `icon-space` for buttons and toggle-buttons
+- style `noshade` for labels
 
 ## to-do
 
+- tri-state-checkbox: label color does not checked when disabled (bug?)
 - file-chooser: should not expand the user home tree under Gnome
 - slider: looks bad in dark skin
-- progress-bar: lacks specific indeterminate state painter
 - (fixed?) scroll-pane: corner should not be white under dark skin
-- tabbed-pane: border decoration looks bad in dark skin. work-around: use `styleId` `"attached"`.
+- tabbed-pane: (OLD) border decoration looks bad in dark skin. work-around: use `styleId` `"attached"`.
+- tabbed-pane: original design was dark text
+- spinner: arrow icons color
+- combo-box: label color, arrow icon color
 
 ## contributing
 

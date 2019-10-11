@@ -1,0 +1,62 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.progressbar.WebProgressBar -->
+
+    <!-- Progress bar -->
+    <style type="progressbar">
+        <component>
+            <foreground>216,220,224</foreground>
+        </component>
+        <painter>
+            <decorations>
+                <decoration>
+                    <WebShape round="2" />
+                    <WebShadow type="outer" width="2" />
+                    <WebShadow type="inner" width="6" />
+                    <LineBorder color="16,16,16" />
+                    <GradientBackground>
+                        <color>37,41,46</color>
+                        <color>41,46,51</color>
+                    </GradientBackground>
+                </decoration>
+                <decoration states="disabled">
+                    <WebShadow type="outer" opacity="0.5" />
+                    <LineBorder color="16,16,16,96" />
+                </decoration>
+            </decorations>
+
+            <!-- Progress line -->
+            <progressPainter>
+                <decorations>
+                    <decoration states="progress">
+                        <GradientBackground>
+                            <color>144,144,144</color>
+                            <color>108,108,108</color>
+                        </GradientBackground>
+                    </decoration>
+                    <decoration states="enabled,progress,intermediate">
+                        <MovingHighlightBackground id="overlay" orientation="horizontal" width="120" color="223,223,223,128" passes="1" duration="2.5s" delay="4s" />
+                    </decoration>
+                    <decoration states="enabled,indeterminate">
+                        <MovingHighlightBackground id="overlay" orientation="horizontal" width="120" color="223,223,223,128" passes="2" duration="2.5s" delay="0.5s" />
+                    </decoration>
+                </decorations>
+            </progressPainter>
+
+            <!-- Progress text painter -->
+            <progressTextPainter>
+                <decorations>
+                    <decoration>
+                        <!-- color seems to be ignored -->
+                        <ProgressBarText color="216,220,224" halign="0" />
+                    </decoration>
+                    <decoration states="disabled">
+                        <ProgressBarText color="216,220,224,128" />
+                    </decoration>
+                </decorations>
+            </progressTextPainter>
+
+        </painter>
+    </style>
+
+</skin>

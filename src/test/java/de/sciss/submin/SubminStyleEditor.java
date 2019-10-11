@@ -3,23 +3,25 @@ package de.sciss.submin;
 import com.alee.extended.style.StyleEditor;
 import com.alee.laf.WebLookAndFeel;
 import com.alee.laf.label.WebLabel;
+import com.alee.laf.menu.WebCheckBoxMenuItem;
 import com.alee.laf.menu.WebMenu;
 import com.alee.laf.menu.WebMenuBar;
 import com.alee.laf.menu.WebMenuItem;
+import com.alee.laf.menu.WebRadioButtonMenuItem;
 import com.alee.laf.progressbar.WebProgressBar;
 import com.alee.laf.text.WebEditorPane;
 import com.alee.managers.style.Skin;
 import com.alee.utils.xml.Resource;
 
+import javax.swing.ButtonGroup;
 import javax.swing.KeyStroke;
 
 public class SubminStyleEditor {
     public static void main(String[] args) {
         final boolean isDark = args.length > 0 && args[0].equals("--dark");
 
-        // XXX TODO
         final Class<? extends Skin> skinClass = isDark ? SubminDarkSkin.class : SubminLightSkin.class;
-//        final Class<? extends Skin> skinClass = SubminDarkSkin.class; // WebSkin.class;
+//        final Class<? extends Skin> skinClass = com.alee.skin.web.WebSkin.class;
 
         // trick to set global font size:
 //        WebLookAndFeel.globalControlFont = WebLookAndFeel.globalControlFont.deriveFont ( 15f );
@@ -60,15 +62,40 @@ public class SubminStyleEditor {
         final WebMenuBar mb = new WebMenuBar();
         final WebMenu m1 = new WebMenu("File");
         final WebMenu m3 = new WebMenu("Open Recent");
+        final WebMenu m4 = new WebMenu("Foo Bar");
         final WebMenuItem mi1 = new WebMenuItem("Open...");
         final WebMenuItem mi2 = new WebMenuItem("Save");
         final WebMenuItem mi5 = new WebMenuItem("Document.txt");
+        final WebCheckBoxMenuItem mi6 = new WebCheckBoxMenuItem("Checkbox");
+        final WebCheckBoxMenuItem mi6d = new WebCheckBoxMenuItem("Checkbox");
+        final WebRadioButtonMenuItem mi7 = new WebRadioButtonMenuItem("Radio 1");
+        final WebRadioButtonMenuItem mi7d = new WebRadioButtonMenuItem("Radio 1");
+        final WebRadioButtonMenuItem mi8 = new WebRadioButtonMenuItem("Radio 2");
+        final WebRadioButtonMenuItem mi8d = new WebRadioButtonMenuItem("Radio 2");
+        final ButtonGroup bg1 = new ButtonGroup();
+        final ButtonGroup bg1d = new ButtonGroup();
         mi2.setEnabled(false);
         m1.add(mi1);
         m1.add(m3);
         m1.addSeparator();
         m1.add(mi2);
         m3.add(mi5);
+        bg1.add(mi7);
+        bg1.add(mi8);
+        bg1d.add(mi7d);
+        bg1d.add(mi8d);
+        bg1.setSelected(mi7.getModel(), true);
+        bg1d.setSelected(mi7d.getModel(), true);
+        mi6d.setEnabled(false);
+        mi7d.setEnabled(false);
+        mi8d.setEnabled(false);
+        m4.add(mi6);
+        m4.add(mi7);
+        m4.add(mi8);
+        m4.add(mi6d);
+        m4.add(mi7d);
+        m4.add(mi8d);
+
         final WebMenu m2 = new WebMenu("Edit");
         final WebMenuItem mi3 = new WebMenuItem("Cut");
         mi3.setAccelerator(KeyStroke.getKeyStroke("control X"));
@@ -79,6 +106,7 @@ public class SubminStyleEditor {
         m2.add(mi4);
         mb.add(m1);
         mb.add(m2);
+        mb.add(m4);
         styleEditor.setJMenuBar(mb);
         styleEditor.setVisible(true);
     }

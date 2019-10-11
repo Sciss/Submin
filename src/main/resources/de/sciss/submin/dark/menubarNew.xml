@@ -1,0 +1,23 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.menu.WebMenuBar -->
+
+    <!-- Menu bar -->
+    <!-- Note: ideally we would use zero padding,
+    but we need padding-left of at least 12 to
+    have the opened menu "window" be translucent -->
+    <style type="menubar" padding="0,12,0,2">
+        <painter>
+            <decorations>
+                <decoration>
+                    <LineBorder color="16,16,16" />
+                    <GradientBackground>
+                        <color>32,36,40</color>
+                        <color>0,0,0</color>
+                        <color>16,18,20</color>
+                    </GradientBackground>
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+</skin>
