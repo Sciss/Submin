@@ -80,27 +80,27 @@
                                 <decoration states="has-no-children">
                                     <LabelLayout>
                                         <LabelIcon constraints="icon" />
-                                        <StyledLabelText constraints="text" color="60,60,60" />
+                                        <SubminStyledLabelText constraints="text" color="60,60,60" />
                                     </LabelLayout>
                                 </decoration>
                                 <decoration states="has-no-children,hover">
                                     <LabelLayout>
-                                        <StyledLabelText color="black" />
+                                        <SubminStyledLabelText color="black" />
                                     </LabelLayout>
                                 </decoration>
                                 <decoration states="has-no-children,selected">
                                     <LabelLayout>
-                                        <StyledLabelText color="black" />
+                                        <SubminStyledLabelText color="black" />
                                     </LabelLayout>
                                 </decoration>
                                 <decoration states="has-no-children,selected,in-focused-parent">
                                     <LabelLayout>
-                                        <StyledLabelText color="0,50,160" />
+                                        <SubminStyledLabelText color="0,50,160" />
                                     </LabelLayout>
                                 </decoration>
                                 <decoration states="has-no-children,disabled">
                                     <LabelLayout>
-                                        <StyledLabelText color="180,180,180" ignoreStyleColors="true" />
+                                        <SubminStyledLabelText color="180,180,180" ignoreStyleColors="true" />
                                     </LabelLayout>
                                 </decoration>
                             </decorations>
