@@ -47,4 +47,6 @@
         </painter>
     </style>
 
+    <style type="label" id="renderer" padding="1" />
+
 </skin>

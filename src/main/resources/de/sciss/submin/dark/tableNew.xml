@@ -70,6 +70,9 @@
             </painter>
         </style>
 
+        <!-- Smaller padding -->
+        <style type="styledlabel" id="renderer" padding="1" />
+
         <!-- File table cell editor -->
         <style type="textfield" id="editor" extends="non-opaque">
             <painter>
