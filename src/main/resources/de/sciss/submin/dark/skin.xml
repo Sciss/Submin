@@ -18,6 +18,7 @@
     <include>dark/checkboxNew.xml</include>
     <include>dark/checkboxmenuitemNew.xml</include>
     <include>dark/comboboxNew.xml</include>
+    <include>dark/customtooltipNew.xml</include>
     <include>dark/dialog.xml</include>
     <include>dark/editorpaneNew.xml</include>
     <include>dark/filechooserNew.xml</include>
