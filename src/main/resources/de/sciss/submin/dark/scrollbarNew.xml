@@ -14,10 +14,10 @@
             <thumbBackgroundColor>64,64,64</thumbBackgroundColor>
             <thumbDisabledBorderColor>64,64,64,32</thumbDisabledBorderColor>
             <thumbDisabledBackgroundColor>64,64,64,64</thumbDisabledBackgroundColor>
-            <thumbRolloverBorderColor>120,120,120,128</thumbRolloverBorderColor>
-            <thumbRolloverBackgroundColor>120,120,120</thumbRolloverBackgroundColor>
-            <thumbPressedBorderColor>84,84,84,128</thumbPressedBorderColor>
-            <thumbPressedBackgroundColor>84,84,84</thumbPressedBackgroundColor>
+            <thumbRolloverBorderColor>84,84,84,128</thumbRolloverBorderColor>
+            <thumbRolloverBackgroundColor>84,84,84</thumbRolloverBackgroundColor>
+            <thumbPressedBorderColor>120,120,120,128</thumbPressedBorderColor>
+            <thumbPressedBackgroundColor>120,120,120</thumbPressedBackgroundColor>
         </painter>
 
         <!-- Scroll bar button -->

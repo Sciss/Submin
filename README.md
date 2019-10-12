@@ -65,6 +65,11 @@ Except for the customised look, this library provides the following changes
 
 - tri-state-checkbox: label color does not checked when disabled (bug?)
 - file-chooser: should not expand the user home tree under Gnome
+- file-chooser: restore favorite-directory tweak
+- file-chooser: tool icon color
+- file-chooser: white background color in detail file list
+- file-chooser: tool-tips do not show text
+- path-field: arrow color
 - slider: looks bad in dark skin
 - tabbed-pane: original design was dark text
 - spinner: arrow icons color
@@ -72,6 +77,7 @@ Except for the customised look, this library provides the following changes
 - hovering scrollpane: colors (should get brighter not darker when pressed)
 - text-area: background not dimmed when disabled
 - text-field: missing style 'undecorated' (Mellite Freesound Retrieval)
+- table: sorting-arrow color
 
 ## contributing
 

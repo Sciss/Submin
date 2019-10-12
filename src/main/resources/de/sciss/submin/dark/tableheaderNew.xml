@@ -1,0 +1,16 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.table.WebTableHeader -->
+
+    <!-- Table header -->
+    <style type="tableheader">
+        <painter>
+            <headerHeight>22</headerHeight>
+            <topBgColor>126,126,126</topBgColor>
+            <bottomBgColor>101,101,101</bottomBgColor>
+            <gridColor>48,48,48</gridColor>
+        </painter>
+
+    </style>
+
+</skin>

@@ -1,0 +1,41 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.extended.pathfield.WebPathField -->
+
+    <!-- Path field -->
+    <style type="panel" id="pathfield" extends="focusable">
+
+        <!-- Path content panel -->
+        <style type="panel" id="content" extends="transparent">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <ColorBackground color="black" />
+                    </decoration>
+                    <decoration states="focused">
+                        <LineBorder color="48,77,130" />
+                    </decoration>
+                    <decoration states="disabled">
+                        <WebShadow type="outer" opacity="0" />
+                        <LineBorder color="16,18,20" />
+                        <ColorBackground color="0,0,0,128" />
+                    </decoration>
+                </decorations>
+            </painter>
+
+        </style>
+
+    </style>
+
+    <!-- Non-opaque path field -->
+    <style type="panel" id="pathfield-non-opaque" extends="pathfield">
+        <painter>
+            <decorations>
+                <decoration>
+                    <ColorBackground color="black" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+</skin>

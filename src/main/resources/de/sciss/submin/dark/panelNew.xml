@@ -1,42 +1,31 @@
-    <skin>
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
 
     <!-- com.alee.laf.panel.WebPanel -->
 
     <!-- Panel -->
     <style type="panel">
         <component>
-            <opaque>true</opaque>
             <foreground>216,220,224</foreground>
             <background>32,36,40</background>
         </component>
-        <painter />
     </style>
 
-    <!-- Transparent panel -->
-    <style type="panel" id="transparent">
-        <component>
-            <opaque>false</opaque>
-        </component>
-    </style>
-
-    <!-- Completely white panel -->
-    <!--<style type="panel" id="white">-->
-        <!--<component>-->
-            <!--<opaque>true</opaque>-->
-            <!--<background>white</background>-->
-        <!--</component>-->
-    <!--</style>-->
-
-    <!-- Decorated panel -->
-    <style type="panel" id="decorated">
-        <component>
-            <opaque>false</opaque>
-        </component>
+    <!-- Non-opaque panel -->
+    <style type="panel" id="non-opaque">
         <painter>
             <decorations>
                 <decoration>
-                    <WebShape round="2" />
-                    <WebShadow type="outer" width="2" />
+                    <ColorBackground color="32,36,40" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Decorated panel -->
+    <style type="panel" id="decorated" extends="non-opaque">
+        <painter>
+            <decorations>
+                <decoration>
                     <LineBorder color="85,85,85" />
                     <ColorBackground color="black" />
                 </decoration>

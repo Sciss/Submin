@@ -21,7 +21,8 @@
     <include>dark/dialog.xml</include>
     <include>dark/editorpaneNew.xml</include>
     <include>dark/filechooserNew.xml</include>
-    <include>dark/filelist.xml</include>
+    <include>dark/filechooserfieldNew.xml</include>
+    <include>dark/filelistNew.xml</include>
     <include>dark/formattedtextfield.xml</include>
     <include>dark/frame.xml</include>
 <!--    <include>dark/hotkeylabel.xml</include>-->
@@ -31,7 +32,9 @@
     <include>dark/menubarNew.xml</include>
     <include>dark/menuitemNew.xml</include>
     <include>dark/optionpane.xml</include>
-    <include>dark/panel.xml</include>
+    <include>dark/pathfieldNew.xml</include>
+    <include>dark/panelNew.xml</include>
+    <include>dark/passwordfieldNew.xml</include>
     <include>dark/popupmenuNew.xml</include>
     <include>dark/popupmenuseparatorNew.xml</include>
     <include>dark/progressbarNew.xml</include>
@@ -42,21 +45,21 @@
     <include>dark/separatorNew.xml</include>
     <include>dark/slider.xml</include>
     <include>dark/spinnerNew.xml</include>
-<!--    <include>dark/splitpane.xml</include>-->
+    <include>dark/splitpaneNew.xml</include>
     <include>dark/statusbar.xml</include>
     <include>dark/styledlabelNew.xml</include>
     <include>dark/styleeditorNew.xml</include>
     <include>dark/tabbedpaneNew.xml</include>
-<!--    <include>dark/table.xml</include>-->
-<!--    <include>dark/tableheader.xml</include>-->
+    <include>dark/tableNew.xml</include>
+    <include>dark/tableheaderNew.xml</include>
     <include>dark/textareaNew.xml</include>
     <include>dark/textfieldNew.xml</include>
     <include>dark/textpaneNew.xml</include>
     <include>dark/togglebuttonNew.xml</include>
     <include>dark/toolbarNew.xml</include>
     <include>dark/toolbarseparatorNew.xml</include>
-<!--    <include>dark/tree.xml</include>-->
+    <include>dark/treeNew.xml</include>
     <include>dark/tristatecheckboxNew.xml</include>
-    <include>dark/viewport.xml</include>
+    <include>dark/viewportNew.xml</include>
 
 </skin>

@@ -13,13 +13,15 @@
 
 package de.sciss.submin;
 
+import com.alee.api.annotations.NotNull;
 import com.alee.laf.LookAndFeelException;
 import com.alee.laf.WebLookAndFeel;
 import com.alee.managers.style.Skin;
 import com.alee.managers.style.StyleManager;
 import com.alee.utils.LafUtils;
 
-import javax.swing.*;
+import javax.swing.UIDefaults;
+import javax.swing.UIManager;
 
 /**
  * Extends <code>WebLookAndFeel</code> with a few
@@ -27,8 +29,7 @@ import javax.swing.*;
  * Otherwise, changes id and name.
  */
 public class SubminLookAndFeel extends WebLookAndFeel {
-    // XXX TODO
-//    public static String fileChooserUI = SubminFileChooserUI.class.getCanonicalName ();
+    public static String fileChooserUI = SubminFileChooserUI.class.getCanonicalName ();
 
     @Override
     public String getName() {
@@ -43,8 +44,7 @@ public class SubminLookAndFeel extends WebLookAndFeel {
     @Override
     protected void initClassDefaults(final UIDefaults table) {
         super.initClassDefaults(table);
-        // XXX TODO
-//        table.put("FileChooserUI", SubminLookAndFeel.fileChooserUI);
+        table.put("FileChooserUI", SubminLookAndFeel.fileChooserUI);
     }
 
     @Override
@@ -52,31 +52,18 @@ public class SubminLookAndFeel extends WebLookAndFeel {
         return "WebLaF based cross-platform look and feel with light and dark skin";
     }
 
-//    public static boolean install(final Class<? extends Skin> skin) {
-//        return install(skin, false);
-//    }
+    public static void install (@NotNull final Class<? extends Skin> skin, @NotNull final Object... arguments ) throws LookAndFeelException
+    {
+        // Event Dispatch Thread check
+        checkEventDispatchThread ();
 
-//    /**
-//     * Installs look and feel in one simple call.
-//     *
-//     * @param skin     initially installed skin class
-//     * @param updateUI whether should update visual representation of all existing components or not
-//     * @return true if look and feel was successfully installed, false otherwise
-//     */
-//    public static boolean install(final Class<? extends Skin> skin, final boolean updateUI) {
-//        // Preparing initial skin
-//        StyleManager.setDefaultSkin(skin);
-//
-//        // Installing LookAndFeel
-//        try {
-//            LafUtils.setupLookAndFeel(SubminLookAndFeel.class);
-//            // Updating already created components tree
-//            if (updateUI) {
-//                updateAllComponentUIs();
-//            }
-//            return true;
-//        } catch (LookAndFeelException e) {
-//            return false;
-//        }
-//    }
+        // Saving previous installed LaF class
+        previousLookAndFeelClass = UIManager.getLookAndFeel ().getClass ();
+
+        // Preparing initial skin
+        StyleManager.setDefaultSkin ( skin );
+
+        // Installing LookAndFeel
+        LafUtils.setupLookAndFeel ( SubminLookAndFeel.class );
+    }
 }

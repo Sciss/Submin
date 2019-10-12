@@ -1,0 +1,17 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.viewport.WebViewport -->
+
+    <!-- Viewport -->
+    <style type="viewport">
+        <painter>
+            <decorations>
+                <decoration>
+                    <BoundsShape />
+                    <ColorBackground color="32,36,40" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+</skin>

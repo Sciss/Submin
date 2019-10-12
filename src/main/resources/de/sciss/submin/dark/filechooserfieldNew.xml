@@ -1,0 +1,23 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.extended.filechooser.WebFileChooserField -->
+
+    <!-- File chooser field -->
+    <style type="panel" id="filechooserfield" extends="focusable">
+        <painter>
+            <decorations>
+                <decoration>
+                    <ColorBackground color="black" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Undecorated file chooser field -->
+    <style type="panel" id="filechooserfield-undecorated" extends="filechooserfield">
+        <component>
+            <background>black</background>
+        </component>
+    </style>
+
+</skin>

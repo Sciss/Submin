@@ -1,0 +1,26 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.extended.list.WebFileList -->
+
+    <!-- File list -->
+    <style type="list" id="filelist">
+        <!-- File cell renderer -->
+        <style type="panel" id="renderer" extends="transparent">
+            <!-- File description label, tile mode only  -->
+            <style type="label" id="description">
+                <component class="com.alee.laf.label.WebLabel">
+                    <foreground>gray</foreground>
+                </component>
+            </style>
+
+            <!-- File size label, tile mode only -->
+            <style type="label" id="size">
+                <component class="com.alee.laf.label.WebLabel">
+                    <foreground>94,151,255</foreground>
+                </component>
+            </style>
+
+        </style>
+    </style>
+
+</skin>

@@ -1,0 +1,117 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.table.WebTable -->
+
+    <!-- Table -->
+    <style type="table">
+        <component>
+            <background>32,36,40</background>
+            <rowHeight>22</rowHeight>
+            <rowMargin>1</rowMargin>
+            <gridColor>48,54,60</gridColor>
+        </component>
+        <painter>
+            <decorations>
+                <decoration>
+                    <ColorBackground color="29,32,36" />
+                </decoration>
+            </decorations>
+
+            <!-- Row background painter -->
+            <rowPainter>
+                <decorations>
+                    <decoration states="odd">
+                        <ColorBackground color="29,32,36" />
+                    </decoration>
+                </decorations>
+            </rowPainter>
+
+            <!-- Cell selection painter -->
+            <selectionPainter>
+                <decorations>
+                    <decoration>
+                        <GradientBackground>
+                            <color>96,96,96</color>
+                            <color>80,80,80</color>
+                        </GradientBackground>
+                    </decoration>
+                </decorations>
+            </selectionPainter>
+
+            <!-- Dragged column background painter -->
+            <draggedColumnPainter>
+                <decorations>
+                    <decoration>
+                        <ColorBackground color="black" opacity="0.8" />
+                    </decoration>
+                </decorations>
+            </draggedColumnPainter>
+
+        </painter>
+
+        <!-- Upper trailing corner -->
+        <style type="canvas" id="corner">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <WebShape round="0" sides="0,0,1,0" />
+                        <LineBorder color="48,48,48" />
+                        <GradientBackground>
+                            <color>126,126,126</color>
+                            <color>101,101,101</color>
+                        </GradientBackground>
+                        <Stripes padding="2,0,2,0" orientation="vertical" align="left">
+                            <Stripe>
+                                <color>170,170,170,0</color>
+                            </Stripe>
+                        </Stripes>
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+
+        <!-- File table cell editor -->
+        <style type="textfield" id="editor" extends="non-opaque">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <LineBorder color="black" />
+                    </decoration>
+                    <decoration states="focused">
+                        <LineBorder color="48,77,130" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+
+        <!-- Generic cell editor -->
+        <style type="textfield" id="editor-generic" extends="non-opaque">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <LineBorder color="black" />
+                    </decoration>
+                    <decoration states="focused">
+                        <LineBorder color="48,77,130" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+
+        <!-- Date table cell editor -->
+        <style type="datefield" id="editor-date" extends="non-opaque">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <LineBorder color="black" />
+                    </decoration>
+                    <decoration states="focused">
+                        <LineBorder color="48,77,130" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+
+    </style>
+
+</skin>

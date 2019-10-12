@@ -1,22 +1,25 @@
 <skin xmlns="http://weblookandfeel.com/XmlSkin">
 
-    <!-- com.alee.laf.list.WebList -->
+    <!-- com.alee.laf.tree.WebTree -->
 
-    <!-- List -->
-    <style type="list">
+    <!-- Tree -->
+    <style type="tree">
         <component>
             <background>29,32,36</background>
             <foreground>200,200,200</foreground>
         </component>
         <painter>
+            <paintLines>true</paintLines>
+            <dashedLines>true</dashedLines>
+            <linesColor>gray</linesColor>
             <decorations>
                 <decoration>
                     <ColorBackground color="29,32,36" />
                 </decoration>
             </decorations>
 
-            <!-- Item background painter -->
-            <itemPainter>
+            <!-- Node background painter -->
+            <nodePainter>
                 <decorations>
                     <decoration states="enabled,unselected,hover" opacity="0.4">
                         <GradientBackground>
@@ -26,9 +29,9 @@
                         </GradientBackground>
                     </decoration>
                 </decorations>
-            </itemPainter>
+            </nodePainter>
 
-            <!-- Selected cells background painter -->
+            <!-- Selection background painter -->
             <selectionPainter>
                 <decorations>
                     <decoration>
@@ -41,20 +44,43 @@
                 </decorations>
             </selectionPainter>
 
+            <!-- Tree drop location painter -->
+            <dropLocationPainter>
+                <decorations>
+                    <decoration states="drop-on">
+                        <WebShadow type="inner" width="5" />
+                        <LineBorder color="85,130,190" stroke="basic;1;round;round;0;4,5" />
+                    </decoration>
+                    <decoration states="drop-between" size="80,2">
+                        <LineBorder color="85,130,190" stroke="basic;1;round;round;0;4,5" />
+                    </decoration>
+                </decorations>
+            </dropLocationPainter>
+
+            <!-- Selector painter -->
+            <selectorPainter>
+                <decorations>
+                    <decoration>
+                        <LineBorder color="gray" stroke="basic;1;round;round;0;3,3" />
+                        <ColorBackground color="0,0,255,25" />
+                    </decoration>
+                </decorations>
+            </selectorPainter>
+
         </painter>
 
-        <!-- Text cell editor -->
-        <style type="textfield" id="editor" extends="non-opaque">
+        <!-- Text field cell editor -->
+        <style type="textfield" id="editor">
             <painter>
                 <decorations>
                     <decoration>
-                        <LineBorder color="16,16,16" />
-                    </decoration>
-                    <decoration states="focused">
+                        <WebShape round="2" />
                         <LineBorder color="48,77,130" />
+                        <ColorBackground color="black" />
                     </decoration>
                 </decorations>
             </painter>
+
         </style>
 
     </style>

@@ -49,17 +49,17 @@
         <!-- Scroll bars -->
         <style type="scrollbar" id="scrollbar" extends="undecorated-buttonless">
             <painter>
-                <thumbRound>0</thumbRound>
+                <thumbRound>3</thumbRound>
                 <thumbMargin>0,0,0,0</thumbMargin>
                 <scrollBarWidth>9</scrollBarWidth>
-                <thumbBorderColor>120,120,120,48</thumbBorderColor>
-                <thumbBackgroundColor>128,128,128,48</thumbBackgroundColor>
-                <thumbDisabledBorderColor>120,120,120,24</thumbDisabledBorderColor>
-                <thumbDisabledBackgroundColor>128,128,128,24</thumbDisabledBackgroundColor>
-                <thumbRolloverBorderColor>60,60,60,64</thumbRolloverBorderColor>
-                <thumbRolloverBackgroundColor>64,64,64,64</thumbRolloverBackgroundColor>
-                <thumbPressedBorderColor>60,60,60,64</thumbPressedBorderColor>
-                <thumbPressedBackgroundColor>60,60,60,86</thumbPressedBackgroundColor>
+                <thumbBorderColor>64,64,64,32</thumbBorderColor>
+                <thumbBackgroundColor>64,64,64,128</thumbBackgroundColor>
+                <thumbDisabledBorderColor>64,64,64,32</thumbDisabledBorderColor>
+                <thumbDisabledBackgroundColor>64,64,64,64</thumbDisabledBackgroundColor>
+                <thumbRolloverBorderColor>120,120,120,32</thumbRolloverBorderColor>
+                <thumbRolloverBackgroundColor>120,120,120,128</thumbRolloverBackgroundColor>
+                <thumbPressedBorderColor>84,84,84,128</thumbPressedBorderColor>
+                <thumbPressedBackgroundColor>140,140,140,128</thumbPressedBackgroundColor>
             </painter>
         </style>
 
