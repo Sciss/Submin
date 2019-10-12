@@ -65,6 +65,7 @@ Except for the customised look, this library provides the following changes
 
 - tri-state-checkbox: label color does not checked when disabled (bug?)
 - file-chooser: tool icon color
+- split-divider: arrow colors
 - path-field: arrow color
 - slider: looks bad in dark skin
 - tabbed-pane: original design was dark text
@@ -74,7 +75,6 @@ Except for the customised look, this library provides the following changes
 - text-area: background not dimmed when disabled
 - text-field: missing style 'undecorated' (Mellite Freesound Retrieval)
 - table: sorting-arrow color
-- tree-table and custom table renderers: investigate selection color issue (Mellite)
 
 ## contributing
 

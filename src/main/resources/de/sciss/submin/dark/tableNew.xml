@@ -9,6 +9,11 @@
             <rowHeight>22</rowHeight>
             <rowMargin>1</rowMargin>
             <gridColor>48,54,60</gridColor>
+            <!-- When using DefaultTreeCellRenderer, we do not get
+            the right rendering. As a workaround, we can set
+            this matte color which is picked up by the default
+            renderer. -->
+            <selectionBackground>74,75,76</selectionBackground>
         </component>
         <painter>
             <decorations>

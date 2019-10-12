@@ -8,7 +8,7 @@
         <!-- Central panel -->
         <style type="panel" id="center">
             <component>
-                <background>229,233,238</background>
+                <background>37,41,46</background>
             </component>
         </style>
 

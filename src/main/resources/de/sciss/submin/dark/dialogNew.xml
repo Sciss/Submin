@@ -1,0 +1,30 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.window.WebDialog -->
+
+    <!-- WebLaF-decorated dialog -->
+    <style type="rootpane" id="dialog-decorated" extends="dialog">
+        <painter>
+            <decorations>
+                <decoration>
+                    <LineBorder color="85,85,85" />
+                    <ColorBackground color="32,36,40" />
+                </decoration>
+            </decorations>
+        </painter>
+
+    </style>
+
+    <!-- Undecorated control-less dialog -->
+    <style type="rootpane" id="dialog-undecorated" extends="dialog">
+        <painter>
+            <decorations>
+                <decoration>
+                    <WebShape />
+                    <ColorBackground color="32,36,40" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+</skin>

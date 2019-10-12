@@ -1,0 +1,57 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.splitpane.WebSplitPaneDivider -->
+
+    <!-- Split pane divider -->
+    <style type="splitpanedivider">
+        <component>
+            <background>37,41,46</background>
+        </component>
+        <painter>
+            <decorations>
+                <decoration states="vertical">
+                    <GradientBackground>
+                        <color>37,41,46</color>
+                        <color>29,32,36</color>
+                    </GradientBackground>
+                    <LineBorder color="20,23,26" />
+                    <AlignLayout>
+                        <BorderLayout constraints="center,center">
+                            <RoundRectangle constraints="north" id="1">
+                                <ColorBackground color="101,101,101" />
+                            </RoundRectangle>
+                            <RoundRectangle constraints="center" id="2">
+                                <ColorBackground color="101,101,101" />
+                            </RoundRectangle>
+                            <RoundRectangle constraints="south" id="3">
+                                <ColorBackground color="101,101,101" />
+                            </RoundRectangle>
+                        </BorderLayout>
+                    </AlignLayout>
+                </decoration>
+                <decoration states="horizontal">
+                    <GradientBackground>
+                        <color>37,41,46</color>
+                        <color>29,32,36</color>
+                    </GradientBackground>
+                    <LineBorder color="20,23,26" />
+                    <AlignLayout>
+                        <BorderLayout constraints="center,center">
+                            <RoundRectangle constraints="west" id="1">
+                                <ColorBackground color="101,101,101" />
+                            </RoundRectangle>
+                            <RoundRectangle constraints="center" id="2">
+                                <ColorBackground color="101,101,101" />
+                            </RoundRectangle>
+                            <RoundRectangle constraints="east" id="3">
+                                <ColorBackground color="101,101,101" />
+                            </RoundRectangle>
+                        </BorderLayout>
+                    </AlignLayout>
+                </decoration>
+            </decorations>
+        </painter>
+
+    </style>
+
+</skin>

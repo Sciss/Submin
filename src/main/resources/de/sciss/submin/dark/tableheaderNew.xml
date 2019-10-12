@@ -11,6 +11,20 @@
             <gridColor>48,48,48</gridColor>
         </painter>
 
+        <style type="label" id="renderer" extends="shadow">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <LabelLayout>
+                            <!-- Ideally we would use bold-face text. With shadow, regular text looks too thin -->
+                            <!-- shadowSize="2" shadowColor="216,220,224" shadowOpacity="2.0"-->
+                            <SubminLabelText constraints="text" color="black" shadow="false" />
+                        </LabelLayout>
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+
     </style>
 
 </skin>
