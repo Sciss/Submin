@@ -1,0 +1,21 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+    <style type="tabbedpane">
+        <style type="panel" id="tab-area" extends="transparent">
+            <style type="viewport" id="viewport" extends="transparent">
+                <style type="panel" id="container" extends="transparent">
+                    <style type="styledlabel" id="tab">
+                        <painter>
+                            <decorations>
+                                <decoration states="has-no-children">
+                                    <LabelLayout>
+                                        <StyledLabelText constraints="text" color="red" />
+                                    </LabelLayout>
+                                </decoration>
+                            </decorations>
+                        </painter>
+                    </style>
+                </style>
+            </style>
+        </style>
+    </style>
+</skin>

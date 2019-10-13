@@ -14,7 +14,7 @@
                 <decorations>
                     <decoration>
                         <BoundsShape />
-                        <ColorBackground color="32,36,40" />
+                        <ColorBackground color="29,32,36" />
                         <!-- same as Separator -->
                         <Stripes orientation="horizontal" align="bottom" bounds="margin">
                             <Stripe>
@@ -62,8 +62,8 @@
                                 </decoration>
                                 <decoration states="selected">
                                     <GradientBackground>
-                                        <color>80,80,80</color>
                                         <color>96,96,96</color>
+                                        <color>101,101,101</color>
                                     </GradientBackground>
                                     <Stripes>
                                         <Stripe stroke="basic;4">
@@ -73,8 +73,8 @@
                                 </decoration>
                                 <decoration states="enabled,hover,selected">
                                     <GradientBackground>
-                                        <color>80,80,80</color>
                                         <color>96,96,96</color>
+                                        <color>101,101,101</color>
                                     </GradientBackground>
                                     <Stripes>
                                         <Stripe stroke="basic;4">
@@ -91,13 +91,12 @@
                                 </decoration>
                                 <decoration states="has-no-children">
                                     <LabelLayout>
-                                        <LabelIcon constraints="icon" />
-                                        <SubminStyledLabelText constraints="text" color="60,60,60" />
+                                        <SubminStyledLabelText constraints="text" color="180,180,180" shadowColor="black" shadow="true" />
                                     </LabelLayout>
                                 </decoration>
                                 <decoration states="has-no-children,hover">
                                     <LabelLayout>
-                                        <SubminStyledLabelText color="black" />
+                                        <SubminStyledLabelText color="180,180,180" />
                                     </LabelLayout>
                                 </decoration>
                                 <decoration states="has-no-children,selected">
@@ -107,7 +106,7 @@
                                 </decoration>
                                 <decoration states="has-no-children,selected,in-focused-parent">
                                     <LabelLayout>
-                                        <SubminStyledLabelText color="0,50,160" />
+                                        <SubminStyledLabelText color="black" shadowColor="128,128,128" shadowOpacity="2.0" />
                                     </LabelLayout>
                                 </decoration>
                                 <decoration states="has-no-children,disabled">

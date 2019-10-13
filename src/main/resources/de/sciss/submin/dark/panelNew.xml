@@ -5,7 +5,8 @@
     <!-- Panel -->
     <style type="panel">
         <component>
-            <foreground>216,220,224</foreground>
+            <!-- dangerous, do _not set: -->
+            <!-- <foreground>216,220,224</foreground> -->
             <background>32,36,40</background>
         </component>
     </style>

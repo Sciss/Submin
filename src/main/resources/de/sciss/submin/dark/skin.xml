@@ -26,7 +26,6 @@
     <include>dark/filelistNew.xml</include>
     <include>dark/formattedtextfield.xml</include> <!--TODO-->
     <include>dark/frame.xml</include> <!--TODO-->
-<!--    <include>dark/hotkeylabel.xml</include>-->
     <include>dark/labelNew.xml</include>
     <include>dark/listNew.xml</include>
     <include>dark/menuNew.xml</include>
@@ -63,5 +62,7 @@
     <include>dark/treeNew.xml</include>
     <include>dark/tristatecheckboxNew.xml</include>
     <include>dark/viewportNew.xml</include>
+
+<!--    <include>dark/debug.xml</include>-->
 
 </skin>
