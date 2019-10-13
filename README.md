@@ -68,8 +68,6 @@ Except for the customised look, this library provides the following changes
 - split-divider: arrow colors
 - path-field: arrow color
 - slider: looks bad in dark skin
-- tabbed-pane: original design was dark text
-- tabbed-pane: style does not match; tabs should have vertical separator
 - spinner: arrow icons color
 - combo-box: arrow icon color
 - text-area: background not dimmed when disabled

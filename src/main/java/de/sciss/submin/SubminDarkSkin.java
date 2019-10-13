@@ -57,6 +57,7 @@ public class SubminDarkSkin extends XmlSkin {
         UIManager.put("OptionPane.messageForeground", new ColorUIResource(216, 220, 224));
         UIManager.put("Table.background", new ColorUIResource(29, 32, 36));
         UIManager.put("Table.foreground", new ColorUIResource(220, 220, 220));
+        UIManager.put("Label.foreground", new ColorUIResource(216, 220, 224));
 //        UIManager.put("Table.selectionForeground", new ColorUIResource(88, 88, 88));
 //        UIManager.put("List.selectionForeground", new ColorUIResource(88, 88, 88));
 //        UIManager.put("Tree.selectionForeground", new ColorUIResource(88, 88, 88));

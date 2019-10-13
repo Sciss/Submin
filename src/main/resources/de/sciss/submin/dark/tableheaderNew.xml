@@ -18,7 +18,7 @@
                         <LabelLayout>
                             <!-- Ideally we would use bold-face text. With shadow, regular text looks too thin -->
                             <!-- shadowSize="2" shadowColor="216,220,224" shadowOpacity="2.0"-->
-                            <SubminLabelText constraints="text" color="black" shadow="false" />
+                            <SubminLabelText constraints="text" color="black" shadow="true" shadowColor="128,128,128" shadowOpacity="1.5" />
                         </LabelLayout>
                     </decoration>
                 </decorations>

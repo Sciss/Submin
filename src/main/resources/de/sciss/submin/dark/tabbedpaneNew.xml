@@ -62,7 +62,7 @@
                                 </decoration>
                                 <decoration states="selected">
                                     <GradientBackground>
-                                        <color>96,96,96</color>
+                                        <color>126,126,126</color>
                                         <color>101,101,101</color>
                                     </GradientBackground>
                                     <Stripes>
@@ -73,7 +73,7 @@
                                 </decoration>
                                 <decoration states="enabled,hover,selected">
                                     <GradientBackground>
-                                        <color>96,96,96</color>
+                                        <color>126,126,126</color>
                                         <color>101,101,101</color>
                                     </GradientBackground>
                                     <Stripes>
@@ -101,7 +101,7 @@
                                 </decoration>
                                 <decoration states="has-no-children,selected">
                                     <LabelLayout>
-                                        <SubminStyledLabelText color="black" />
+                                        <SubminStyledLabelText color="black" shadowColor="128,128,128" shadowOpacity="2.0" />
                                     </LabelLayout>
                                 </decoration>
                                 <decoration states="has-no-children,selected,in-focused-parent">
