@@ -1,75 +1,57 @@
 <skin xmlns="http://weblookandfeel.com/XmlSkin">
 
-    <!-- com.alee.laf.splitpane.WebSplitPane -->
+    <!-- com.alee.laf.spinner.WebSpinner -->
 
-    <!-- Split pane -->
-    <style type="splitpane">
-        <component>
-            <background>37,41,46</background>
-        </component>
-
-        <!-- Non-continuous divider -->
-        <style type="canvas" id="non-continuous">
-            <painter>
-                <decorations>
-                    <decoration>
-                        <ColorBackground color="37,41,46,200" />
-                        <LineBorder color="20,23,26" />
-                    </decoration>
-                </decorations>
-            </painter>
-        </style>
-
-    </style>
-
-    <!-- Non-opaque split pane -->
-    <style type="splitpane" id="non-opaque">
+    <!-- Spinner -->
+    <style type="spinner">
         <painter>
             <decorations>
                 <decoration>
-                    <ColorBackground color="37,41,46" />
+                    <LineBorder color="black" />
+                    <ColorBackground color="black" />
                 </decoration>
-            </decorations>
-        </painter>
-    </style>
-
-    <!-- Undecorated split pane -->
-    <style type="splitpane" id="undecorated" extends="transparent">
-
-        <!-- Non-continuous divider -->
-        <style type="canvas" id="non-continuous">
-            <painter>
-                <decorations>
-                    <decoration>
-                        <ColorBackground color="37,41,46,200" />
-                    </decoration>
-                </decorations>
-            </painter>
-        </style>
-
-    </style>
-
-    <!-- Decorated split pane -->
-    <style type="splitpane" id="decorated" extends="non-opaque">
-        <painter>
-            <decorations>
-                <decoration>
-                    <LineBorder color="20,23,26" />
-                    <ColorBackground color="37,41,46" />
-                </decoration>
-            </decorations>
-        </painter>
-    </style>
-
-    <!-- Decorated split pane -->
-    <style type="splitpane" id="focusable" extends="decorated">
-        <painter>
-            <decorations>
                 <decoration states="focused">
                     <LineBorder color="48,77,130" />
                 </decoration>
+                <decoration states="disabled">
+                    <WebShadow type="outer" opacity="0" />
+                    <LineBorder color="16,18,20" />
+                </decoration>
             </decorations>
         </painter>
+
+        <!-- Buttons -->
+        <style type="button" id="button" extends="icon">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <ColorBackground color="black" />
+                    </decoration>
+                    <decoration states="in-focused-parent">
+                        <LineBorder color="48,77,130" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+        <style type="button" id="next" extends="button" padding="2,2,1,2">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <WebShape sides="0,1,0,0" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+        <style type="button" id="previous" extends="button" padding="0,2,2,2">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <WebShape sides="0,1,0,0" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+
     </style>
 
 </skin>
