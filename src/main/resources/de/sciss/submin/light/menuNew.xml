@@ -1,0 +1,17 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.menu.WebMenu -->
+
+    <!-- Menu -->
+    <style type="menu">
+        <painter>
+            <decorations>
+                <decoration states="menubar">
+                    <WebShape round="2" />
+                    <MenuItemLayout padding="4,2,4,8" iconTextGap="6" textArrowGap="10" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+</skin>

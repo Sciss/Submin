@@ -1,0 +1,19 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.button.WebToggleButton -->
+
+    <!-- Toggle button -->
+    <style type="togglebutton" padding="2,6,2,6">
+        <painter>
+            <decorations>
+                <decoration>
+                    <WebShape round="3" />
+                    <WebShadow type="outer" width="3" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Used by Mellite for tool icons; like 'icon' but more spacing -->
+    <style type="togglebutton" id="icon-space" padding="2,3,2,3" />
+</skin>

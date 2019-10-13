@@ -1,5 +1,4 @@
 <skin xmlns="http://weblookandfeel.com/XmlSkin">
-    <!-- TODO -->
 
     <!-- com.alee.laf.splitpane.WebSplitPane -->
 
@@ -47,13 +46,6 @@
                     <ColorBackground color="237,237,237" />
                 </decoration>
             </decorations>
-        </painter>
-    </style>
-
-    <!-- Transparent split pane -->
-    <style type="splitpane" id="transparent" extends="non-opaque">
-        <painter>
-            <decorations overwrite="true" />
         </painter>
     </style>
 

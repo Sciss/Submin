@@ -1,8 +1,0 @@
-<skin>
-    <!-- Label without text shade -->
-    <style type="label" id="noshade">
-        <painter>
-            <drawShade>false</drawShade>
-        </painter>
-    </style>
-</skin>

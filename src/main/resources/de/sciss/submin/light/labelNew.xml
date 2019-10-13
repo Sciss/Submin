@@ -1,0 +1,12 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.label.WebLabel -->
+
+    <!-- Label -->
+    <style type="label" padding="0,1,0,1" />
+
+        <!-- Label without text shadow -->
+    <style type="label" id="noshade" padding="0" />
+
+    <style type="label" id="renderer" padding="1,2,1,2" />
+</skin>

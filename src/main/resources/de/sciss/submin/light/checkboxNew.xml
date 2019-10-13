@@ -1,0 +1,20 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.checkbox.WebCheckBox -->
+
+    <!-- Checkbox -->
+    <style type="checkbox">
+        <painter>
+
+            <!-- Check state painter -->
+            <checkStatePainter>
+                <decorations>
+                    <decoration size="20,20">
+                        <WebShadow type="outer" width="3" />
+                    </decoration>
+                </decorations>
+            </checkStatePainter>
+
+        </painter>
+    </style>
+</skin>

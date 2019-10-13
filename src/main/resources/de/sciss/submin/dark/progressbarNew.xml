@@ -10,8 +10,6 @@
         <painter>
             <decorations>
                 <decoration>
-                    <WebShape round="2" />
-                    <WebShadow type="outer" width="2" />
                     <WebShadow type="inner" width="6" />
                     <LineBorder color="16,16,16" />
                     <GradientBackground>

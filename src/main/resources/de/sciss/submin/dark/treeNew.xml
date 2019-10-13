@@ -74,7 +74,6 @@
             <painter>
                 <decorations>
                     <decoration>
-                        <WebShape round="2" />
                         <LineBorder color="48,77,130" />
                         <ColorBackground color="black" />
                     </decoration>

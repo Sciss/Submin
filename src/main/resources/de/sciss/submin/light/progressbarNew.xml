@@ -1,0 +1,31 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.progressbar.WebProgressBar -->
+
+    <!-- Progress bar -->
+    <style type="progressbar">
+        <component>
+            <foreground>101,101,101</foreground>
+        </component>
+        <painter>
+            <!-- Progress line -->
+            <progressPainter>
+                <decorations>
+                    <decoration states="progress">
+                        <GradientBackground>
+                            <color>217,217,217</color>
+                            <color>194,194,194</color>
+                        </GradientBackground>
+                    </decoration>
+                    <decoration states="enabled,progress,intermediate">
+                        <MovingHighlightBackground id="overlay" orientation="horizontal" width="120" color="101,101,101,128" passes="1" duration="2.5s" delay="4s" />
+                    </decoration>
+                    <decoration states="enabled,indeterminate">
+                        <MovingHighlightBackground id="overlay" orientation="horizontal" width="120" color="101,101,101,128" passes="2" duration="2.5s" delay="0.5s" />
+                    </decoration>
+                </decorations>
+            </progressPainter>
+        </painter>
+    </style>
+
+</skin>

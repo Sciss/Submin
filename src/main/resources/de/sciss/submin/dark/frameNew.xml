@@ -7,8 +7,6 @@
         <painter>
             <decorations>
                 <decoration>
-                    <WebShape round="4" />
-                    <WebShadow type="outer" opacity="0.45" width="40" />
                     <LineBorder color="16,16,16" />
                     <GradientBackground>
                         <color fraction="0">48,48,48</color>

@@ -1,5 +1,4 @@
 <skin xmlns="http://weblookandfeel.com/XmlSkin">
-<!--    TO-DO: label painting (foreground, shadow), button-down -->
 
     <!-- com.alee.laf.combobox.WebComboBox -->
 
@@ -34,9 +33,8 @@
         <!-- Default editor -->
         <style type="textfield" id="editor">
             <painter>
-                <decorations overwrite="true">
+                <decorations>
                     <decoration>
-                        <WebShape round="2,0,0,2" sides="0,0,0,1" />
                         <LineBorder color="170,170,170" />
                         <ColorBackground color="white" />
                     </decoration>
@@ -54,7 +52,7 @@
         <!-- Separator -->
         <style type="separator" id="separator" extends="vertical">
             <painter>
-                <decorations overwrite="true">
+                <decorations>
                     <decoration>
                         <SeparatorStripes padding="2,2,2,0">
                             <Stripe>
@@ -74,7 +72,7 @@
         </style>
 
         <!-- Arrow button -->
-        <style type="button" id="arrow" padding="2">
+        <style type="button" id="arrow">
             <painter>
                 <decorations>
                     <decoration visible="false">

@@ -1,0 +1,27 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.radiobutton.WebRadioButton -->
+
+    <!-- Radio button -->
+    <style type="radiobutton">
+        <painter>
+            <!-- Radio state painter -->
+            <checkStatePainter>
+                <decorations>
+                    <decoration size="20,20">
+                        <!--looks bad: EllipseShape-->
+                        <WebShape round="7" />
+                        <WebShadow type="outer" width="3" />
+                        <LineBorder color="170,170,170" />
+                        <GradientBackground>
+                            <color>white</color>
+                            <color>223,223,223</color>
+                        </GradientBackground>
+                    </decoration>
+                </decorations>
+            </checkStatePainter>
+
+        </painter>
+    </style>
+
+</skin>

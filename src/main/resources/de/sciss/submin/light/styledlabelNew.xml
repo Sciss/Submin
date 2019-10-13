@@ -1,0 +1,11 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.extended.label.WebStyledLabel -->
+
+    <!-- Styled label -->
+    <style type="styledlabel" padding="0,1,0,1" />
+
+    <!-- Label with text shadow -->
+    <style type="styledlabel" id="shadow" padding="0" />
+
+</skin>

@@ -13,7 +13,7 @@
         </style>
 
         <!-- South panel -->
-        <style type="panel" id="south" padding="4,4,4,4">
+        <style type="panel" id="south">
             <painter>
                 <decorations>
                     <decoration>
@@ -28,7 +28,7 @@
         </style>
 
         <!-- Files removal confirmation list -->
-        <style type="panel" id="removal" padding="4,4,4,4">
+        <style type="panel" id="removal">
             <component>
                 <background>black</background>
             </component>

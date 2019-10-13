@@ -1,0 +1,18 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.combobox.WebComboBox -->
+
+    <!-- Combobox -->
+    <style type="combobox">
+        <!-- Separator -->
+        <style type="separator" id="separator" extends="vertical">
+            <painter>
+                <decorations>
+                    <decoration>
+                        <SeparatorStripes padding="2,2,2,1" />
+                    </decoration>
+                </decorations>
+            </painter>
+        </style>
+    </style>
+</skin>

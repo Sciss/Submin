@@ -1,0 +1,27 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.tabbedpane.WebTabbedPane -->
+
+    <!-- Tabbed pane -->
+    <style type="tabbedpane">
+        <!-- Tab area -->
+        <style type="panel" id="tab-area" extends="transparent">
+            <!-- Tab viewport -->
+            <style type="viewport" id="viewport" extends="transparent">
+
+                <!-- Tab container -->
+                <style type="panel" id="container" extends="transparent">
+                    <!-- Tab title -->
+                    <style type="styledlabel" id="tab" padding="5,9,5,9" margin="0,0,0,1" />
+                </style>
+
+            </style>
+
+        </style>
+
+    </style>
+
+    <!-- Attached tabbed pane: this is obsolete and no-op now -->
+    <style type="tabbedpane" id="attached" />
+
+</skin>

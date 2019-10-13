@@ -1,8 +1,0 @@
-<skin>
-    <style type="table">
-        <component>
-            <selectionBackground>206,206,196</selectionBackground>
-            <selectionForeground>black</selectionForeground>
-        </component>
-    </style>
-</skin>

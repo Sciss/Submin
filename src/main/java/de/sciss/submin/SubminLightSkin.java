@@ -16,6 +16,7 @@ package de.sciss.submin;
 import com.alee.managers.style.XmlSkin;
 
 import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource;
 
 public class SubminLightSkin extends XmlSkin {
     public SubminLightSkin() {
@@ -29,5 +30,6 @@ public class SubminLightSkin extends XmlSkin {
     public static void installSkin() {
         SubminLookAndFeel.install(SubminLightSkin.class);
         UIManager.put("dark-skin", false);
+        UIManager.put("Label.foreground", new ColorUIResource(0, 0, 0));
     }
 }

@@ -50,8 +50,6 @@
         <style type="scrollbar" id="scrollbar" extends="undecorated-buttonless">
             <painter>
                 <thumbRound>3</thumbRound>
-                <thumbMargin>0,0,0,0</thumbMargin>
-                <scrollBarWidth>9</scrollBarWidth>
                 <thumbBorderColor>64,64,64,32</thumbBorderColor>
                 <thumbBackgroundColor>64,64,64,128</thumbBackgroundColor>
                 <thumbDisabledBorderColor>64,64,64,32</thumbDisabledBorderColor>
@@ -70,9 +68,6 @@
         <!-- Popup list scrollbar -->
         <style type="scrollbar" id="vertical" extends="undecorated-buttonless">
             <painter>
-                <thumbRound>2</thumbRound>
-                <thumbMargin>0,0,0,3</thumbMargin>
-                <scrollBarWidth>10</scrollBarWidth>
                 <thumbBorderColor>120,120,120,48</thumbBorderColor>
                 <thumbBackgroundColor>128,128,128,48</thumbBackgroundColor>
                 <thumbDisabledBorderColor>120,120,120,24</thumbDisabledBorderColor>

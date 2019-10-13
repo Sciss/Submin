@@ -1,0 +1,19 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.table.WebTable -->
+
+    <!-- Table -->
+    <style type="table">
+        <component>
+            <rowHeight>22</rowHeight>
+            <rowMargin>1</rowMargin>
+            <selectionBackground>218,218,208</selectionBackground>
+            <selectionForeground>black</selectionForeground>
+        </component>
+
+        <!-- Smaller padding -->
+        <style type="styledlabel" id="renderer" padding="1,2,1,2" />
+
+    </style>
+
+</skin>

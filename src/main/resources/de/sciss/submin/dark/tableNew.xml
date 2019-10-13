@@ -59,7 +59,6 @@
             <painter>
                 <decorations>
                     <decoration>
-                        <WebShape round="0" sides="0,0,1,0" />
                         <LineBorder color="48,48,48" />
                         <GradientBackground>
                             <color>126,126,126</color>

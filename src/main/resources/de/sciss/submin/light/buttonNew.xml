@@ -1,0 +1,18 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.button.WebButton -->
+
+    <!-- Button -->
+    <style type="button" padding="2,6,2,6">
+        <painter>
+            <decorations>
+                <decoration>
+                    <WebShadow type="outer" width="3" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+    <!-- Used by Mellite for tool icons; like 'icon' but more spacing -->
+    <style type="button" id="icon-space" padding="2,3,2,3" />
+</skin>
