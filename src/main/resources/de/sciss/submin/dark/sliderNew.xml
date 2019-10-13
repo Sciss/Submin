@@ -1,14 +1,9 @@
-<skin>
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
 
     <!-- com.alee.laf.slider.WebSlider -->
 
     <!-- Slider -->
     <style type="slider">
-        <component>
-            <opaque>false</opaque>
-            <!-- <background>black</background> -->
-            <foreground>220,220,220</foreground>
-        </component>
         <painter class="SubminSliderPainter">
             <trackBgTop>37,41,46</trackBgTop>
             <trackBgBottom>41,46,51</trackBgBottom>
@@ -17,13 +12,14 @@
             <progressBorderColor>128,128,128</progressBorderColor>
             <thumbBgTop>84,84,84</thumbBgTop>
             <thumbBgBottom>72,72,72</thumbBgBottom>
-            <animated>false</animated>
             <tickColor>200,200,200</tickColor>
             <darkBorderColor>16,16,16</darkBorderColor>
             <disabledBorderColor>16,16,16,128</disabledBorderColor>
             <focusColor>48,77,130</focusColor>
             <shadeColor>29,30,31</shadeColor>
+            <animated>false</animated>
         </painter>
+
     </style>
 
 </skin>

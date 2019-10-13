@@ -1,0 +1,46 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.window.WebFrame -->
+
+    <!-- WebLaF-decorated frame -->
+    <style type="rootpane" id="frame-decorated" extends="frame">
+        <painter>
+            <decorations>
+                <decoration>
+                    <WebShape round="4" />
+                    <WebShadow type="outer" opacity="0.45" width="40" />
+                    <LineBorder color="16,16,16" />
+                    <GradientBackground>
+                        <color fraction="0">48,48,48</color>
+                        <color fraction="0.1">32,36,40</color>
+                    </GradientBackground>
+                </decoration>
+            </decorations>
+        </painter>
+
+        <!-- Glass dialog -->
+        <style type="rootpane" id="glass-dialog" extends="dialog">
+            <painter>
+                <decorations>
+                    <decoration states="win">
+                        <ColorBackground color="32,36,40" opacity="0.2" />
+                    </decoration>
+                </decorations>
+            </painter>
+
+        </style>
+
+    </style>
+
+    <!-- Undecorated control-less frame -->
+    <style type="rootpane" id="frame-undecorated" extends="frame">
+        <painter>
+            <decorations>
+                <decoration>
+                    <ColorBackground color="32,36,40" />
+                </decoration>
+            </decorations>
+        </painter>
+    </style>
+
+</skin>

@@ -9,13 +9,16 @@ import com.alee.laf.menu.WebMenuBar;
 import com.alee.laf.menu.WebMenuItem;
 import com.alee.laf.menu.WebRadioButtonMenuItem;
 import com.alee.laf.progressbar.WebProgressBar;
+import com.alee.laf.slider.WebSlider;
 import com.alee.laf.splitpane.WebSplitPane;
 import com.alee.laf.text.WebEditorPane;
+import com.alee.laf.text.WebFormattedTextField;
 import com.alee.managers.style.Skin;
 import com.alee.utils.xml.Resource;
 
 import javax.swing.ButtonGroup;
 import javax.swing.KeyStroke;
+import java.util.Hashtable;
 
 public class SubminStyleEditor {
     public static void main(String[] args) {
@@ -62,6 +65,17 @@ public class SubminStyleEditor {
 //                final WebSplitPane split = new WebSplitPane();
 //                editor.putClientProperty("styleId", "decorated");
 
+                final WebSlider sl = new WebSlider();
+                sl.setPaintTicks(true);
+                sl.setMajorTickSpacing(25);
+                sl.setMinorTickSpacing(5);
+                final Hashtable slLb = sl.createStandardLabels(25);
+                sl.setLabelTable(slLb);
+                sl.setPaintLabels(true);
+                addViewComponent("Slider with ticks and labels", sl, sl, true);
+
+                final WebFormattedTextField ftf = new WebFormattedTextField("00:04:33.000");
+                addViewComponent("Formatted text field", ftf, ftf, true);
             }
         };
         final WebMenuBar mb = new WebMenuBar();

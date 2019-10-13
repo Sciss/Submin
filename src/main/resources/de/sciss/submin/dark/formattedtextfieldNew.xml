@@ -1,26 +1,18 @@
-<skin>
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
 
-    <!-- com.alee.laf.text.WebTextField -->
+    <!-- com.alee.laf.text.WebFormattedTextField -->
 
-    <!-- Text field -->
-    <style type="textfield" padding="2,4,2,4">
+    <!-- Formatted text field -->
+    <style type="formattedtextfield" padding="2,4,2,4">
         <component>
-            <opaque>false</opaque>
             <foreground>200,200,200</foreground>
             <selectedTextColor>black</selectedTextColor>
             <selectionColor>200,200,200</selectionColor>
             <caretColor>71,113,191</caretColor>
         </component>
         <painter>
-            <inputPromptHorizontalPosition>10</inputPromptHorizontalPosition>
-            <inputPromptVerticalPosition>1</inputPromptVerticalPosition>
-            <inputPromptForeground>160,160,160</inputPromptForeground>
-            <inputPromptOnlyWhenEditable>true</inputPromptOnlyWhenEditable>
-            <hideInputPromptOnFocus>false</hideInputPromptOnFocus>
             <decorations>
                 <decoration>
-                    <WebShape round="2" />
-                    <WebShadow type="outer" width="2" />
                     <LineBorder color="black" />
                     <ColorBackground color="black" />
                 </decoration>
@@ -36,17 +28,19 @@
         </painter>
     </style>
 
-    <!-- Text field undecorated -->
-    <style type="textfield" id="undecorated">
+    <!-- Non-opaque formatted text field -->
+    <style type="formattedtextfield" id="non-opaque">
         <painter>
             <decorations>
-                <decoration visible="false" />
+                <decoration>
+                    <ColorBackground color="black" />
+                </decoration>
             </decorations>
         </painter>
     </style>
 
-    <!-- Text field without focus decoration -->
-    <style type="textfield" id="nofocus">
+    <!-- Formatted text field without focus decoration -->
+    <style type="formattedtextfield" id="nofocus">
         <painter>
             <decorations>
                 <decoration states="focused">

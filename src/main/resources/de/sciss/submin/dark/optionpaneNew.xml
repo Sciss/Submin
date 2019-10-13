@@ -1,0 +1,12 @@
+<skin xmlns="http://weblookandfeel.com/XmlSkin">
+
+    <!-- com.alee.laf.optionpane.WebOptionPane -->
+
+    <!-- Option pane -->
+    <style type="optionpane">
+        <component>
+            <background>32,36,40</background>
+        </component>
+    </style>
+
+</skin>

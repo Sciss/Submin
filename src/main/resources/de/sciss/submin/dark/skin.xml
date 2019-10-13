@@ -24,14 +24,14 @@
     <include>dark/filechooserNew.xml</include>
     <include>dark/filechooserfieldNew.xml</include>
     <include>dark/filelistNew.xml</include>
-    <include>dark/formattedtextfield.xml</include> <!--TODO-->
-    <include>dark/frame.xml</include> <!--TODO-->
+    <include>dark/formattedtextfieldNew.xml</include>
+    <include>dark/frameNew.xml</include>
     <include>dark/labelNew.xml</include>
     <include>dark/listNew.xml</include>
     <include>dark/menuNew.xml</include>
     <include>dark/menubarNew.xml</include>
     <include>dark/menuitemNew.xml</include>
-    <include>dark/optionpane.xml</include> <!--TODO-->
+    <include>dark/optionpaneNew.xml</include>
     <include>dark/pathfieldNew.xml</include>
     <include>dark/panelNew.xml</include>
     <include>dark/passwordfieldNew.xml</include>
@@ -43,11 +43,11 @@
     <include>dark/scrollbarNew.xml</include>
     <include>dark/scrollpaneNew.xml</include>
     <include>dark/separatorNew.xml</include>
-    <include>dark/slider.xml</include> <!--TODO-->
+    <include>dark/sliderNew.xml</include>
     <include>dark/spinnerNew.xml</include>
     <include>dark/splitpaneNew.xml</include>
     <include>dark/splitpanedividerNew.xml</include>
-    <include>dark/statusbar.xml</include> <!--TODO-->
+    <include>dark/statusbarNew.xml</include>
     <include>dark/styledlabelNew.xml</include>
     <include>dark/styleeditorNew.xml</include>
     <include>dark/tabbedpaneNew.xml</include>
@@ -62,7 +62,5 @@
     <include>dark/treeNew.xml</include>
     <include>dark/tristatecheckboxNew.xml</include>
     <include>dark/viewportNew.xml</include>
-
-<!--    <include>dark/debug.xml</include>-->
 
 </skin>
