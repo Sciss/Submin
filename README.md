@@ -24,7 +24,7 @@ The following artifact will be available from Maven Central:
 
     "de.sciss" % "submin" % v
 
-The current version `v` is `"0.2.5"`.
+The current version `v` is `"0.3.1"`.
 
 ## using
 
@@ -56,8 +56,7 @@ Except for the customised look, this library provides the following changes
 - `FileChooserUI`: under Linux/Gnome we populate the file tree with the Gnome
   favourites as per `~/.config/gtk-3.0/bookmarks`. To support other window managers
   and other operating systems, we require your help. If you can provide information
-  on how to obtain favourites e.g. under KDE, on OS X, or Windows, please let me know.
-  
+  on how to obtain favourites e.g. under KDE, on OS X, or Windows, please let me know.  
 - style `icon-space` for buttons and toggle-buttons
 - style `noshade` for labels
 
@@ -67,11 +66,9 @@ Except for the customised look, this library provides the following changes
 - file-chooser: tool icon color
 - split-divider: arrow colors
 - path-field: arrow color
-- slider: looks bad in dark skin
 - spinner: arrow icons color
 - combo-box: arrow icon color
 - text-area: background not dimmed when disabled
-- text-field: missing style 'undecorated' (Mellite Freesound Retrieval)
 - table: sorting-arrow color
 
 ## contributing

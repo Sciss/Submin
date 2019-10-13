@@ -47,12 +47,17 @@ public class SubminStyleEditor {
             protected void createPreviewPanel() {
                 super.createPreviewPanel();
 
-                final WebProgressBar progress = new WebProgressBar();
-//                progress.setValue ( 0 );
-                progress.setIndeterminate(true);
-                progress.setString("Label");
-                progress.setStringPainted(true);
-                addViewComponent("Progress (indeterminate)", progress, progress, true);
+                final WebProgressBar progress1 = new WebProgressBar();
+                progress1.setIndeterminate(true);
+                progress1.setString("Label");
+                progress1.setStringPainted(true);
+                addViewComponent("Progress (indeterminate)", progress1, progress1, true);
+
+                final WebProgressBar progress2 = new WebProgressBar();
+                progress2.setValue ( 50 );
+                progress2.setString("Label");
+                progress2.setStringPainted(true);
+                addViewComponent("Progress (with label)", progress2, progress2, true);
 
                 final WebLabel label = new WebLabel("<html><body>An <i>HTML</i> <b>label</b>.<br><A HREF=\"foo\">link</A></body>");
                 addViewComponent("Label with HTML", label, label, true);

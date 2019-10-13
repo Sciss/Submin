@@ -18,7 +18,10 @@
                         </GradientBackground>
                     </decoration>
                     <decoration states="enabled,progress,intermediate">
-                        <MovingHighlightBackground id="overlay" orientation="horizontal" width="120" color="101,101,101,128" passes="1" duration="2.5s" delay="4s" />
+                        <ColorBackground id="overlay" opacity="0" />
+                    </decoration>
+                    <decoration states="enabled,progress,intermediate,vertical">
+                        <ColorBackground id="overlay" opacity="0" />
                     </decoration>
                     <decoration states="enabled,indeterminate">
                         <MovingHighlightBackground id="overlay" orientation="horizontal" width="120" color="101,101,101,128" passes="2" duration="2.5s" delay="0.5s" />
