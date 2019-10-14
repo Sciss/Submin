@@ -14,6 +14,7 @@
 package de.sciss.submin;
 
 import com.alee.managers.style.XmlSkin;
+import com.alee.utils.XmlUtils;
 
 import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
@@ -23,11 +24,29 @@ public class SubminLightSkin extends XmlSkin {
         super(SubminLightSkin.class, "light/skin.xml");
     }
 
+    /*
+     * Manager initialization mark.
+     */
+    private static boolean initialized = false;
+
+    /**
+     * Initializes StyleManager settings.
+     */
+    public static synchronized void initialize() {
+        if (!initialized) {
+            initialized = true;
+            // Class aliases
+            XmlUtils.processAnnotations(SubminScrollPaneLayout  .class);
+            XmlUtils.processAnnotations(SubminScrollPaneLayout.UIResource  .class);
+        }
+    }
+
     /**
      * Initializes the skin and sets the L&amp;F to <tt>WebLookAndFeel</tt> using this skin.
      * Sets UI default <tt>"dark-skin"</tt> to <tt>false</tt>.
      */
     public static void installSkin() {
+        initialize();
         SubminLookAndFeel.install(SubminLightSkin.class);
         UIManager.put("dark-skin", false);
         UIManager.put("Label.foreground", new ColorUIResource(0, 0, 0));

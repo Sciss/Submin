@@ -6,6 +6,7 @@
     <style type="scrollpane">
         <component>
             <background>32,36,40</background>
+<!--            <layout class="SubminScrollPaneLayout$UIResource" />-->
         </component>
         <painter>
             <decorations>

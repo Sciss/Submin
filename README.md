@@ -24,7 +24,7 @@ The following artifact will be available from Maven Central:
 
     "de.sciss" % "submin" % v
 
-The current version `v` is `"0.3.1"`.
+The current version `v` is `"0.3.2"`.
 
 ## using
 
