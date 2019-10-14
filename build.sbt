@@ -2,7 +2,7 @@ lazy val root = project.in(file("."))
   .settings(publishSettings)
   .settings(
     name                := "Submin",
-    version             := "0.3.2",
+    version             := "0.3.3-SNAPSHOT",
     organization        := "de.sciss",
     licenses            := Seq("GPL v3+" -> url("http://www.gnu.org/licenses/gpl-3.0.txt")),
     scalaVersion        := "2.12.10", // not used
