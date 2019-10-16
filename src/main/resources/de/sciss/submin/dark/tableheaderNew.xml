@@ -4,6 +4,9 @@
 
     <!-- Table header -->
     <style type="tableheader">
+        <component>
+            <foreground>216,220,224</foreground>
+        </component>
         <painter>
             <topBgColor>126,126,126</topBgColor>
             <bottomBgColor>101,101,101</bottomBgColor>

@@ -4,6 +4,9 @@
 
     <!-- Radio button -->
     <style type="radiobutton">
+        <component>
+            <foreground>216,220,224</foreground>
+        </component>
         <painter>
             <decorations>
                 <decoration>

@@ -4,6 +4,9 @@
 
     <!-- Combobox -->
     <style type="combobox">
+        <component>
+            <foreground>220,220,220</foreground>
+        </component>
         <painter>
             <decorations>
                 <decoration>

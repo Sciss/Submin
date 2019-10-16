@@ -2,7 +2,7 @@ lazy val root = project.in(file("."))
   .settings(publishSettings)
   .settings(
     name                := "Submin",
-    version             := "0.3.3-SNAPSHOT",
+    version             := "0.3.3",
     organization        := "de.sciss",
     licenses            := Seq("GPL v3+" -> url("http://www.gnu.org/licenses/gpl-3.0.txt")),
     scalaVersion        := "2.12.10", // not used
@@ -21,7 +21,7 @@ lazy val root = project.in(file("."))
     javacOptions in doc := commonJavaOptions
   )
 
-def weblafVersion   = "2.2.0" //  "1.2.11-SNAPSHOT"
+def weblafVersion   = "2.2.1" //  "1.2.11-SNAPSHOT"
 def rsyntaxVersion  = "2.6.1"
 
 def commonJavaOptions = Seq("-source", "1.8")

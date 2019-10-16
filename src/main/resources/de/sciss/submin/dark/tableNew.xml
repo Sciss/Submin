@@ -5,6 +5,7 @@
     <!-- Table -->
     <style type="table">
         <component>
+            <foreground>216,220,224</foreground>
             <background>32,36,40</background>
             <rowHeight>22</rowHeight>
             <rowMargin>1</rowMargin>

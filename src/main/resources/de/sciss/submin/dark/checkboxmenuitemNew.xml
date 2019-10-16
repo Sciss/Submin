@@ -3,6 +3,9 @@
 
     <!-- Check box menu item -->
     <style type="checkboxmenuitem">
+        <component>
+            <foreground>200,200,200</foreground>
+        </component>
         <painter>
             <decorations>
                 <decoration>

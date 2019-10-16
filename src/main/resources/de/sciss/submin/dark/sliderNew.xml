@@ -4,6 +4,9 @@
 
     <!-- Slider -->
     <style type="slider">
+        <component>
+            <foreground>216,220,224</foreground>
+        </component>
         <painter class="SubminSliderPainter">
             <trackBgTop>37,41,46</trackBgTop>
             <trackBgBottom>41,46,51</trackBgBottom>

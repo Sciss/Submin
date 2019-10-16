@@ -19,6 +19,8 @@ import java.awt.GridLayout;
 
 public class TextAreaRunaway implements Runnable {
     public static void main(String[] args) {
+        System.out.println(System.getProperty("java.runtime.version"));
+
         EventQueue.invokeLater(new TextAreaRunaway());
     }
 
@@ -38,45 +40,46 @@ public class TextAreaRunaway implements Runnable {
         final JComponent lbTags         = new JLabel("Tags"       );
         final JComponent lbDescription  = new JLabel("Description");
         final JPanel p = new JPanel();
-//        final GroupLayout lay = new GroupLayout(p);
-//        lay.setAutoCreateGaps(true);
-//        p.setLayout(lay);
-//        GroupLayout.SequentialGroup hGroup = lay.createSequentialGroup();
-//        hGroup.addGroup(lay.createParallelGroup().
-//                addComponent(lbTags).addComponent(lbDescription));
-//        hGroup.addGroup(lay.createParallelGroup().
-//                addComponent(ggTags).addComponent(ggDescription));
-//        lay.setHorizontalGroup(hGroup);
-//        GroupLayout.SequentialGroup vGroup = lay.createSequentialGroup();
-//        vGroup.addGroup(lay.createParallelGroup(GroupLayout.Alignment.BASELINE).
-//                addComponent(lbTags).addComponent(ggTags));
-//        vGroup.addGroup(lay.createParallelGroup(GroupLayout.Alignment.BASELINE).
-//                addComponent(lbDescription).addComponent(ggDescription));
-//        lay.setVerticalGroup(vGroup);
-//        p.setLayout(new GridLayout(2, 2));
-        final GridBagConstraints con = new GridBagConstraints();
-        final GridBagLayout lay = new GridBagLayout();
+        final GroupLayout lay = new GroupLayout(p);
+        lay.setAutoCreateGaps(true);
         p.setLayout(lay);
-        con.gridwidth   = 1;
-        con.weightx     = 0.0;
-        con.fill        = GridBagConstraints.NONE;
-        lay.setConstraints(lbTags, con);
-        con.gridwidth   = GridBagConstraints.REMAINDER;
-        con.weightx     = 1.0;
-        con.fill        = GridBagConstraints.BOTH;
-        lay.setConstraints(ggTags, con);
-        con.gridwidth   = 1;
-        con.weightx     = 0.0;
-        con.fill        = GridBagConstraints.NONE;
-        lay.setConstraints(lbDescription, con);
-        con.gridwidth   = GridBagConstraints.REMAINDER;
-        con.weightx     = 1.0;
-        con.fill        = GridBagConstraints.BOTH;
-        lay.setConstraints(ggDescription, con);
-        p.add(lbTags);
-        p.add(ggTags);
-        p.add(lbDescription);
-        p.add(ggDescription);
+        GroupLayout.SequentialGroup hGroup = lay.createSequentialGroup();
+        hGroup.addGroup(lay.createParallelGroup().
+                addComponent(lbTags).addComponent(lbDescription));
+        hGroup.addGroup(lay.createParallelGroup().
+                addComponent(ggTags).addComponent(ggDescription));
+        lay.setHorizontalGroup(hGroup);
+        GroupLayout.SequentialGroup vGroup = lay.createSequentialGroup();
+        vGroup.addGroup(lay.createParallelGroup(GroupLayout.Alignment.BASELINE).
+                addComponent(lbTags).addComponent(ggTags));
+        vGroup.addGroup(lay.createParallelGroup(GroupLayout.Alignment.BASELINE).
+                addComponent(lbDescription).addComponent(ggDescription));
+        lay.setVerticalGroup(vGroup);
+
+//        p.setLayout(new GridLayout(2, 2));
+//        final GridBagConstraints con = new GridBagConstraints();
+//        final GridBagLayout lay = new GridBagLayout();
+//        p.setLayout(lay);
+//        con.gridwidth   = 1;
+//        con.weightx     = 0.0;
+//        con.fill        = GridBagConstraints.NONE;
+//        lay.setConstraints(lbTags, con);
+//        con.gridwidth   = GridBagConstraints.REMAINDER;
+//        con.weightx     = 1.0;
+//        con.fill        = GridBagConstraints.BOTH;
+//        lay.setConstraints(ggTags, con);
+//        con.gridwidth   = 1;
+//        con.weightx     = 0.0;
+//        con.fill        = GridBagConstraints.NONE;
+//        lay.setConstraints(lbDescription, con);
+//        con.gridwidth   = GridBagConstraints.REMAINDER;
+//        con.weightx     = 1.0;
+//        con.fill        = GridBagConstraints.BOTH;
+//        lay.setConstraints(ggDescription, con);
+//        p.add(lbTags);
+//        p.add(ggTags);
+//        p.add(lbDescription);
+//        p.add(ggDescription);
 
         final JScrollPane scroll = new JScrollPane(p);
         final JViewport vp = scroll.getViewport();

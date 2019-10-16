@@ -4,6 +4,9 @@
 
     <!-- Toggle button -->
     <style type="togglebutton" padding="2,6,2,6">
+        <component>
+            <foreground>220,220,220</foreground>
+        </component>
         <painter>
             <decorations>
                 <decoration>
