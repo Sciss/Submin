@@ -5,11 +5,13 @@
     <!-- Radio button -->
     <style type="radiobutton">
         <painter>
+            <!--TODO-->
             <!-- Radio state painter -->
+<!--
             <checkStatePainter>
                 <decorations>
                     <decoration size="20,20">
-                        <!--looks bad: EllipseShape-->
+                        &lt;!&ndash;looks bad: EllipseShape&ndash;&gt;
                         <WebShape round="7" />
                         <WebShadow type="outer" width="3" />
                         <LineBorder color="170,170,170" />
@@ -20,6 +22,7 @@
                     </decoration>
                 </decorations>
             </checkStatePainter>
+-->
 
         </painter>
     </style>

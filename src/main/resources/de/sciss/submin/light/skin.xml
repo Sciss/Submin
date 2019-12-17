@@ -11,7 +11,7 @@
     <class>de.sciss.submin.SubminLightSkin</class>
 
     <!-- Including WebLaF default skin, will use its style as a base -->
-    <include nearClass="com.alee.skin.web.WebSkin">resources/skin.xml</include>
+    <include nearClass="com.alee.skin.light.WebLightSkin">resources/web-light-skin.xml</include>
 
     <include>light/buttonNew.xml</include>
     <include>light/checkboxNew.xml</include>

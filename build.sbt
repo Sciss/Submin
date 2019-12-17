@@ -2,7 +2,7 @@ lazy val root = project.in(file("."))
   .settings(publishSettings)
   .settings(
     name                := "Submin",
-    version             := "0.3.3",
+    version             := "0.3.4-SNAPSHOT",
     organization        := "de.sciss",
     licenses            := Seq("GPL v3+" -> url("http://www.gnu.org/licenses/gpl-3.0.txt")),
     scalaVersion        := "2.12.10", // not used
@@ -11,9 +11,9 @@ lazy val root = project.in(file("."))
     homepage            := Some(url(s"https://git.iem.at/sciss/${name.value}")),
 //    resolvers           += Resolver.sonatypeRepo("snapshots"),
     libraryDependencies ++= Seq(
-       "de.sciss"      % "weblaf"          % weblafVersion,
-//      "com.weblookandfeel" % "weblaf-core"     % weblafVersion,
-//      "com.weblookandfeel" % "weblaf-ui"       % weblafVersion,
+//       "de.sciss"      % "weblaf"          % weblafVersion,
+      "com.weblookandfeel" % "weblaf-core"     % weblafVersion,
+      "com.weblookandfeel" % "weblaf-ui"       % weblafVersion,
       "com.fifesoft"       % "rsyntaxtextarea" % rsyntaxVersion % Test
     ),
     mainClass in (Test, run) := Some("de.sciss.submin.SubminStyleEditor"),
@@ -21,7 +21,8 @@ lazy val root = project.in(file("."))
     javacOptions in doc := commonJavaOptions
   )
 
-def weblafVersion   = "2.2.1" //  "1.2.11-SNAPSHOT"
+//def weblafVersion   = "2.2.1"
+def weblafVersion   = "1.2.11"
 def rsyntaxVersion  = "2.6.1"
 
 def commonJavaOptions = Seq("-source", "1.8")

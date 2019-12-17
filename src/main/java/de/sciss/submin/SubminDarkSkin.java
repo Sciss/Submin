@@ -13,6 +13,7 @@
 
 package de.sciss.submin;
 
+import com.alee.api.resource.ClassResource;
 import com.alee.managers.style.XmlSkin;
 import com.alee.utils.XmlUtils;
 
@@ -23,7 +24,7 @@ import javax.swing.text.html.StyleSheet;
 
 public class SubminDarkSkin extends XmlSkin {
     public SubminDarkSkin() {
-        super(SubminDarkSkin.class, "dark/skin.xml");
+        super(new ClassResource(SubminDarkSkin.class, "dark/skin.xml"));
     }
 
     /*

@@ -1,7 +1,7 @@
 package de.sciss.submin;
 
+import com.alee.api.resource.ClassResource;
 import com.alee.extended.style.StyleEditor;
-import com.alee.laf.WebLookAndFeel;
 import com.alee.laf.label.WebLabel;
 import com.alee.laf.menu.WebCheckBoxMenuItem;
 import com.alee.laf.menu.WebMenu;
@@ -10,11 +10,9 @@ import com.alee.laf.menu.WebMenuItem;
 import com.alee.laf.menu.WebRadioButtonMenuItem;
 import com.alee.laf.progressbar.WebProgressBar;
 import com.alee.laf.slider.WebSlider;
-import com.alee.laf.splitpane.WebSplitPane;
 import com.alee.laf.text.WebEditorPane;
 import com.alee.laf.text.WebFormattedTextField;
 import com.alee.managers.style.Skin;
-import com.alee.utils.xml.Resource;
 
 import javax.swing.ButtonGroup;
 import javax.swing.KeyStroke;
@@ -38,7 +36,7 @@ public class SubminStyleEditor {
 
         // Edited skin file
         // XXX TODO
-        final Resource skin = new Resource(skinClass, prefix + "/skin.xml");
+        final ClassResource skin = new ClassResource(skinClass, prefix + "/skin.xml");
 //        final Resource skin = new Resource(skinClass, "resources/skin.xml");
 
         // Displaying StyleEditor

@@ -32,7 +32,9 @@
                 </decoration>
             </decorations>
 
+            <!--TODO-->
             <!-- Check state painter -->
+<!--
             <checkStatePainter>
                 <decorations>
                     <decoration size="20,20">
@@ -61,6 +63,7 @@
                     </decoration>
                 </decorations>
             </checkStatePainter>
+-->
 
         </painter>
     </style>

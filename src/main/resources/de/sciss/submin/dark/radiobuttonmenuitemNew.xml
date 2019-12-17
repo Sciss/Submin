@@ -32,11 +32,13 @@
                 </decoration>
             </decorations>
 
+            <!--TODO-->
             <!-- Radio state painter -->
+<!--
             <checkStatePainter>
                 <decorations>
                     <decoration size="20,20">
-                        <!--looks bad: EllipseShape-->
+                        &lt;!&ndash;looks bad: EllipseShape&ndash;&gt;
                         <WebShape round="7" />
                         <WebShadow type="outer" width="3" />
                         <LineBorder color="16,16,16" />
@@ -62,6 +64,7 @@
                     </decoration>
                 </decorations>
             </checkStatePainter>
+-->
 
         </painter>
     </style>

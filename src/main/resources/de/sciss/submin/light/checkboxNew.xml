@@ -6,7 +6,9 @@
     <style type="checkbox">
         <painter>
 
-            <!-- Check state painter -->
+            <!--TODO-->
+<!--
+            &lt;!&ndash; Check state painter &ndash;&gt;
             <checkStatePainter>
                 <decorations>
                     <decoration size="20,20">
@@ -14,6 +16,7 @@
                     </decoration>
                 </decorations>
             </checkStatePainter>
+-->
 
         </painter>
     </style>
