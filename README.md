@@ -24,7 +24,7 @@ The following artifact will be available from Maven Central:
 
     "de.sciss" % "submin" % v
 
-The current version `v` is `"0.3.2"`.
+The current version `v` is `"0.3.4"`.
 
 ## using
 
@@ -41,7 +41,7 @@ The boolean argument is `true` for the dark skin and `false` for the light skin.
 
 ## building
 
-Submin builds with sbt. It is written in Java and should run on a Java 6 runtime.
+Submin builds with [sbt](http://www.scala-sbt.org/). It is written in Java and should run on a Java 6 runtime.
 
 ## running
 

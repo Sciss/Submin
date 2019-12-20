@@ -15,7 +15,6 @@ package de.sciss.submin;
 
 import com.alee.api.resource.ClassResource;
 import com.alee.managers.style.XmlSkin;
-import com.alee.utils.XmlUtils;
 
 import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
@@ -36,9 +35,6 @@ public class SubminLightSkin extends XmlSkin {
     public static synchronized void initialize() {
         if (!initialized) {
             initialized = true;
-            // Class aliases
-            XmlUtils.processAnnotations(SubminScrollPaneLayout  .class);
-            XmlUtils.processAnnotations(SubminScrollPaneLayout.UIResource  .class);
         }
     }
 

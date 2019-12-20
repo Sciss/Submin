@@ -1,33 +1,42 @@
 <skin xmlns="http://weblookandfeel.com/XmlSkin">
+    <!-- com.alee.laf.menu.WebRadioButtonMenuItem -->
 
-    <!-- com.alee.laf.radiobutton.WebRadioButton -->
-
-    <!-- Radio button -->
-    <style type="radiobutton">
+    <!-- Radio button menu item -->
+    <style type="radiobuttonmenuitem">
         <component>
-            <foreground>216,220,224</foreground>
+            <foreground>200,200,200</foreground>
         </component>
         <painter>
             <decorations>
                 <decoration>
-                    <ButtonLayout>
-                        <SubminButtonText constraints="text" color="216,220,224" shadowColor="24,26,28" />
-                    </ButtonLayout>
+                    <WebShape round="0" />
+                    <MenuItemLayout>
+                        <ButtonText constraints="text" color="200,200,200" />
+                        <RoundRectangle constraints="accelerator">
+                            <ColorBackground color="0,0,0,200" />
+                        </RoundRectangle>
+                        <AcceleratorText constraints="accelerator" color="90,90,90" />
+                    </MenuItemLayout>
+                </decoration>
+                <decoration states="selected">
+                    <GradientBackground>
+                        <color>88,88,88</color>
+                        <color>76,76,76,200</color>
+                    </GradientBackground>
                 </decoration>
                 <decoration states="disabled">
-                    <ButtonLayout>
-                        <SubminButtonText color="216,220,224,96" />
-                    </ButtonLayout>
+                    <MenuItemLayout>
+                        <ButtonText color="200,200,200,96" />
+                        <AcceleratorText color="90,90,90,96" />
+                    </MenuItemLayout>
                 </decoration>
             </decorations>
 
-            <!--TODO-->
-            <!-- Radio state painter -->
-<!--
-            <checkStatePainter>
+            <!-- State icon painter -->
+            <stateIconPainter>
                 <decorations>
                     <decoration size="20,20">
-                        &lt;!&ndash;looks bad: EllipseShape&ndash;&gt;
+                        <!--looks bad: EllipseShape-->
                         <WebShape round="7" />
                         <WebShadow type="outer" width="3" />
                         <LineBorder color="16,16,16" />
@@ -37,10 +46,8 @@
                         </GradientBackground>
                     </decoration>
                     <decoration states="checked">
+                        <LineBorder color="48,48,48" />
                         <RadioIcon leftColor="180,180,180" rightColor="128,128,128" />
-                    </decoration>
-                    <decoration states="focused">
-                        <LineBorder color="48,77,130" />
                     </decoration>
                     <decoration states="disabled">
                         <WebShadow type="outer" opacity="0" />
@@ -54,8 +61,7 @@
                         <RadioIcon leftColor="140,140,140,128" rightColor="128,128,128,128" />
                     </decoration>
                 </decorations>
-            </checkStatePainter>
--->
+            </stateIconPainter>
 
         </painter>
     </style>

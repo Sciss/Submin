@@ -5,19 +5,14 @@
     <!-- Checkbox -->
     <style type="checkbox">
         <painter>
-
-            <!--TODO-->
-<!--
-            &lt;!&ndash; Check state painter &ndash;&gt;
-            <checkStatePainter>
+            <!-- State icon painter -->
+            <stateIconPainter>
                 <decorations>
                     <decoration size="20,20">
                         <WebShadow type="outer" width="3" />
                     </decoration>
                 </decorations>
-            </checkStatePainter>
--->
-
+            </stateIconPainter>
         </painter>
     </style>
 </skin>

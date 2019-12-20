@@ -43,8 +43,6 @@ public class SubminDarkSkin extends XmlSkin {
             XmlUtils.processAnnotations(SubminButtonText        .class);
             XmlUtils.processAnnotations(SubminLabelText         .class);
             XmlUtils.processAnnotations(SubminStyledLabelText   .class);
-            XmlUtils.processAnnotations(SubminScrollPaneLayout  .class);
-            XmlUtils.processAnnotations(SubminScrollPaneLayout.UIResource  .class);
         }
     }
 
@@ -61,9 +59,6 @@ public class SubminDarkSkin extends XmlSkin {
         UIManager.put("Table.background", new ColorUIResource(29, 32, 36));
         UIManager.put("Table.foreground", new ColorUIResource(220, 220, 220));
         UIManager.put("Label.foreground", new ColorUIResource(216, 220, 224));
-//        UIManager.put("Table.selectionForeground", new ColorUIResource(88, 88, 88));
-//        UIManager.put("List.selectionForeground", new ColorUIResource(88, 88, 88));
-//        UIManager.put("Tree.selectionForeground", new ColorUIResource(88, 88, 88));
         UIManager.put("Panel.background", new ColorUIResource(32, 36, 40));
 
         // cf. https://stackoverflow.com/questions/26749495/customize-detault-html-link-color-in-java-swing

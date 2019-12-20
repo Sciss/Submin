@@ -1,16 +1,16 @@
 <skin xmlns="http://weblookandfeel.com/XmlSkin">
-    <!-- com.alee.laf.menu.WebRadioButtonMenuItem -->
+    <!-- com.alee.laf.menu.WebCheckBoxMenuItem -->
 
-    <!-- Radio button menu item -->
-    <style type="radiobuttonmenuitem">
+    <!-- Check box menu item -->
+    <style type="checkboxmenuitem">
         <component>
             <foreground>200,200,200</foreground>
         </component>
         <painter>
             <decorations>
                 <decoration>
-                    <WebShape round="0" />
                     <MenuItemLayout>
+                        <SimpleButtonIcon constraints="icon" />
                         <ButtonText constraints="text" color="200,200,200" />
                         <RoundRectangle constraints="accelerator">
                             <ColorBackground color="0,0,0,200" />
@@ -32,24 +32,21 @@
                 </decoration>
             </decorations>
 
-            <!--TODO-->
-            <!-- Radio state painter -->
-<!--
-            <checkStatePainter>
+            <!-- State icon painter -->
+            <stateIconPainter>
                 <decorations>
                     <decoration size="20,20">
-                        &lt;!&ndash;looks bad: EllipseShape&ndash;&gt;
-                        <WebShape round="7" />
+                        <WebShape round="2" />
                         <WebShadow type="outer" width="3" />
                         <LineBorder color="16,16,16" />
-                        <GradientBackground>
+                        <GradientBackground type="linear" from="0.0,0.0" to="0.0,2.0">
                             <color>64,64,64</color>
                             <color>48,48,48</color>
                         </GradientBackground>
                     </decoration>
                     <decoration states="checked">
                         <LineBorder color="48,48,48" />
-                        <RadioIcon leftColor="180,180,180" rightColor="128,128,128" />
+                        <CheckIcon bounds="margin" stroke="basic;2" color="180,180,180" />
                     </decoration>
                     <decoration states="disabled">
                         <WebShadow type="outer" opacity="0" />
@@ -60,11 +57,10 @@
                         </GradientBackground>
                     </decoration>
                     <decoration states="disabled,checked">
-                        <RadioIcon leftColor="140,140,140,128" rightColor="128,128,128,128" />
+                        <CheckIcon bounds="margin" color="160,160,160,128" />
                     </decoration>
                 </decorations>
-            </checkStatePainter>
--->
+            </stateIconPainter>
 
         </painter>
     </style>
